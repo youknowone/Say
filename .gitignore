@@ -1,0 +1,16 @@
+
+.DS_Store
+.git
+*.orig
+*~
+.*.swp
+*.xcodeproj/*.mode1v3
+*.xcodeproj/*.pbxuser
+*.xcodeproj/*.perspectivev3
+*xcuserdata
+*.xcworkspace*
+
+Podfile.lock
+Pods
+
+version.xcconfig
