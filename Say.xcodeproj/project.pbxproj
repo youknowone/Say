@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		389A62B11ADE3A090037183B /* SayKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389A62B01ADE3A090037183B /* SayKit.swift */; };
+		389A62B31ADE446F0037183B /* SayKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389A62B21ADE446F0037183B /* SayKit.swift */; };
 		38B8C1EC1AD6F903009F0783 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B8C1EB1AD6F903009F0783 /* AppDelegate.swift */; };
 		38B8C1EE1AD6F903009F0783 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B8C1ED1AD6F903009F0783 /* ViewController.swift */; };
 		38B8C1F01AD6F903009F0783 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38B8C1EF1AD6F903009F0783 /* Images.xcassets */; };
@@ -38,7 +38,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		389A62B01ADE3A090037183B /* SayKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SayKit.swift; path = ../Pods/SayKit/SayKit/SayKit.swift; sourceTree = "<group>"; };
+		389A62B21ADE446F0037183B /* SayKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SayKit.swift; path = SayKit/SayKit/SayKit.swift; sourceTree = SOURCE_ROOT; };
 		38B8C1E61AD6F903009F0783 /* Say.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Say.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		38B8C1EA1AD6F903009F0783 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		38B8C1EB1AD6F903009F0783 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -98,7 +98,7 @@
 				38B8C2081AD72667009F0783 /* Say.entitlements */,
 				38B8C1EB1AD6F903009F0783 /* AppDelegate.swift */,
 				38B8C1ED1AD6F903009F0783 /* ViewController.swift */,
-				389A62B01ADE3A090037183B /* SayKit.swift */,
+				389A62B21ADE446F0037183B /* SayKit.swift */,
 				38B8C1EF1AD6F903009F0783 /* Images.xcassets */,
 				38B8C1F11AD6F903009F0783 /* Main.storyboard */,
 				38B8C1E91AD6F903009F0783 /* Supporting Files */,
@@ -259,7 +259,7 @@
 			files = (
 				38B8C1EE1AD6F903009F0783 /* ViewController.swift in Sources */,
 				38B8C1EC1AD6F903009F0783 /* AppDelegate.swift in Sources */,
-				389A62B11ADE3A090037183B /* SayKit.swift in Sources */,
+				389A62B31ADE446F0037183B /* SayKit.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
