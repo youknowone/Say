@@ -11,6 +11,7 @@ import Cocoa
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationShouldTerminateAfterLastWindowClosed(sender: NSApplication) -> Bool {
+        // force app to be terminated after closing
         return true
     }
 

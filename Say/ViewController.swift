@@ -9,53 +9,59 @@
 import Cocoa
 //import SayKit
 
-func syncronizedData(tag: String, URL: NSURL) -> NSData {
-    let standardUserDefaults = NSUserDefaults.standardUserDefaults()
-    var iconData = standardUserDefaults.objectForKey(tag) as? NSData
-    if iconData == nil {
-        iconData = NSData(contentsOfURL: URL)
-        standardUserDefaults.setObject(iconData!, forKey: tag)
-        standardUserDefaults.synchronize()
-    }
-    return iconData!
-}
 
+/// Main window of the application
 class MainWindow: NSWindow {
     @IBOutlet var speechToolbarItem: NSToolbarItem! = nil;
     @IBOutlet var exportToolbarItem: NSToolbarItem! = nil;
 
     override func awakeFromNib() {
+        /** Load data from cache in NSUserDefaults or from URL.
+        *
+        *   Load data from cache in NSUserDefaults. If cache data doesn't exist
+        *   in NSUserDefaults with given tag, download data from URL and save
+        *   it to the given tag before loading.
+        */
+        func syncronizedData(tag: String, URL: NSURL) -> NSData {
+            let standardUserDefaults = NSUserDefaults.standardUserDefaults()
+            var iconData = standardUserDefaults.objectForKey(tag) as? NSData
+            if iconData == nil {
+                iconData = NSData(contentsOfURL: URL)
+                standardUserDefaults.setObject(iconData!, forKey: tag)
+                standardUserDefaults.synchronize()
+            }
+            return iconData!
+        }
+
         super.awakeFromNib()
         self.speechToolbarItem.image = NSImage(data: syncronizedData("icon_speech", NSURL(string: "http://upload.wikimedia.org/wikipedia/commons/1/10/Exquisite-microphone.png")!))
         self.exportToolbarItem.image = NSImage(data: syncronizedData("icon_export", NSURL(string: "http://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Gnome-generic-empty.svg/500px-Gnome-generic-empty.svg.png?uselang=ko")!))
     }
 }
 
-class MainWindowController: NSWindowController, NSWindowDelegate {
-    func windowWillClose(notification: NSNotification) {
-
-    }
-}
-
+/// The controller for main view in main window
 class ViewController: NSViewController {
-
+    /// Text view to speech
     @IBOutlet var textView: NSTextView! = nil;
+    /// Combo box for voices. Default is decided by system locale
     @IBOutlet var voiceComboBox: NSComboBox! = nil;
+    /// Save panel for "Export" menu
     let voiceSavePanel = NSSavePanel()
+    /// Open panel for "Open" menu
     let textOpenPanel = NSOpenPanel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         assert(self.textView != nil)
         assert(self.voiceComboBox != nil)
-        self.voiceSavePanel.allowedFileTypes = ["aiff"]
+        self.voiceSavePanel.allowedFileTypes = ["aiff"] // default output format is aiff. See `man say`
 
         self.voiceComboBox.addItemsWithObjectValues(SKVoice.voices.map({ "\($0.name)(\($0.locale)): \($0.comment)"; }))
     }
 
     override var representedObject: AnyObject? {
         didSet {
-        // Update the view, if already loaded.
+            // Update the view, if already loaded.
         }
     }
 
