@@ -3,11 +3,17 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 47;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		389A62B31ADE446F0037183B /* SayKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389A62B21ADE446F0037183B /* SayKit.swift */; };
+		389F0EE11B0D3ACD0069DBEF /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 389F0EC41B0D3A3B0069DBEF /* NotificationCenter.framework */; };
+		389F0EE81B0D3ACD0069DBEF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 389F0EE61B0D3ACD0069DBEF /* InfoPlist.strings */; };
+		389F0EEA1B0D3ACD0069DBEF /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389F0EE91B0D3ACD0069DBEF /* TodayViewController.swift */; };
+		389F0EEC1B0D3ACD0069DBEF /* TodayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 389F0EEB1B0D3ACD0069DBEF /* TodayViewController.xib */; };
+		389F0EEF1B0D3ACD0069DBEF /* Today.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 389F0EE01B0D3ACD0069DBEF /* Today.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		389F0EF91B0D4BF50069DBEF /* SayKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389A62B21ADE446F0037183B /* SayKit.swift */; };
 		38B8C1EC1AD6F903009F0783 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B8C1EB1AD6F903009F0783 /* AppDelegate.swift */; };
 		38B8C1EE1AD6F903009F0783 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B8C1ED1AD6F903009F0783 /* ViewController.swift */; };
 		38B8C1F01AD6F903009F0783 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38B8C1EF1AD6F903009F0783 /* Images.xcassets */; };
@@ -16,6 +22,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		389F0EED1B0D3ACD0069DBEF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 38B8C1DE1AD6F903009F0783 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 389F0EDF1B0D3ACD0069DBEF;
+			remoteInfo = Today;
+		};
 		38B8C1F91AD6F903009F0783 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 38B8C1DE1AD6F903009F0783 /* Project object */;
@@ -35,10 +48,28 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		389F0EDB1B0D3A3B0069DBEF /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				389F0EEF1B0D3ACD0069DBEF /* Today.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		389A62B21ADE446F0037183B /* SayKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SayKit.swift; path = SayKit/SayKit/SayKit.swift; sourceTree = SOURCE_ROOT; };
+		389F0EC41B0D3A3B0069DBEF /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		389F0EE01B0D3ACD0069DBEF /* Today.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Today.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		389F0EE41B0D3ACD0069DBEF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		389F0EE51B0D3ACD0069DBEF /* Today.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Today.entitlements; sourceTree = "<group>"; };
+		389F0EE71B0D3ACD0069DBEF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		389F0EE91B0D3ACD0069DBEF /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		389F0EEB1B0D3ACD0069DBEF /* TodayViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TodayViewController.xib; sourceTree = "<group>"; };
 		38B8C1E61AD6F903009F0783 /* Say.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Say.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		38B8C1EA1AD6F903009F0783 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		38B8C1EB1AD6F903009F0783 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -55,6 +86,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		389F0EDD1B0D3ACD0069DBEF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				389F0EE11B0D3ACD0069DBEF /* NotificationCenter.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		38B8C1E31AD6F903009F0783 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -72,11 +111,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		389F0EE21B0D3ACD0069DBEF /* Today */ = {
+			isa = PBXGroup;
+			children = (
+				389F0EE91B0D3ACD0069DBEF /* TodayViewController.swift */,
+				389F0EEB1B0D3ACD0069DBEF /* TodayViewController.xib */,
+				389F0EE31B0D3ACD0069DBEF /* Supporting Files */,
+			);
+			path = Today;
+			sourceTree = "<group>";
+		};
+		389F0EE31B0D3ACD0069DBEF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				389F0EE41B0D3ACD0069DBEF /* Info.plist */,
+				389F0EE51B0D3ACD0069DBEF /* Today.entitlements */,
+				389F0EE61B0D3ACD0069DBEF /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		38B8C1DD1AD6F903009F0783 = {
 			isa = PBXGroup;
 			children = (
 				38B8C1E81AD6F903009F0783 /* Say */,
 				38B8C1FB1AD6F903009F0783 /* SayTests */,
+				389F0EE21B0D3ACD0069DBEF /* Today */,
 				38B8C1E71AD6F903009F0783 /* Products */,
 				4D16F21E26E774FB43E0C712 /* Pods */,
 				7979093ADF6D2E2A28116378 /* Frameworks */,
@@ -88,6 +148,7 @@
 			children = (
 				38B8C1E61AD6F903009F0783 /* Say.app */,
 				38B8C1F81AD6F903009F0783 /* SayTests.xctest */,
+				389F0EE01B0D3ACD0069DBEF /* Today.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -144,6 +205,7 @@
 			isa = PBXGroup;
 			children = (
 				D26B89D2E46FEA2D2D8D18AF /* Pods.framework */,
+				389F0EC41B0D3A3B0069DBEF /* NotificationCenter.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -151,6 +213,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		389F0EDF1B0D3ACD0069DBEF /* Today */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 389F0EF01B0D3ACD0069DBEF /* Build configuration list for PBXNativeTarget "Today" */;
+			buildPhases = (
+				389F0EDC1B0D3ACD0069DBEF /* Sources */,
+				389F0EDD1B0D3ACD0069DBEF /* Frameworks */,
+				389F0EDE1B0D3ACD0069DBEF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Today;
+			productName = Today;
+			productReference = 389F0EE01B0D3ACD0069DBEF /* Today.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		38B8C1E51AD6F903009F0783 /* Say */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 38B8C2021AD6F903009F0783 /* Build configuration list for PBXNativeTarget "Say" */;
@@ -159,10 +238,12 @@
 				38B8C1E31AD6F903009F0783 /* Frameworks */,
 				38B8C1E41AD6F903009F0783 /* Resources */,
 				389A62A91ADE399F0037183B /* CopyFiles */,
+				389F0EDB1B0D3A3B0069DBEF /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				389F0EEE1B0D3ACD0069DBEF /* PBXTargetDependency */,
 			);
 			name = Say;
 			productName = Say;
@@ -196,6 +277,10 @@
 				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = youknowone.org;
 				TargetAttributes = {
+					389F0EDF1B0D3ACD0069DBEF = {
+						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = 9384JEL3M9;
+					};
 					38B8C1E51AD6F903009F0783 = {
 						CreatedOnToolsVersion = 6.3;
 						DevelopmentTeam = 9384JEL3M9;
@@ -215,7 +300,7 @@
 				};
 			};
 			buildConfigurationList = 38B8C1E11AD6F903009F0783 /* Build configuration list for PBXProject "Say" */;
-			compatibilityVersion = "Xcode 3.2";
+			compatibilityVersion = "Xcode 6.3";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -229,11 +314,21 @@
 			targets = (
 				38B8C1E51AD6F903009F0783 /* Say */,
 				38B8C1F71AD6F903009F0783 /* SayTests */,
+				389F0EDF1B0D3ACD0069DBEF /* Today */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		389F0EDE1B0D3ACD0069DBEF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				389F0EEC1B0D3ACD0069DBEF /* TodayViewController.xib in Resources */,
+				389F0EE81B0D3ACD0069DBEF /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		38B8C1E41AD6F903009F0783 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -253,6 +348,15 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		389F0EDC1B0D3ACD0069DBEF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				389F0EF91B0D4BF50069DBEF /* SayKit.swift in Sources */,
+				389F0EEA1B0D3ACD0069DBEF /* TodayViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		38B8C1E21AD6F903009F0783 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -274,6 +378,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		389F0EEE1B0D3ACD0069DBEF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 389F0EDF1B0D3ACD0069DBEF /* Today */;
+			targetProxy = 389F0EED1B0D3ACD0069DBEF /* PBXContainerItemProxy */;
+		};
 		38B8C1FA1AD6F903009F0783 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 38B8C1E51AD6F903009F0783 /* Say */;
@@ -282,6 +391,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		389F0EE61B0D3ACD0069DBEF /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				389F0EE71B0D3ACD0069DBEF /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
 		38B8C1F11AD6F903009F0783 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -293,6 +410,34 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		389F0EF11B0D3ACD0069DBEF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = Today/Today.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = Today/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		389F0EF21B0D3ACD0069DBEF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = Today/Today.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = Today/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 		38B8C2001AD6F903009F0783 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -310,6 +455,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -437,6 +583,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		389F0EF01B0D3ACD0069DBEF /* Build configuration list for PBXNativeTarget "Today" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				389F0EF11B0D3ACD0069DBEF /* Debug */,
+				389F0EF21B0D3ACD0069DBEF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		38B8C1E11AD6F903009F0783 /* Build configuration list for PBXProject "Say" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
