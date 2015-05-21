@@ -7,11 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		38531EA71B0E508300E2C16D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 38531EA91B0E508300E2C16D /* InfoPlist.strings */; };
+		38531EAB1B0E517900E2C16D /* TodayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38531EAD1B0E517900E2C16D /* TodayViewController.xib */; };
 		389A62B31ADE446F0037183B /* SayKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389A62B21ADE446F0037183B /* SayKit.swift */; };
 		389F0EE11B0D3ACD0069DBEF /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 389F0EC41B0D3A3B0069DBEF /* NotificationCenter.framework */; };
 		389F0EE81B0D3ACD0069DBEF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 389F0EE61B0D3ACD0069DBEF /* InfoPlist.strings */; };
 		389F0EEA1B0D3ACD0069DBEF /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389F0EE91B0D3ACD0069DBEF /* TodayViewController.swift */; };
-		389F0EEC1B0D3ACD0069DBEF /* TodayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 389F0EEB1B0D3ACD0069DBEF /* TodayViewController.xib */; };
 		389F0EEF1B0D3ACD0069DBEF /* Today.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 389F0EE01B0D3ACD0069DBEF /* Today.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		389F0EF91B0D4BF50069DBEF /* SayKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389A62B21ADE446F0037183B /* SayKit.swift */; };
 		38B8C1EC1AD6F903009F0783 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B8C1EB1AD6F903009F0783 /* AppDelegate.swift */; };
@@ -62,14 +63,19 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		38531EA01B0E4BA200E2C16D /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Main.strings; sourceTree = "<group>"; };
+		38531EA11B0E4BA200E2C16D /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		38531EA61B0E507600E2C16D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		38531EA81B0E508300E2C16D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		38531EAA1B0E508700E2C16D /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		38531EAC1B0E517900E2C16D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/TodayViewController.xib; sourceTree = "<group>"; };
+		38531EAF1B0E517E00E2C16D /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/TodayViewController.strings; sourceTree = "<group>"; };
 		389A62B21ADE446F0037183B /* SayKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SayKit.swift; path = SayKit/SayKit/SayKit.swift; sourceTree = SOURCE_ROOT; };
 		389F0EC41B0D3A3B0069DBEF /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		389F0EE01B0D3ACD0069DBEF /* Today.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Today.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		389F0EE41B0D3ACD0069DBEF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		389F0EE51B0D3ACD0069DBEF /* Today.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Today.entitlements; sourceTree = "<group>"; };
-		389F0EE71B0D3ACD0069DBEF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		389F0EE91B0D3ACD0069DBEF /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
-		389F0EEB1B0D3ACD0069DBEF /* TodayViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TodayViewController.xib; sourceTree = "<group>"; };
 		38B8C1E61AD6F903009F0783 /* Say.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Say.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		38B8C1EA1AD6F903009F0783 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		38B8C1EB1AD6F903009F0783 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -115,7 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				389F0EE91B0D3ACD0069DBEF /* TodayViewController.swift */,
-				389F0EEB1B0D3ACD0069DBEF /* TodayViewController.xib */,
+				38531EAD1B0E517900E2C16D /* TodayViewController.xib */,
 				389F0EE31B0D3ACD0069DBEF /* Supporting Files */,
 			);
 			path = Today;
@@ -171,6 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				38B8C1EA1AD6F903009F0783 /* Info.plist */,
+				38531EA91B0E508300E2C16D /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -306,6 +313,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ko,
 			);
 			mainGroup = 38B8C1DD1AD6F903009F0783;
 			productRefGroup = 38B8C1E71AD6F903009F0783 /* Products */;
@@ -324,7 +332,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				389F0EEC1B0D3ACD0069DBEF /* TodayViewController.xib in Resources */,
+				38531EAB1B0E517900E2C16D /* TodayViewController.xib in Resources */,
 				389F0EE81B0D3ACD0069DBEF /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -334,6 +342,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				38B8C1F01AD6F903009F0783 /* Images.xcassets in Resources */,
+				38531EA71B0E508300E2C16D /* InfoPlist.strings in Resources */,
 				38B8C1F31AD6F903009F0783 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -391,10 +400,29 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		38531EA91B0E508300E2C16D /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				38531EA81B0E508300E2C16D /* en */,
+				38531EAA1B0E508700E2C16D /* ko */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		38531EAD1B0E517900E2C16D /* TodayViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				38531EAC1B0E517900E2C16D /* Base */,
+				38531EAF1B0E517E00E2C16D /* ko */,
+			);
+			name = TodayViewController.xib;
+			sourceTree = "<group>";
+		};
 		389F0EE61B0D3ACD0069DBEF /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				389F0EE71B0D3ACD0069DBEF /* en */,
+				38531EA11B0E4BA200E2C16D /* ko */,
+				38531EA61B0E507600E2C16D /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -403,6 +431,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				38B8C1F21AD6F903009F0783 /* Base */,
+				38531EA01B0E4BA200E2C16D /* ko */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
