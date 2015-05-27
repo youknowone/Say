@@ -6,6 +6,20 @@
 	objectVersion = 47;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		3859C7BB1B15DF55005E6D87 /* Version */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 3859C7BE1B15DF55005E6D87 /* Build configuration list for PBXAggregateTarget "Version" */;
+			buildPhases = (
+				3859C7C31B15DF75005E6D87 /* Run Version Script */,
+			);
+			dependencies = (
+			);
+			name = Version;
+			productName = Prebuild;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		38531EA71B0E508300E2C16D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 38531EA91B0E508300E2C16D /* InfoPlist.strings */; };
 		38531EAB1B0E517900E2C16D /* TodayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38531EAD1B0E517900E2C16D /* TodayViewController.xib */; };
@@ -30,6 +44,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		3859C7BF1B15DF65005E6D87 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 38B8C1DE1AD6F903009F0783 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3859C7BB1B15DF55005E6D87;
+			remoteInfo = Version;
+		};
+		3859C7C11B15DF6C005E6D87 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 38B8C1DE1AD6F903009F0783 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3859C7BB1B15DF55005E6D87;
+			remoteInfo = Version;
+		};
 		389F0EED1B0D3ACD0069DBEF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 38B8C1DE1AD6F903009F0783 /* Project object */;
@@ -84,6 +112,7 @@
 		38531F641B0E8D6200E2C16D /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		38531F661B0E8DBF00E2C16D /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Fabric.framework; path = Pods/FabricOSX/Fabric.framework; sourceTree = SOURCE_ROOT; };
 		38531F671B0E8DBF00E2C16D /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Crashlytics.framework; path = Pods/FabricOSX/Crashlytics.framework; sourceTree = SOURCE_ROOT; };
+		3859C7C41B15DFDF005E6D87 /* Version.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Version.xcconfig; sourceTree = SOURCE_ROOT; };
 		389A62B21ADE446F0037183B /* SayKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SayKit.swift; path = SayKit/SayKit/SayKit.swift; sourceTree = SOURCE_ROOT; };
 		389F0EC41B0D3A3B0069DBEF /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		389F0EE01B0D3ACD0069DBEF /* Today.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Today.appex; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -183,6 +212,7 @@
 		38B8C1E81AD6F903009F0783 /* Say */ = {
 			isa = PBXGroup;
 			children = (
+				3859C7C41B15DFDF005E6D87 /* Version.xcconfig */,
 				38B8C2081AD72667009F0783 /* Say.entitlements */,
 				38B8C1EB1AD6F903009F0783 /* AppDelegate.swift */,
 				38B8C1ED1AD6F903009F0783 /* ViewController.swift */,
@@ -259,6 +289,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				3859C7C21B15DF6C005E6D87 /* PBXTargetDependency */,
 			);
 			name = Today;
 			productName = Today;
@@ -281,6 +312,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				3859C7C01B15DF65005E6D87 /* PBXTargetDependency */,
 				389F0EEE1B0D3ACD0069DBEF /* PBXTargetDependency */,
 			);
 			name = Say;
@@ -315,6 +347,9 @@
 				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = youknowone.org;
 				TargetAttributes = {
+					3859C7BB1B15DF55005E6D87 = {
+						CreatedOnToolsVersion = 6.3.1;
+					};
 					389F0EDF1B0D3ACD0069DBEF = {
 						CreatedOnToolsVersion = 6.3.1;
 						DevelopmentTeam = 9384JEL3M9;
@@ -351,6 +386,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
+				3859C7BB1B15DF55005E6D87 /* Version */,
 				38B8C1E51AD6F903009F0783 /* Say */,
 				38B8C1F71AD6F903009F0783 /* SayTests */,
 				389F0EDF1B0D3ACD0069DBEF /* Today */,
@@ -400,6 +436,20 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "./Pods/FabricOSX/Fabric.framework/run 1b5d8443c3eabba778b0d97bff234647af846181 34aaecdde99dce1f9408a963ba788143536760a1c73ce21b46a14f888c5d54c1";
+		};
+		3859C7C31B15DF75005E6D87 /* Run Version Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Run Version Script";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cd $PROJECT_DIR\nLONG_VERSION=`git describe --tags --long`\nVERSION=`echo $LONG_VERSION | sed s/\\-.*$//`\necho \"VERSION = $VERSION\" > Version.xcconfig\necho \"BUILD_NUMBER = $(git rev-list HEAD | wc -l | tr -d ' ')\" >> Version.xcconfig\necho \"LONG_VERSION = $LONG_VERSION\" >> Version.xcconfig";
 		};
 		85B4D9762F8EB293F6C85908 /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -464,6 +514,16 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		3859C7C01B15DF65005E6D87 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3859C7BB1B15DF55005E6D87 /* Version */;
+			targetProxy = 3859C7BF1B15DF65005E6D87 /* PBXContainerItemProxy */;
+		};
+		3859C7C21B15DF6C005E6D87 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3859C7BB1B15DF55005E6D87 /* Version */;
+			targetProxy = 3859C7C11B15DF6C005E6D87 /* PBXContainerItemProxy */;
+		};
 		389F0EEE1B0D3ACD0069DBEF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 389F0EDF1B0D3ACD0069DBEF /* Today */;
@@ -516,6 +576,20 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		3859C7BC1B15DF55005E6D87 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		3859C7BD1B15DF55005E6D87 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		389F0EF11B0D3ACD0069DBEF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -546,6 +620,7 @@
 		};
 		38B8C2001AD6F903009F0783 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3859C7C41B15DFDF005E6D87 /* Version.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -589,6 +664,7 @@
 		};
 		38B8C2011AD6F903009F0783 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3859C7C41B15DFDF005E6D87 /* Version.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -700,6 +776,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		3859C7BE1B15DF55005E6D87 /* Build configuration list for PBXAggregateTarget "Version" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3859C7BC1B15DF55005E6D87 /* Debug */,
+				3859C7BD1B15DF55005E6D87 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		389F0EF01B0D3ACD0069DBEF /* Build configuration list for PBXNativeTarget "Today" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
