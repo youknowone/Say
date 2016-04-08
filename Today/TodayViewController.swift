@@ -8,7 +8,7 @@
 
 import Cocoa
 import NotificationCenter
-//import SayKit
+import SayKit
 
 class TodayViewController: NSViewController, NCWidgetProviding, NSTextFieldDelegate {
 
@@ -16,6 +16,7 @@ class TodayViewController: NSViewController, NCWidgetProviding, NSTextFieldDeleg
         return "TodayViewController"
     }
 
+    @available(OSXApplicationExtension 10.10, *)
     func widgetPerformUpdateWithCompletionHandler(completionHandler: ((NCUpdateResult) -> Void)!) {
         // Update your data and prepare for a snapshot. Call completion handler when you are done
         // with NoData if nothing has changed or NewData if there is new data since the last

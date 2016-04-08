@@ -1,4 +1,6 @@
-platform :osx, "10.10"
+platform :osx, "10.9"
 
-pod 'FabricOSX/Core'
-pod 'FabricOSX/Crashlytics'
+use_frameworks!
+pod 'Fabric'
+pod 'Crashlytics'
+pod 'SayKit' #, :path => '../SayKit'

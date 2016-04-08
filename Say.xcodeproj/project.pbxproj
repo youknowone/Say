@@ -23,19 +23,20 @@
 /* Begin PBXBuildFile section */
 		38531EA71B0E508300E2C16D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 38531EA91B0E508300E2C16D /* InfoPlist.strings */; };
 		38531EAB1B0E517900E2C16D /* TodayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38531EAD1B0E517900E2C16D /* TodayViewController.xib */; };
-		38531F571B0E8C2D00E2C16D /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F58218C5435BA1B0638F46BC /* libPods.a */; };
 		38531F5E1B0E8D3D00E2C16D /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 38531F5D1B0E8D3D00E2C16D /* libc++.dylib */; };
 		38531F5F1B0E8D4200E2C16D /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 38531F541B0E8C0800E2C16D /* libz.dylib */; };
 		38531F631B0E8D5A00E2C16D /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38531F621B0E8D5A00E2C16D /* Security.framework */; };
 		38531F651B0E8D6200E2C16D /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38531F641B0E8D6200E2C16D /* SystemConfiguration.framework */; };
 		38531F681B0E8DBF00E2C16D /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38531F661B0E8DBF00E2C16D /* Fabric.framework */; };
 		38531F691B0E8DBF00E2C16D /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38531F671B0E8DBF00E2C16D /* Crashlytics.framework */; };
-		389A62B31ADE446F0037183B /* SayKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389A62B21ADE446F0037183B /* SayKit.swift */; };
+		38892F261CB81EE7003E14D3 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67AF1B41D71AD8F6B26E1BD0 /* Pods.framework */; };
+		38892F281CB81EE7003E14D3 /* SayKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38892F271CB81EE7003E14D3 /* SayKit.framework */; };
+		38892F291CB81FA8003E14D3 /* SayKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38892F271CB81EE7003E14D3 /* SayKit.framework */; };
+		38892F2B1CB81FA8003E14D3 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38892F2A1CB81FA8003E14D3 /* Pods.framework */; };
 		389F0EE11B0D3ACD0069DBEF /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 389F0EC41B0D3A3B0069DBEF /* NotificationCenter.framework */; };
 		389F0EE81B0D3ACD0069DBEF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 389F0EE61B0D3ACD0069DBEF /* InfoPlist.strings */; };
 		389F0EEA1B0D3ACD0069DBEF /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389F0EE91B0D3ACD0069DBEF /* TodayViewController.swift */; };
 		389F0EEF1B0D3ACD0069DBEF /* Today.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 389F0EE01B0D3ACD0069DBEF /* Today.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		389F0EF91B0D4BF50069DBEF /* SayKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389A62B21ADE446F0037183B /* SayKit.swift */; };
 		38B8C1EC1AD6F903009F0783 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B8C1EB1AD6F903009F0783 /* AppDelegate.swift */; };
 		38B8C1EE1AD6F903009F0783 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B8C1ED1AD6F903009F0783 /* ViewController.swift */; };
 		38B8C1F01AD6F903009F0783 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38B8C1EF1AD6F903009F0783 /* Images.xcassets */; };
@@ -113,7 +114,8 @@
 		38531F661B0E8DBF00E2C16D /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Fabric.framework; path = Pods/FabricOSX/Fabric.framework; sourceTree = SOURCE_ROOT; };
 		38531F671B0E8DBF00E2C16D /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Crashlytics.framework; path = Pods/FabricOSX/Crashlytics.framework; sourceTree = SOURCE_ROOT; };
 		3859C7C41B15DFDF005E6D87 /* Version.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Version.xcconfig; sourceTree = SOURCE_ROOT; };
-		389A62B21ADE446F0037183B /* SayKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SayKit.swift; path = SayKit/SayKit/SayKit.swift; sourceTree = SOURCE_ROOT; };
+		38892F271CB81EE7003E14D3 /* SayKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SayKit.framework; path = build/Debug/SayKit.framework; sourceTree = "<group>"; };
+		38892F2A1CB81FA8003E14D3 /* Pods.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods.framework; path = Pods/../build/Debug/Pods.framework; sourceTree = "<group>"; };
 		389F0EC41B0D3A3B0069DBEF /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		389F0EE01B0D3ACD0069DBEF /* Today.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Today.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		389F0EE41B0D3ACD0069DBEF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -129,8 +131,8 @@
 		38B8C1FD1AD6F903009F0783 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		38B8C1FE1AD6F903009F0783 /* SayTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SayTests.swift; sourceTree = "<group>"; };
 		38B8C2081AD72667009F0783 /* Say.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Say.entitlements; sourceTree = "<group>"; };
+		67AF1B41D71AD8F6B26E1BD0 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7C8299E06F9559672C10464 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
-		F58218C5435BA1B0638F46BC /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBB80D06E1DB2E169491FBAF /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -139,6 +141,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38892F2B1CB81FA8003E14D3 /* Pods.framework in Frameworks */,
+				38892F291CB81FA8003E14D3 /* SayKit.framework in Frameworks */,
 				389F0EE11B0D3ACD0069DBEF /* NotificationCenter.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -147,11 +151,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38892F281CB81EE7003E14D3 /* SayKit.framework in Frameworks */,
+				38892F261CB81EE7003E14D3 /* Pods.framework in Frameworks */,
 				38531F651B0E8D6200E2C16D /* SystemConfiguration.framework in Frameworks */,
 				38531F631B0E8D5A00E2C16D /* Security.framework in Frameworks */,
 				38531F5F1B0E8D4200E2C16D /* libz.dylib in Frameworks */,
 				38531F5E1B0E8D3D00E2C16D /* libc++.dylib in Frameworks */,
-				38531F571B0E8C2D00E2C16D /* libPods.a in Frameworks */,
 				38531F681B0E8DBF00E2C16D /* Fabric.framework in Frameworks */,
 				38531F691B0E8DBF00E2C16D /* Crashlytics.framework in Frameworks */,
 			);
@@ -216,7 +221,6 @@
 				38B8C2081AD72667009F0783 /* Say.entitlements */,
 				38B8C1EB1AD6F903009F0783 /* AppDelegate.swift */,
 				38B8C1ED1AD6F903009F0783 /* ViewController.swift */,
-				389A62B21ADE446F0037183B /* SayKit.swift */,
 				38B8C1EF1AD6F903009F0783 /* Images.xcassets */,
 				38B8C1F11AD6F903009F0783 /* Main.storyboard */,
 				38531F661B0E8DBF00E2C16D /* Fabric.framework */,
@@ -264,13 +268,15 @@
 		7979093ADF6D2E2A28116378 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				38892F2A1CB81FA8003E14D3 /* Pods.framework */,
+				38892F271CB81EE7003E14D3 /* SayKit.framework */,
 				38531F641B0E8D6200E2C16D /* SystemConfiguration.framework */,
 				38531F621B0E8D5A00E2C16D /* Security.framework */,
 				38531F601B0E8D5300E2C16D /* SecurityFoundation.framework */,
 				38531F5D1B0E8D3D00E2C16D /* libc++.dylib */,
 				38531F541B0E8C0800E2C16D /* libz.dylib */,
 				389F0EC41B0D3A3B0069DBEF /* NotificationCenter.framework */,
-				F58218C5435BA1B0638F46BC /* libPods.a */,
+				67AF1B41D71AD8F6B26E1BD0 /* Pods.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -307,7 +313,8 @@
 				389A62A91ADE399F0037183B /* CopyFiles */,
 				389F0EDB1B0D3A3B0069DBEF /* Embed App Extensions */,
 				B04CE90081DEBDF7E17EC1EA /* Copy Pods Resources */,
-				38531F581B0E8CCA00E2C16D /* ShellScript */,
+				38531F581B0E8CCA00E2C16D /* Fabric */,
+				E1553D2AF851A98703DE5645 /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -344,7 +351,9 @@
 		38B8C1DE1AD6F903009F0783 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0630;
+				LastSwiftMigration = 0720;
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = youknowone.org;
 				TargetAttributes = {
 					3859C7BB1B15DF55005E6D87 = {
@@ -424,18 +433,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		38531F581B0E8CCA00E2C16D /* ShellScript */ = {
+		38531F581B0E8CCA00E2C16D /* Fabric */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
+			name = Fabric;
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "./Pods/FabricOSX/Fabric.framework/run 1b5d8443c3eabba778b0d97bff234647af846181 34aaecdde99dce1f9408a963ba788143536760a1c73ce21b46a14f888c5d54c1";
+			shellScript = "${PODS_ROOT}/Fabric/run 1b5d8443c3eabba778b0d97bff234647af846181 34aaecdde99dce1f9408a963ba788143536760a1c73ce21b46a14f888c5d54c1";
 		};
 		3859C7C31B15DF75005E6D87 /* Run Version Script */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -481,6 +491,21 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		E1553D2AF851A98703DE5645 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -488,7 +513,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				389F0EF91B0D4BF50069DBEF /* SayKit.swift in Sources */,
 				389F0EEA1B0D3ACD0069DBEF /* TodayViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -499,7 +523,6 @@
 			files = (
 				38B8C1EE1AD6F903009F0783 /* ViewController.swift in Sources */,
 				38B8C1EC1AD6F903009F0783 /* AppDelegate.swift in Sources */,
-				389A62B31ADE446F0037183B /* SayKit.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -592,6 +615,7 @@
 		};
 		389F0EF11B0D3ACD0069DBEF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FBB80D06E1DB2E169491FBAF /* Pods.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = Today/Today.entitlements;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -601,6 +625,7 @@
 				);
 				INFOPLIST_FILE = Today/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.youknowone.Say.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
@@ -608,11 +633,14 @@
 		};
 		389F0EF21B0D3ACD0069DBEF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B7C8299E06F9559672C10464 /* Pods.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = Today/Today.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = Today/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.youknowone.Say.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
@@ -639,6 +667,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -706,14 +735,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Say/Say.entitlements;
 				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)",
-					"$(PROJECT_DIR)/Pods/FabricOSX",
-				);
 				INFOPLIST_FILE = Say/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_BUNDLE_IDENTIFIER = "org.youknowone.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -724,15 +749,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Say/Say.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)",
-					"$(PROJECT_DIR)/Pods/FabricOSX",
-				);
 				INFOPLIST_FILE = Say/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_BUNDLE_IDENTIFIER = "org.youknowone.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -752,6 +774,7 @@
 				);
 				INFOPLIST_FILE = SayTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.youknowone.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = SayTests;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Say.app/Contents/MacOS/Say";
 			};
@@ -768,6 +791,7 @@
 				);
 				INFOPLIST_FILE = SayTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.youknowone.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = SayTests;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Say.app/Contents/MacOS/Say";
 			};
