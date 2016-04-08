@@ -7,7 +7,7 @@
 //
 
 import Cocoa
-//import SayKit
+import SayKit
 
 
 /// Main window of the application
@@ -22,20 +22,28 @@ class MainWindow: NSWindow {
         *   in NSUserDefaults with given tag, download data from URL and save
         *   it to the given tag before loading.
         */
-        func syncronizedData(tag: String, URL: NSURL) -> NSData {
+        func syncronizedData(tag: String, URL: NSURL) -> NSData? {
             let standardUserDefaults = NSUserDefaults.standardUserDefaults()
-            var iconData = standardUserDefaults.objectForKey(tag) as? NSData
+            let iconData = standardUserDefaults.objectForKey(tag) as? NSData
             if iconData == nil {
-                iconData = NSData(contentsOfURL: URL)
-                standardUserDefaults.setObject(iconData!, forKey: tag)
-                standardUserDefaults.synchronize()
+                if let iconData = NSData(contentsOfURL: URL) {
+                    standardUserDefaults.setObject(iconData, forKey: tag)
+                    standardUserDefaults.synchronize()
+                    return iconData
+                } else {
+                    //print("Icon is not loadable!")
+                }
             }
-            return iconData!
+            return iconData
         }
 
         super.awakeFromNib()
-        self.speechToolbarItem.image = NSImage(data: syncronizedData("icon_speech", NSURL(string: "http://upload.wikimedia.org/wikipedia/commons/1/10/Exquisite-microphone.png")!))
-        self.exportToolbarItem.image = NSImage(data: syncronizedData("icon_export", NSURL(string: "http://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Gnome-generic-empty.svg/500px-Gnome-generic-empty.svg.png?uselang=ko")!))
+        if let imageData = syncronizedData("icon_speech", URL: NSURL(string: "https://upload.wikimedia.org/wikipedia/commons/1/10/Exquisite-microphone.png")!) {
+            self.speechToolbarItem.image = NSImage(data: imageData)
+        }
+        if let imageData = syncronizedData("icon_export", URL: NSURL(string: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Gnome-generic-empty.svg/500px-Gnome-generic-empty.svg.png?uselang=ko")!) {
+            self.exportToolbarItem.image = NSImage(data: imageData)
+        }
     }
 }
 
@@ -50,6 +58,7 @@ class ViewController: NSViewController {
     /// Open panel for "Open" menu
     let textOpenPanel = NSOpenPanel()
 
+    @available(OSX 10.10, *)
     override func viewDidLoad() {
         super.viewDidLoad()
         assert(self.textView != nil)

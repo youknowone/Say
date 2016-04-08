@@ -1,0 +1,5 @@
+language: objective-c
+sudo: false
+xcode_workspace: Say.xcworkspace
+osx_image: xcode7
+xcode_scheme: Say
