@@ -25,8 +25,8 @@ class TodayViewController: NSViewController, NCWidgetProviding, NSTextFieldDeleg
     }
 
     func control(control: NSControl, textView: NSTextView, doCommandBySelector commandSelector: Selector) -> Bool {
-        if commandSelector == "insertNewline:" {
-            let say = SKSay(text: textView.string ?? "")
+        if commandSelector == #selector(insertNewline(_:)) {
+            let say = Say(text: textView.string ?? "")
             say.play(false)
         }
         return false

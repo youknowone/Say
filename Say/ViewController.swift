@@ -65,7 +65,7 @@ class ViewController: NSViewController {
         assert(self.voiceComboBox != nil)
         self.voiceSavePanel.allowedFileTypes = ["aiff"] // default output format is aiff. See `man say`
 
-        self.voiceComboBox.addItemsWithObjectValues(SKVoice.voices.map({ "\($0.name)(\($0.locale)): \($0.comment)"; }))
+        self.voiceComboBox.addItemsWithObjectValues(Voice.voices.map({ "\($0.name)(\($0.locale)): \($0.comment)"; }))
     }
 
     override var representedObject: AnyObject? {
@@ -80,27 +80,27 @@ class ViewController: NSViewController {
         }
     }
 
-    var selectedVoice: SKVoice? {
+    var selectedVoice: Voice? {
         get {
             let index = self.voiceComboBox.indexOfSelectedItem
             if index <= 0 || index == NSNotFound {
                 return nil
             } else {
-                return SKVoice.voices[index - 1]
+                return Voice.voices[index - 1]
             }
         }
     }
 
     @IBAction func say(sender: NSControl) {
         sender.enabled = false
-        SKSay(text: self.textForSpeech, voice: self.selectedVoice).play(true)
+        Say(text: self.textForSpeech, voice: self.selectedVoice).play(true)
         sender.enabled = true
     }
 
     @IBAction func saveDocumentAs(sender: NSControl) {
         self.voiceSavePanel.runModal()
         if let URL = self.voiceSavePanel.URL {
-            SKSay(text: self.textForSpeech, voice: self.selectedVoice).writeToURL(URL, atomically: true)
+            Say(text: self.textForSpeech, voice: self.selectedVoice).writeToURL(URL, atomically: true)
         }
     }
 
