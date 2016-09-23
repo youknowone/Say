@@ -17,14 +17,14 @@ class TodayViewController: NSViewController, NCWidgetProviding, NSTextFieldDeleg
     }
 
     @available(OSXApplicationExtension 10.10, *)
-    func widgetPerformUpdateWithCompletionHandler(completionHandler: ((NCUpdateResult) -> Void)!) {
+    func widgetPerformUpdate(completionHandler: (@escaping (NCUpdateResult) -> Void)) {
         // Update your data and prepare for a snapshot. Call completion handler when you are done
         // with NoData if nothing has changed or NewData if there is new data since the last
         // time we called you
-        completionHandler(.NoData)
+        completionHandler(.noData)
     }
 
-    func control(control: NSControl, textView: NSTextView, doCommandBySelector commandSelector: Selector) -> Bool {
+    func control(_ control: NSControl, textView: NSTextView, doCommandBy commandSelector: Selector) -> Bool {
         if commandSelector == #selector(insertNewline(_:)) {
             let say = Say(text: textView.string ?? "")
             say.play(false)

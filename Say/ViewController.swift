@@ -22,12 +22,12 @@ class MainWindow: NSWindow {
         *   in NSUserDefaults with given tag, download data from URL and save
         *   it to the given tag before loading.
         */
-        func syncronizedData(tag: String, URL: NSURL) -> NSData? {
-            let standardUserDefaults = NSUserDefaults.standardUserDefaults()
-            let iconData = standardUserDefaults.objectForKey(tag) as? NSData
+        func syncronizedData(_ tag: String, URL: Foundation.URL) -> Data? {
+            let standardUserDefaults = UserDefaults.standard
+            let iconData = standardUserDefaults.object(forKey: tag) as? Data
             if iconData == nil {
-                if let iconData = NSData(contentsOfURL: URL) {
-                    standardUserDefaults.setObject(iconData, forKey: tag)
+                if let iconData = try? Data(contentsOf: URL) {
+                    standardUserDefaults.set(iconData, forKey: tag)
                     standardUserDefaults.synchronize()
                     return iconData
                 } else {
@@ -38,10 +38,10 @@ class MainWindow: NSWindow {
         }
 
         super.awakeFromNib()
-        if let imageData = syncronizedData("icon_speech", URL: NSURL(string: "https://upload.wikimedia.org/wikipedia/commons/1/10/Exquisite-microphone.png")!) {
+        if let imageData = syncronizedData("icon_speech", URL: URL(string: "https://upload.wikimedia.org/wikipedia/commons/1/10/Exquisite-microphone.png")!) {
             self.speechToolbarItem.image = NSImage(data: imageData)
         }
-        if let imageData = syncronizedData("icon_export", URL: NSURL(string: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Gnome-generic-empty.svg/500px-Gnome-generic-empty.svg.png?uselang=ko")!) {
+        if let imageData = syncronizedData("icon_export", URL: URL(string: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Gnome-generic-empty.svg/500px-Gnome-generic-empty.svg.png?uselang=ko")!) {
             self.exportToolbarItem.image = NSImage(data: imageData)
         }
     }
@@ -65,10 +65,10 @@ class ViewController: NSViewController {
         assert(self.voiceComboBox != nil)
         self.voiceSavePanel.allowedFileTypes = ["aiff"] // default output format is aiff. See `man say`
 
-        self.voiceComboBox.addItemsWithObjectValues(Voice.voices.map({ "\($0.name)(\($0.locale)): \($0.comment)"; }))
+        self.voiceComboBox.addItems(withObjectValues: Voice.voices.map({ "\($0.name)(\($0.locale)): \($0.comment)"; }))
     }
 
-    override var representedObject: AnyObject? {
+    override var representedObject: Any? {
         didSet {
             // Update the view, if already loaded.
         }
@@ -91,15 +91,15 @@ class ViewController: NSViewController {
         }
     }
 
-    @IBAction func say(sender: NSControl) {
-        sender.enabled = false
+    @IBAction func say(_ sender: NSControl) {
+        sender.isEnabled = false
         Say(text: self.textForSpeech, voice: self.selectedVoice).play(true)
-        sender.enabled = true
+        sender.isEnabled = true
     }
 
-    @IBAction func saveDocumentAs(sender: NSControl) {
+    @IBAction func saveDocumentAs(_ sender: NSControl) {
         self.voiceSavePanel.runModal()
-        if let URL = self.voiceSavePanel.URL {
+        if let URL = self.voiceSavePanel.url {
             Say(text: self.textForSpeech, voice: self.selectedVoice).writeToURL(URL, atomically: true)
         }
     }
