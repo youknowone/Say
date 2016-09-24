@@ -9,12 +9,13 @@
 import UIKit
 
 class ViewController: UIViewController {
-    @IBOutlet weak var inputText: UITextView!
     
+    @IBOutlet var textview: UITextView?
     
     @IBAction func playClicked(_ sender: AnyObject) {
     }
     @IBAction func changeVoiceClicked(_ sender: AnyObject) {
+        
     }
     override func viewDidLoad() {
         super.viewDidLoad()

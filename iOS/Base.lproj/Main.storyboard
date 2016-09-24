@@ -30,7 +30,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Play"/>
                                 <connections>
-                                    <action selector="playClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xjh-Vb-05v"/>
+                                    <action selector="playClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="y8f-bR-Fpc"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FOf-Jg-6RG">
@@ -38,7 +38,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Change Voice"/>
                                 <connections>
-                                    <action selector="changeVoiceClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qLV-Cj-W8m"/>
+                                    <action selector="changeVoiceClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="H7c-wG-GdN"/>
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Hello, World!" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Vpa-uC-abB">
@@ -52,7 +52,7 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <connections>
-                        <outlet property="inputText" destination="Vpa-uC-abB" id="2ij-zF-im2"/>
+                        <outlet property="textview" destination="Vpa-uC-abB" id="yTS-Z0-ZEa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
