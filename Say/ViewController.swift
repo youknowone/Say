@@ -7,7 +7,7 @@
 //
 
 import Cocoa
-import SayKit
+// import SayKit
 
 
 /// Main window of the application

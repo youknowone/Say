@@ -29,8 +29,6 @@
 		38531F651B0E8D6200E2C16D /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38531F641B0E8D6200E2C16D /* SystemConfiguration.framework */; };
 		38531F681B0E8DBF00E2C16D /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38531F661B0E8DBF00E2C16D /* Fabric.framework */; };
 		38531F691B0E8DBF00E2C16D /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38531F671B0E8DBF00E2C16D /* Crashlytics.framework */; };
-		38892F281CB81EE7003E14D3 /* SayKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38892F271CB81EE7003E14D3 /* SayKit.framework */; };
-		38892F291CB81FA8003E14D3 /* SayKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38892F271CB81EE7003E14D3 /* SayKit.framework */; };
 		389F0EE11B0D3ACD0069DBEF /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 389F0EC41B0D3A3B0069DBEF /* NotificationCenter.framework */; };
 		389F0EE81B0D3ACD0069DBEF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 389F0EE61B0D3ACD0069DBEF /* InfoPlist.strings */; };
 		389F0EEA1B0D3ACD0069DBEF /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389F0EE91B0D3ACD0069DBEF /* TodayViewController.swift */; };
@@ -40,6 +38,8 @@
 		38B8C1F01AD6F903009F0783 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38B8C1EF1AD6F903009F0783 /* Images.xcassets */; };
 		38B8C1F31AD6F903009F0783 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38B8C1F11AD6F903009F0783 /* Main.storyboard */; };
 		38B8C1FF1AD6F903009F0783 /* SayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B8C1FE1AD6F903009F0783 /* SayTests.swift */; };
+		38EBA45D1D963C7E0017D221 /* SayKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38EBA45B1D963C7E0017D221 /* SayKit.swift */; };
+		38EBA45E1D963C9E0017D221 /* SayKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38EBA45B1D963C7E0017D221 /* SayKit.swift */; };
 		C6C976F9946834E8CA810F0F /* Pods_Today.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99CE34ECE6B8AF4678AD345D /* Pods_Today.framework */; };
 		DEF8F1885BBB478066E71E9B /* Pods_Say.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E94767B29E2584F76FB58A25 /* Pods_Say.framework */; };
 /* End PBXBuildFile section */
@@ -114,7 +114,6 @@
 		38531F661B0E8DBF00E2C16D /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Fabric.framework; path = Pods/FabricOSX/Fabric.framework; sourceTree = SOURCE_ROOT; };
 		38531F671B0E8DBF00E2C16D /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Crashlytics.framework; path = Pods/FabricOSX/Crashlytics.framework; sourceTree = SOURCE_ROOT; };
 		3859C7C41B15DFDF005E6D87 /* Version.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Version.xcconfig; sourceTree = SOURCE_ROOT; };
-		38892F271CB81EE7003E14D3 /* SayKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SayKit.framework; path = build/Debug/SayKit.framework; sourceTree = "<group>"; };
 		38892F2A1CB81FA8003E14D3 /* Pods.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods.framework; path = Pods/../build/Debug/Pods.framework; sourceTree = "<group>"; };
 		389F0EC41B0D3A3B0069DBEF /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		389F0EE01B0D3ACD0069DBEF /* Today.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Today.appex; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -131,15 +130,16 @@
 		38B8C1FD1AD6F903009F0783 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		38B8C1FE1AD6F903009F0783 /* SayTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SayTests.swift; sourceTree = "<group>"; };
 		38B8C2081AD72667009F0783 /* Say.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Say.entitlements; sourceTree = "<group>"; };
+		38EBA4571D963C010017D221 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		38EBA45A1D963C7E0017D221 /* SayKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SayKit.h; sourceTree = "<group>"; };
+		38EBA45B1D963C7E0017D221 /* SayKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SayKit.swift; sourceTree = "<group>"; };
 		67AF1B41D71AD8F6B26E1BD0 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		67B66C7B8905683C82719BF4 /* Pods-Say.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Say.release.xcconfig"; path = "Pods/Target Support Files/Pods-Say/Pods-Say.release.xcconfig"; sourceTree = "<group>"; };
 		85C266E2E98713504326D715 /* Pods-Today.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Today.release.xcconfig"; path = "Pods/Target Support Files/Pods-Today/Pods-Today.release.xcconfig"; sourceTree = "<group>"; };
 		99CE34ECE6B8AF4678AD345D /* Pods_Today.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Today.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B7C8299E06F9559672C10464 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		D5085086CDFD1D10C3AB0619 /* Pods-Today.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Today.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Today/Pods-Today.debug.xcconfig"; sourceTree = "<group>"; };
 		D9A43EE01BD294DADD455567 /* Pods-Say.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Say.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Say/Pods-Say.debug.xcconfig"; sourceTree = "<group>"; };
 		E94767B29E2584F76FB58A25 /* Pods_Say.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Say.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		FBB80D06E1DB2E169491FBAF /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,7 +147,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				38892F291CB81FA8003E14D3 /* SayKit.framework in Frameworks */,
 				389F0EE11B0D3ACD0069DBEF /* NotificationCenter.framework in Frameworks */,
 				C6C976F9946834E8CA810F0F /* Pods_Today.framework in Frameworks */,
 			);
@@ -157,7 +156,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				38892F281CB81EE7003E14D3 /* SayKit.framework in Frameworks */,
 				38531F651B0E8D6200E2C16D /* SystemConfiguration.framework in Frameworks */,
 				38531F631B0E8D5A00E2C16D /* Security.framework in Frameworks */,
 				38531F5F1B0E8D4200E2C16D /* libz.dylib in Frameworks */,
@@ -202,6 +200,7 @@
 			isa = PBXGroup;
 			children = (
 				38B8C1E81AD6F903009F0783 /* Say */,
+				38EBA4581D963C7E0017D221 /* SayKit */,
 				38B8C1FB1AD6F903009F0783 /* SayTests */,
 				389F0EE21B0D3ACD0069DBEF /* Today */,
 				38B8C1E71AD6F903009F0783 /* Products */,
@@ -262,11 +261,20 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		38EBA4581D963C7E0017D221 /* SayKit */ = {
+			isa = PBXGroup;
+			children = (
+				38EBA45A1D963C7E0017D221 /* SayKit.h */,
+				38EBA45B1D963C7E0017D221 /* SayKit.swift */,
+			);
+			name = SayKit;
+			path = SayKit/SayKit;
+			sourceTree = "<group>";
+		};
 		4D16F21E26E774FB43E0C712 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				FBB80D06E1DB2E169491FBAF /* Pods.debug.xcconfig */,
-				B7C8299E06F9559672C10464 /* Pods.release.xcconfig */,
+				38EBA4571D963C010017D221 /* Podfile */,
 				D9A43EE01BD294DADD455567 /* Pods-Say.debug.xcconfig */,
 				67B66C7B8905683C82719BF4 /* Pods-Say.release.xcconfig */,
 				D5085086CDFD1D10C3AB0619 /* Pods-Today.debug.xcconfig */,
@@ -279,7 +287,6 @@
 			isa = PBXGroup;
 			children = (
 				38892F2A1CB81FA8003E14D3 /* Pods.framework */,
-				38892F271CB81EE7003E14D3 /* SayKit.framework */,
 				38531F641B0E8D6200E2C16D /* SystemConfiguration.framework */,
 				38531F621B0E8D5A00E2C16D /* Security.framework */,
 				38531F601B0E8D5300E2C16D /* SecurityFoundation.framework */,
@@ -305,6 +312,7 @@
 				389F0EDD1B0D3ACD0069DBEF /* Frameworks */,
 				389F0EDE1B0D3ACD0069DBEF /* Resources */,
 				3C0C86932B48E5D72164DBFA /* [CP] Copy Pods Resources */,
+				C4DAA63C99C88545821F8C74 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -505,7 +513,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		8B68B682C1070C6D916625AD /* [CP] Check Pods Manifest.lock */ = {
@@ -520,7 +528,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		B04CE90081DEBDF7E17EC1EA /* [CP] Copy Pods Resources */ = {
@@ -536,6 +544,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Say/Pods-Say-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C4DAA63C99C88545821F8C74 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Today/Pods-Today-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E1553D2AF851A98703DE5645 /* [CP] Embed Pods Frameworks */ = {
@@ -560,6 +583,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38EBA45E1D963C9E0017D221 /* SayKit.swift in Sources */,
 				389F0EEA1B0D3ACD0069DBEF /* TodayViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -570,6 +594,7 @@
 			files = (
 				38B8C1EE1AD6F903009F0783 /* ViewController.swift in Sources */,
 				38B8C1EC1AD6F903009F0783 /* AppDelegate.swift in Sources */,
+				38EBA45D1D963C7E0017D221 /* SayKit.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -664,6 +689,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D5085086CDFD1D10C3AB0619 /* Pods-Today.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_ENTITLEMENTS = Today/Today.entitlements;
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -683,6 +709,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 85C266E2E98713504326D715 /* Pods-Today.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_ENTITLEMENTS = Today/Today.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
@@ -788,6 +815,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D9A43EE01BD294DADD455567 /* Pods-Say.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Say/Say.entitlements;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -804,6 +832,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 67B66C7B8905683C82719BF4 /* Pods-Say.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Say/Say.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";

@@ -8,7 +8,7 @@
 
 import Cocoa
 import NotificationCenter
-import SayKit
+//import SayKit
 
 class TodayViewController: NSViewController, NCWidgetProviding, NSTextFieldDelegate {
 

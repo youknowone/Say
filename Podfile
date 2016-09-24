@@ -4,12 +4,12 @@ target 'Say' do
     use_frameworks!
     pod 'Fabric'
     pod 'Crashlytics'
-    pod 'SayKit', :path => '../SayKit'
+    # pod 'SayKit', :path => '../SayKit'
 end
 
 target 'Today' do
     use_frameworks!
     pod 'Fabric'
     pod 'Crashlytics'
-    pod 'SayKit', :path => '../SayKit'
+    # pod 'SayKit', :path => '../SayKit'
 end
