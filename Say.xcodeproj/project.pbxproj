@@ -45,6 +45,13 @@
 		38DF26F01D9647E100332CE1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38DF26EE1D9647E100332CE1 /* LaunchScreen.storyboard */; };
 		38DF26FB1D9647E100332CE1 /* iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DF26FA1D9647E100332CE1 /* iOSTests.swift */; };
 		38DF27061D9647E100332CE1 /* iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DF27051D9647E100332CE1 /* iOSUITests.swift */; };
+		38DF27161D96609600332CE1 /* SayKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38EBA45B1D963C7E0017D221 /* SayKit.swift */; };
+		38DF27171D96609600332CE1 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389F0EE91B0D3ACD0069DBEF /* TodayViewController.swift */; };
+		38DF27191D96609600332CE1 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 389F0EC41B0D3A3B0069DBEF /* NotificationCenter.framework */; };
+		38DF271A1D96609600332CE1 /* Pods_Today.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99CE34ECE6B8AF4678AD345D /* Pods_Today.framework */; };
+		38DF271C1D96609600332CE1 /* TodayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38531EAD1B0E517900E2C16D /* TodayViewController.xib */; };
+		38DF271D1D96609600332CE1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 389F0EE61B0D3ACD0069DBEF /* InfoPlist.strings */; };
+		38DF27271D96614A00332CE1 /* Today.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 38DF27231D96609600332CE1 /* Today.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		38EBA45D1D963C7E0017D221 /* SayKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38EBA45B1D963C7E0017D221 /* SayKit.swift */; };
 		38EBA45E1D963C9E0017D221 /* SayKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38EBA45B1D963C7E0017D221 /* SayKit.swift */; };
 		38EBA4661D963CF90017D221 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B8C1ED1AD6F903009F0783 /* ViewController.swift */; };
@@ -57,7 +64,6 @@
 		38EBA4721D963CF90017D221 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38B8C1EF1AD6F903009F0783 /* Images.xcassets */; };
 		38EBA4731D963CF90017D221 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 38531EA91B0E508300E2C16D /* InfoPlist.strings */; };
 		38EBA4741D963CF90017D221 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38B8C1F11AD6F903009F0783 /* Main.storyboard */; };
-		38EBA4771D963CF90017D221 /* Today.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 389F0EE01B0D3ACD0069DBEF /* Today.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		C6C976F9946834E8CA810F0F /* Pods_Today.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99CE34ECE6B8AF4678AD345D /* Pods_Today.framework */; };
 		DEF8F1885BBB478066E71E9B /* Pods_Say.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E94767B29E2584F76FB58A25 /* Pods_Say.framework */; };
 /* End PBXBuildFile section */
@@ -105,19 +111,26 @@
 			remoteGlobalIDString = 38DF26E21D9647E000332CE1;
 			remoteInfo = iOS;
 		};
-		38EBA4611D963CF90017D221 /* PBXContainerItemProxy */ = {
+		38DF27131D96609600332CE1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 38B8C1DE1AD6F903009F0783 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 3859C7BB1B15DF55005E6D87;
 			remoteInfo = Version;
 		};
-		38EBA4631D963CF90017D221 /* PBXContainerItemProxy */ = {
+		38DF27251D96611600332CE1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 38B8C1DE1AD6F903009F0783 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 389F0EDF1B0D3ACD0069DBEF;
-			remoteInfo = Today;
+			remoteGlobalIDString = 38DF27111D96609600332CE1;
+			remoteInfo = "Today-dev";
+		};
+		38EBA4611D963CF90017D221 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 38B8C1DE1AD6F903009F0783 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3859C7BB1B15DF55005E6D87;
+			remoteInfo = Version;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -157,7 +170,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				38EBA4771D963CF90017D221 /* Today.appex in Embed App Extensions */,
+				38DF27271D96614A00332CE1 /* Today.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -209,6 +222,8 @@
 		38DF27011D9647E100332CE1 /* iOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		38DF27051D9647E100332CE1 /* iOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSUITests.swift; sourceTree = "<group>"; };
 		38DF27071D9647E100332CE1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		38DF27231D96609600332CE1 /* Today.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Today.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		38DF27241D96609600332CE1 /* Today copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Today copy-Info.plist"; path = "/Volumes/UserSpace/Projects/Say/Today copy-Info.plist"; sourceTree = "<absolute>"; };
 		38EBA4571D963C010017D221 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 		38EBA45A1D963C7E0017D221 /* SayKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SayKit.h; sourceTree = "<group>"; };
 		38EBA45B1D963C7E0017D221 /* SayKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SayKit.swift; sourceTree = "<group>"; };
@@ -275,6 +290,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		38DF27181D96609600332CE1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				38DF27191D96609600332CE1 /* NotificationCenter.framework in Frameworks */,
+				38DF271A1D96609600332CE1 /* Pods_Today.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		38EBA4691D963CF90017D221 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -323,6 +347,7 @@
 				4D16F21E26E774FB43E0C712 /* Pods */,
 				7979093ADF6D2E2A28116378 /* Frameworks */,
 				38EBA47F1D963CF90017D221 /* Say copy-Info.plist */,
+				38DF27241D96609600332CE1 /* Today copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -336,6 +361,7 @@
 				38DF26E31D9647E000332CE1 /* Say.app */,
 				38DF26F61D9647E100332CE1 /* iOSTests.xctest */,
 				38DF27011D9647E100332CE1 /* iOSUITests.xctest */,
+				38DF27231D96609600332CE1 /* Today.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -572,6 +598,24 @@
 			productReference = 38DF27011D9647E100332CE1 /* iOSUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		38DF27111D96609600332CE1 /* Today-dev */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 38DF27201D96609600332CE1 /* Build configuration list for PBXNativeTarget "Today-dev" */;
+			buildPhases = (
+				38DF27151D96609600332CE1 /* Sources */,
+				38DF27181D96609600332CE1 /* Frameworks */,
+				38DF271B1D96609600332CE1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				38DF27121D96609600332CE1 /* PBXTargetDependency */,
+			);
+			name = "Today-dev";
+			productName = Today;
+			productReference = 38DF27231D96609600332CE1 /* Today.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		38EBA45F1D963CF90017D221 /* Say-dev */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 38EBA47B1D963CF90017D221 /* Build configuration list for PBXNativeTarget "Say-dev" */;
@@ -585,8 +629,8 @@
 			buildRules = (
 			);
 			dependencies = (
+				38DF27261D96611600332CE1 /* PBXTargetDependency */,
 				38EBA4601D963CF90017D221 /* PBXTargetDependency */,
-				38EBA4621D963CF90017D221 /* PBXTargetDependency */,
 			);
 			name = "Say-dev";
 			productName = Say;
@@ -665,6 +709,7 @@
 				38B8C1F71AD6F903009F0783 /* SayTests */,
 				389F0EDF1B0D3ACD0069DBEF /* Today */,
 				38EBA45F1D963CF90017D221 /* Say-dev */,
+				38DF27111D96609600332CE1 /* Today-dev */,
 				38DF26E21D9647E000332CE1 /* iOS */,
 				38DF26F51D9647E100332CE1 /* iOSTests */,
 				38DF27001D9647E100332CE1 /* iOSUITests */,
@@ -720,6 +765,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		38DF271B1D96609600332CE1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				38DF271C1D96609600332CE1 /* TodayViewController.xib in Resources */,
+				38DF271D1D96609600332CE1 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -909,6 +963,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		38DF27151D96609600332CE1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				38DF27161D96609600332CE1 /* SayKit.swift in Sources */,
+				38DF27171D96609600332CE1 /* TodayViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		38EBA4651D963CF90017D221 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -952,15 +1015,20 @@
 			target = 38DF26E21D9647E000332CE1 /* iOS */;
 			targetProxy = 38DF27021D9647E100332CE1 /* PBXContainerItemProxy */;
 		};
+		38DF27121D96609600332CE1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3859C7BB1B15DF55005E6D87 /* Version */;
+			targetProxy = 38DF27131D96609600332CE1 /* PBXContainerItemProxy */;
+		};
+		38DF27261D96611600332CE1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 38DF27111D96609600332CE1 /* Today-dev */;
+			targetProxy = 38DF27251D96611600332CE1 /* PBXContainerItemProxy */;
+		};
 		38EBA4601D963CF90017D221 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 3859C7BB1B15DF55005E6D87 /* Version */;
 			targetProxy = 38EBA4611D963CF90017D221 /* PBXContainerItemProxy */;
-		};
-		38EBA4621D963CF90017D221 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 389F0EDF1B0D3ACD0069DBEF /* Today */;
-			targetProxy = 38EBA4631D963CF90017D221 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1358,6 +1426,40 @@
 			};
 			name = Release;
 		};
+		38DF27211D96609600332CE1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Today copy-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.youknowone.Say.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = Today;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		38DF27221D96609600332CE1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_ENTITLEMENTS = Today/Today.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "Today copy-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.youknowone.Say.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = Today;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
 		38EBA47C1D963CF90017D221 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1468,6 +1570,15 @@
 				38DF27101D9647E100332CE1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+		};
+		38DF27201D96609600332CE1 /* Build configuration list for PBXNativeTarget "Today-dev" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				38DF27211D96609600332CE1 /* Debug */,
+				38DF27221D96609600332CE1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		38EBA47B1D963CF90017D221 /* Build configuration list for PBXNativeTarget "Say-dev" */ = {
 			isa = XCConfigurationList;
