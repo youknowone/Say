@@ -116,8 +116,12 @@ class ViewController: NSViewController {
         self.textImportPanel.runModal()
         do {
             
-            let text2 = try NSString(contentsOf: self.textImportPanel.url!, encoding: String.Encoding.utf8.rawValue)
-            self.textView.string = text2 as String
+            if let URL = self.textImportPanel.url{
+                let text2 = try NSString(contentsOf: URL, encoding: String.Encoding.utf8.rawValue)
+                self.textView.string = text2 as String
+                
+            }
+            
         }
         catch {/* error handling here */}
     }
