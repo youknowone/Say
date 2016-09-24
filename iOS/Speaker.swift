@@ -14,6 +14,7 @@ public class Speaker: NSObject, AVSpeechSynthesizerDelegate {
     var volume: Float = 1.0
     var mute = false
     var voice = AVSpeechSynthesisVoice(language: "ko-KR")     // set default language : korean
+    var voices = AVSpeechSynthesisVoice.speechVoices()
     
     let synthesizer = AVSpeechSynthesizer()
 
@@ -35,7 +36,6 @@ public class Speaker: NSObject, AVSpeechSynthesizerDelegate {
     }
 
     public func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didFinish utterance: AVSpeechUtterance) {
-//        Core.core.speaker(self, didFinishSpeechString: utterance.speechString)
 //        Do what speeching finished
         print("speeching finished")
     }
@@ -52,7 +52,6 @@ public class Speaker: NSObject, AVSpeechSynthesizerDelegate {
         self.voice = AVSpeechSynthesisVoice(language: language)
     }
 }
-
 
 protocol SpeakerDelegate {
     func speaker(speaker: Speaker, didFinishSpeechString: String);

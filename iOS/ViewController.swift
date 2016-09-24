@@ -13,6 +13,7 @@ class ViewController: UIViewController, SpeakerDelegate, UIPickerViewDelegate, U
     @IBOutlet var textview: UITextView!
     var languagePicker: UIPickerView = UIPickerView()
     let speaker = Speaker.defaultSpeaker
+    var languageNames = [String]()
     
     @IBAction func playClicked(_ sender: AnyObject) {
         if let text = self.textview.text {
@@ -20,10 +21,13 @@ class ViewController: UIViewController, SpeakerDelegate, UIPickerViewDelegate, U
         }
     }
     @IBAction func changeVoiceClicked(_ sender: AnyObject) {
-        print("change voice")
+        // create action sheet dynamically
         let alertView = UIAlertController(title: "Select Launguage", message: "\n\n\n\n\n\n\n\n\n\n", preferredStyle: UIAlertControllerStyle.actionSheet);
         self.languagePicker.center.x = self.view.center.x
-        let action = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil)
+        let action = UIAlertAction(title: "DONE", style: .default) { (action) in
+            let value = self.languagePicker.selectedRow(inComponent: 0)
+            self.speaker.changeLanguage(language: self.speaker.voices[value].language)
+        }
         alertView.addAction(action)
         alertView.view.addSubview(languagePicker)
         present(alertView, animated: true, completion: nil)
@@ -35,30 +39,38 @@ class ViewController: UIViewController, SpeakerDelegate, UIPickerViewDelegate, U
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // create popup picker view
         languagePicker = UIPickerView(frame: CGRect(x: 0, y: 0, width: 300, height: 180))
         languagePicker.delegate = self
         languagePicker.dataSource = self
         languagePicker.showsSelectionIndicator = true
         languagePicker.tintColor = UIColor.red
         languagePicker.reloadAllComponents()
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
+        //init language names
+        let voices = self.speaker.voices
+        for voice in voices {
+            languageNames.append(voice.name)
+        }
     }
     
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return self.speaker.voices.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        let name = self.languageNames[row]
+        let languageCode = self.speaker.voices[row].language
+        return "\(name)(\(languageCode))"
+    }
+
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
     
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return 10
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
-    
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return "row : \(row)"
-    }
-
-
 }
