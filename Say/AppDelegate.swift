@@ -7,8 +7,8 @@
 //
 
 import Cocoa
-import Fabric
-import Crashlytics
+//import Fabric
+//import Crashlytics
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
@@ -18,7 +18,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        Fabric.with([Crashlytics()])
+        //Fabric.with([Crashlytics()])
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
