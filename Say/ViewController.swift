@@ -60,10 +60,11 @@ class ViewController: NSViewController {
     /// Combo box for voices. Default is decided by system locale
     @IBOutlet var voiceComboBox: NSComboBox! = nil
     /// Save panel for "Export" menu
+    @IBOutlet var URLField: NSTextField! = nil;
     let voiceSavePanel = NSSavePanel()
     /// Open panel for "Open" menu
     let textOpenPanel = NSOpenPanel()
-    
+   
     @IBOutlet var datePicker: NSDatePicker! = nil
     @IBOutlet var alarmButton: NSButton!
     
@@ -105,6 +106,45 @@ class ViewController: NSViewController {
             } else {
                 return VoiceAPI.voices[index - 1]
             }
+        }
+    }
+ 
+    func dialogOK(question: String, text: String) {
+        let myPopup: NSAlert = NSAlert()
+        myPopup.messageText = question
+        myPopup.informativeText = text
+        myPopup.alertStyle = NSAlertStyle.warning
+        myPopup.addButton(withTitle: "OK")
+        myPopup.runModal()
+    }
+    
+    @IBAction func selectText(_ sender: NSTextField) {
+        if let url = URL(string: sender.stringValue) {
+            // if URL format is right
+            if let data = NSData.init(contentsOf: url) {
+                let dataString = String(data:data as Data, encoding:String.Encoding.utf8)!
+                if let result = findTitle(in: dataString) {
+                    textView.string = result
+                } else {
+                    dialogOK(question:"URL fetching error", text: "Ther URL is not accessible")
+                }
+            } else {
+                dialogOK(question:"URL fetching error", text: "Ther URL is not accessible")            }
+        } else {
+            dialogOK(question:"URL fetching error", text: "Ther URL is not accessible")
+        }
+    }
+    
+    func findTitle(in dataString: String) -> String? {
+        let regex = try! NSRegularExpression(pattern: "<title>\\s*(.*)\\s*</title>", options: NSRegularExpression.Options())
+        let result = regex.matches(in: dataString as String, options: NSRegularExpression.MatchingOptions(), range: NSRange(location: 0, length: dataString.characters.count))
+        if result.count > 0 {
+            let range = result[0].rangeAt(1)
+            let text = (dataString as NSString).substring(with: range)
+            
+            return text
+        } else {
+            return nil
         }
     }
     
