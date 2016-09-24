@@ -57,6 +57,8 @@ class ViewController: NSViewController {
     let voiceSavePanel = NSSavePanel()
     /// Open panel for "Open" menu
     let textOpenPanel = NSOpenPanel()
+    
+    var sayObj: Say! = nil;
 
     @available(OSX 10.10, *)
     override func viewDidLoad() {
@@ -92,9 +94,21 @@ class ViewController: NSViewController {
 
     @IBAction func say(_ sender: NSControl) {
         sender.isEnabled = false
-        Say(text: self.textForSpeech, voice: self.selectedVoice).play(true)
-        sender.isEnabled = true
+        self.sayObj = Say(text: self.textForSpeech, voice: self.selectedVoice)
+        if #available(OSX 10.10, *) {
+            DispatchQueue.global(qos: .background).async {
+                self.sayObj.play(true)
+                DispatchQueue.main.async {
+                    sender.isEnabled = true
+                }
+            }
+        } else {
+            self.sayObj.play(true)
+            sender.isEnabled = true
+        }
+        
     }
+
 
     @IBAction func saveDocumentAs(_ sender: NSControl) {
         self.voiceSavePanel.runModal()
