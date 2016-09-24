@@ -1554,6 +1554,7 @@
 				38DF270A1D9647E100332CE1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		38DF270B1D9647E100332CE1 /* Build configuration list for PBXNativeTarget "iOSTests" */ = {
 			isa = XCConfigurationList;
@@ -1562,6 +1563,7 @@
 				38DF270D1D9647E100332CE1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		38DF270E1D9647E100332CE1 /* Build configuration list for PBXNativeTarget "iOSUITests" */ = {
 			isa = XCConfigurationList;
@@ -1570,6 +1572,7 @@
 				38DF27101D9647E100332CE1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		38DF27201D96609600332CE1 /* Build configuration list for PBXNativeTarget "Today-dev" */ = {
 			isa = XCConfigurationList;
