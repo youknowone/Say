@@ -93,7 +93,9 @@ class ViewController: NSViewController {
 
     @IBAction func say(_ sender: NSControl) {
         sender.isEnabled = false
-        Say(text: self.textForSpeech, voice: self.selectedVoice).play(true)
+//        Say(text: self.textForSpeech, voice: self.selectedVoice).play(true)
+        let sayAPI = SayAPI.init()
+        sayAPI.startSpeaking(text: self.textForSpeech)
         sender.isEnabled = true
     }
 

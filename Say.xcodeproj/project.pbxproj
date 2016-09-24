@@ -63,6 +63,8 @@
 		38EBA4721D963CF90017D221 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38B8C1EF1AD6F903009F0783 /* Images.xcassets */; };
 		38EBA4731D963CF90017D221 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 38531EA91B0E508300E2C16D /* InfoPlist.strings */; };
 		38EBA4741D963CF90017D221 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38B8C1F11AD6F903009F0783 /* Main.storyboard */; };
+		4EF775FD1D9690A000B407BD /* Say.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF775FC1D9690A000B407BD /* Say.swift */; };
+		4EF775FE1D9690A000B407BD /* Say.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF775FC1D9690A000B407BD /* Say.swift */; };
 		C6C976F9946834E8CA810F0F /* Pods_Today.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99CE34ECE6B8AF4678AD345D /* Pods_Today.framework */; };
 		DEF8F1885BBB478066E71E9B /* Pods_Say.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E94767B29E2584F76FB58A25 /* Pods_Say.framework */; };
 /* End PBXBuildFile section */
@@ -228,6 +230,7 @@
 		38EBA45B1D963C7E0017D221 /* SayKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SayKit.swift; sourceTree = "<group>"; };
 		38EBA47E1D963CF90017D221 /* Say.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Say.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		38EBA47F1D963CF90017D221 /* Say copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Say copy-Info.plist"; path = "/Volumes/UserSpace/Projects/Say/Say copy-Info.plist"; sourceTree = "<absolute>"; };
+		4EF775FC1D9690A000B407BD /* Say.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Say.swift; sourceTree = "<group>"; };
 		67AF1B41D71AD8F6B26E1BD0 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		67B66C7B8905683C82719BF4 /* Pods-Say.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Say.release.xcconfig"; path = "Pods/Target Support Files/Pods-Say/Pods-Say.release.xcconfig"; sourceTree = "<group>"; };
 		85C266E2E98713504326D715 /* Pods-Today.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Today.release.xcconfig"; path = "Pods/Target Support Files/Pods-Today/Pods-Today.release.xcconfig"; sourceTree = "<group>"; };
@@ -371,6 +374,7 @@
 				38B8C2081AD72667009F0783 /* Say.entitlements */,
 				38B8C1EB1AD6F903009F0783 /* AppDelegate.swift */,
 				38B8C1ED1AD6F903009F0783 /* ViewController.swift */,
+				4EF775FC1D9690A000B407BD /* Say.swift */,
 				38B8C1EF1AD6F903009F0783 /* Images.xcassets */,
 				38B8C1F11AD6F903009F0783 /* Main.storyboard */,
 				38531F661B0E8DBF00E2C16D /* Fabric.framework */,
@@ -923,6 +927,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				38B8C1EE1AD6F903009F0783 /* ViewController.swift in Sources */,
+				4EF775FD1D9690A000B407BD /* Say.swift in Sources */,
 				38B8C1EC1AD6F903009F0783 /* AppDelegate.swift in Sources */,
 				38EBA45D1D963C7E0017D221 /* SayKit.swift in Sources */,
 			);
@@ -975,6 +980,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				38EBA4661D963CF90017D221 /* ViewController.swift in Sources */,
+				4EF775FE1D9690A000B407BD /* Say.swift in Sources */,
 				38EBA4671D963CF90017D221 /* AppDelegate.swift in Sources */,
 				38EBA4681D963CF90017D221 /* SayKit.swift in Sources */,
 			);
