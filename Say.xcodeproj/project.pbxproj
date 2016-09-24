@@ -48,7 +48,6 @@
 		38DF27161D96609600332CE1 /* SayKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38EBA45B1D963C7E0017D221 /* SayKit.swift */; };
 		38DF27171D96609600332CE1 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389F0EE91B0D3ACD0069DBEF /* TodayViewController.swift */; };
 		38DF27191D96609600332CE1 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 389F0EC41B0D3A3B0069DBEF /* NotificationCenter.framework */; };
-		38DF271A1D96609600332CE1 /* Pods_Today.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99CE34ECE6B8AF4678AD345D /* Pods_Today.framework */; };
 		38DF271C1D96609600332CE1 /* TodayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38531EAD1B0E517900E2C16D /* TodayViewController.xib */; };
 		38DF271D1D96609600332CE1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 389F0EE61B0D3ACD0069DBEF /* InfoPlist.strings */; };
 		38DF27271D96614A00332CE1 /* Today.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 38DF27231D96609600332CE1 /* Today.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -295,7 +294,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				38DF27191D96609600332CE1 /* NotificationCenter.framework in Frameworks */,
-				38DF271A1D96609600332CE1 /* Pods_Today.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
