@@ -8,14 +8,22 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, SpeakerDelegate {
     
-    @IBOutlet var textview: UITextView?
+    @IBOutlet var textview: UITextView!
+    let speaker = Speaker.defaultSpeaker
     
     @IBAction func playClicked(_ sender: AnyObject) {
+        if let text = self.textview.text {
+            self.speaker.speakText(text: text)
+        }
     }
     @IBAction func changeVoiceClicked(_ sender: AnyObject) {
-        
+        print("change voice")
+    }
+    
+    func speaker(speaker: Speaker, didFinishSpeechString: String) {
+        print("didFinishSpeechString : ", didFinishSpeechString)
     }
     override func viewDidLoad() {
         super.viewDidLoad()
