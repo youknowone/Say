@@ -13,7 +13,8 @@ public class Speaker: NSObject, AVSpeechSynthesizerDelegate {
     static let defaultSpeaker = Speaker()
     var volume: Float = 1.0
     var mute = false
-
+    var voice = AVSpeechSynthesisVoice(language: "ko-KR")     // set default language : korean
+    
     let synthesizer = AVSpeechSynthesizer()
 
     override init() {
@@ -43,8 +44,12 @@ public class Speaker: NSObject, AVSpeechSynthesizerDelegate {
         let utterance = AVSpeechUtterance(string: text)
         utterance.rate = 0.4
         utterance.volume = self.mute ? 0.0 : self.volume
-        utterance.voice = AVSpeechSynthesisVoice(language: "ko-KR")
+        utterance.voice = self.voice
         self.synthesizer.speak(utterance)
+    }
+    
+    public func changeLanguage(language: String) {
+        self.voice = AVSpeechSynthesisVoice(language: language)
     }
 }
 
