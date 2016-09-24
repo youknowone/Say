@@ -31,6 +31,7 @@ class ViewController: UIViewController, SpeakerDelegate, UIPickerViewDelegate, U
         alertView.addAction(action)
         alertView.view.addSubview(languagePicker)
         present(alertView, animated: true, completion: nil)
+        self.languagePicker.autoresizingMask = [UIViewAutoresizing.flexibleLeftMargin, UIViewAutoresizing.flexibleRightMargin]
     }
     
     func speaker(speaker: Speaker, didFinishSpeechString: String) {
@@ -41,7 +42,7 @@ class ViewController: UIViewController, SpeakerDelegate, UIPickerViewDelegate, U
         super.viewDidLoad()
         
         // create popup picker view
-        languagePicker = UIPickerView(frame: CGRect(x: 0, y: 0, width: 300, height: 180))
+        languagePicker = UIPickerView(frame: CGRect(x: 0, y: 20, width: 300, height: 250))
         languagePicker.delegate = self
         languagePicker.dataSource = self
         languagePicker.showsSelectionIndicator = true
