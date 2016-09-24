@@ -640,6 +640,11 @@
                                         <action selector="say:" target="Oky-zY-oP4" id="Cad-Yw-tgn"/>
                                     </connections>
                                 </toolbarItem>
+                                <toolbarItem implicitItemIdentifier="6A955BC7-564E-48A5-A151-E34E7D5F2DEE" label="Import" paletteLabel="Import" tag="-1" id="ZA3-HX-azw">
+                                    <connections>
+                                        <action selector="importTextFile:" target="Oky-zY-oP4" id="Paz-6g-upa"/>
+                                    </connections>
+                                </toolbarItem>
                                 <toolbarItem implicitItemIdentifier="FC3706CA-321A-40CD-9C56-F02197593445" label="Export" paletteLabel="Export" tag="-1" id="TyK-Za-nsz">
                                     <connections>
                                         <action selector="saveDocumentAs:" target="Oky-zY-oP4" id="bQt-fI-lvt"/>
@@ -649,12 +654,14 @@
                             <defaultToolbarItems>
                                 <toolbarItem reference="ejk-nz-xAn"/>
                                 <toolbarItem reference="TyK-Za-nsz"/>
+                                <toolbarItem reference="ZA3-HX-azw"/>
                                 <toolbarItem reference="uvq-7p-ATT"/>
                             </defaultToolbarItems>
                         </toolbar>
                         <connections>
                             <outlet property="delegate" destination="B8D-0N-5wS" id="mzV-fs-HiO"/>
                             <outlet property="exportToolbarItem" destination="TyK-Za-nsz" id="Mup-fG-Imc"/>
+                            <outlet property="importToolbarItem" destination="ZA3-HX-azw" id="lYi-cA-9SF"/>
                             <outlet property="speechToolbarItem" destination="ejk-nz-xAn" id="3lL-2C-FGG"/>
                         </connections>
                     </window>
@@ -703,14 +710,14 @@
                             <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L9g-0O-auU">
                                 <rect key="frame" x="20" y="20" width="440" height="264"/>
                                 <clipView key="contentView" id="c9L-u2-i0w">
-                                    <rect key="frame" x="1" y="1" width="438" height="262"/>
+                                    <rect key="frame" x="1" y="1" width="423" height="262"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <textView importsGraphics="NO" usesFontPanel="YES" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" linkDetection="YES" dashSubstitution="YES" spellingCorrection="YES" smartInsertDelete="YES" id="1kY-L4-Wfr">
-                                            <rect key="frame" x="0.0" y="0.0" width="438" height="262"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="423" height="262"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <size key="minSize" width="438" height="262"/>
+                                            <size key="minSize" width="423" height="262"/>
                                             <size key="maxSize" width="463" height="10000000"/>
                                             <attributedString key="textStorage">
                                                 <fragment content="Write or paste text here.  `Play` to play the sound via audio output. `Export` to export the sound as an .aiff file.">
@@ -730,7 +737,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                                 <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="9z9-iT-xMo">
-                                    <rect key="frame" x="423" y="1" width="16" height="262"/>
+                                    <rect key="frame" x="424" y="1" width="15" height="262"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
