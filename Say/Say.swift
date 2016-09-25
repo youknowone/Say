@@ -13,6 +13,8 @@ class SayAPI {
     var text: String
     var voice: VoiceAPI?
     
+    var outputFile: String? = nil
+    
     init(text: String, voice: VoiceAPI?) {
         speechSynthesizer = NSSpeechSynthesizer.init()
         self.text = text
@@ -30,5 +32,10 @@ class SayAPI {
     func play() {
         speechSynthesizer?.setVoice(self.voice?.identifier)
         speechSynthesizer?.startSpeaking(text);
+    }
+    
+    func writeToURL(_ URL: Foundation.URL, atomically: Bool) {
+        speechSynthesizer?.setVoice(self.voice?.identifier)
+        speechSynthesizer?.startSpeaking(text, to: URL)
     }
 }
