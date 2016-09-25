@@ -20,4 +20,12 @@ class VoiceAPI {
         self.locale = dictionary["VoiceLocaleIdentifier"] as! String
         self.name = dictionary["VoiceName"] as! String
     }
+    
+    static let voices: [VoiceAPI] = {
+        var voices: [VoiceAPI] = []
+        for voiceIdentifier in NSSpeechSynthesizer.availableVoices() {
+            voices.append(VoiceAPI.init(dictionary: NSSpeechSynthesizer.attributes(forVoice: voiceIdentifier)))
+        }
+        return voices
+    }()
 }
