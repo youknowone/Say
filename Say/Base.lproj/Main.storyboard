@@ -67,7 +67,7 @@
                                         </menuItem>
                                         <menuItem title="Open…" keyEquivalent="o" id="IAo-SY-fd9">
                                             <connections>
-                                                <action selector="openDocument:" target="Ady-hI-5gd" id="bVn-NM-KNZ"/>
+                                                <action selector="openTextFile:" target="Ady-hI-5gd" id="Pbn-Y7-ZXp"/>
                                             </connections>
                                         </menuItem>
                                         <menuItem title="Open Recent" id="tXI-mr-wws">
@@ -642,7 +642,7 @@
                                 </toolbarItem>
                                 <toolbarItem implicitItemIdentifier="6A955BC7-564E-48A5-A151-E34E7D5F2DEE" label="Import" paletteLabel="Import" tag="-1" id="ZA3-HX-azw">
                                     <connections>
-                                        <action selector="importTextFile:" target="Oky-zY-oP4" id="Paz-6g-upa"/>
+                                        <action selector="openTextFile:" target="Oky-zY-oP4" id="fJm-Yf-yM8"/>
                                     </connections>
                                 </toolbarItem>
                                 <toolbarItem implicitItemIdentifier="FC3706CA-321A-40CD-9C56-F02197593445" label="Export" paletteLabel="Export" tag="-1" id="TyK-Za-nsz">
@@ -661,7 +661,7 @@
                         <connections>
                             <outlet property="delegate" destination="B8D-0N-5wS" id="mzV-fs-HiO"/>
                             <outlet property="exportToolbarItem" destination="TyK-Za-nsz" id="Mup-fG-Imc"/>
-                            <outlet property="importToolbarItem" destination="ZA3-HX-azw" id="lYi-cA-9SF"/>
+                            <outlet property="openToolbarItem" destination="ZA3-HX-azw" id="B6X-N6-Ftw"/>
                             <outlet property="speechToolbarItem" destination="ejk-nz-xAn" id="3lL-2C-FGG"/>
                         </connections>
                     </window>
