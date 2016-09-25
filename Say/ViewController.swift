@@ -14,7 +14,7 @@ import Cocoa
 class MainWindow: NSWindow {
     @IBOutlet var speechToolbarItem: NSToolbarItem! = nil;
     @IBOutlet var exportToolbarItem: NSToolbarItem! = nil;
-    @IBOutlet var importToolbarItem: NSToolbarItem! = nil;
+    @IBOutlet var openToolbarItem: NSToolbarItem! = nil;
     override func awakeFromNib() {
         /** Load data from cache in NSUserDefaults or from URL.
          *
@@ -44,9 +44,9 @@ class MainWindow: NSWindow {
         if let imageData = syncronizedData("icon_export", URL: URL(string: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Gnome-generic-empty.svg/500px-Gnome-generic-empty.svg.png?uselang=ko")!) {
             self.exportToolbarItem.image = NSImage(data: imageData)
         }
-        if let imageData = syncronizedData("icon_import", URL: URL(string: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Inkscape_icons_document_import.svg/500px-Inkscape_icons_document_import.svg.png?uselang=ko")!) {
-            assert(self.importToolbarItem != nil)
-            self.importToolbarItem.image = NSImage(data: imageData)
+        if let imageData = syncronizedData("icon_open", URL: URL(string: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Inkscape_icons_document_import.svg/500px-Inkscape_icons_document_import.svg.png?uselang=ko")!) {
+            //assert(self.openToolbarItem != nil)
+            self.openToolbarItem.image = NSImage(data: imageData)
         }
     }
     
@@ -61,11 +61,8 @@ class ViewController: NSViewController {
     @IBOutlet var voiceComboBox: NSComboBox! = nil;
     /// Save panel for "Export" menu
     let voiceSavePanel = NSSavePanel()
-    let textImportPanel = NSOpenPanel()
     
     /// Open panel for "Open" menu
-    
-    /// Open panel for "Ixport" menu
     let textOpenPanel = NSOpenPanel()
     
     @available(OSX 10.10, *)
@@ -74,7 +71,6 @@ class ViewController: NSViewController {
         assert(self.textView != nil)
         assert(self.voiceComboBox != nil)
         self.voiceSavePanel.allowedFileTypes = ["aiff"] // default output format is aiff. See `man say`
-        
         self.voiceComboBox.addItems(withObjectValues: Voice.voices.map({ "\($0.name)(\($0.locale)): \($0.comment)"; }))
     }
     
@@ -112,11 +108,10 @@ class ViewController: NSViewController {
             Say(text: self.textForSpeech, voice: self.selectedVoice).writeToURL(URL, atomically: true)
         }
     }
-    @IBAction func importTextFile(_ sender: NSControl){
-        self.textImportPanel.runModal()
+    @IBAction func openTextFile(_ sender: NSControl){
+        self.textOpenPanel.runModal()
         do {
-            
-            if let URL = self.textImportPanel.url{
+            if let URL = self.textOpenPanel.url{
                 let text2 = try NSString(contentsOf: URL, encoding: String.Encoding.utf8.rawValue)
                 self.textView.string = text2 as String
                 
