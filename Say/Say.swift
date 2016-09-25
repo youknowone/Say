@@ -8,13 +8,19 @@
 
 import Cocoa
 
-class SayAPI {
+class SayAPI: NSObject {
     let speechSynthesizer: NSSpeechSynthesizer?
     var text: String
     var voice: VoiceAPI?
     
     var outputFile: String? = nil
     
+    override var description: String {
+        get {
+            return "<Say: '\(self.text)'>"
+        }
+    }
+
     init(text: String, voice: VoiceAPI?) {
         speechSynthesizer = NSSpeechSynthesizer.init()
         self.text = text

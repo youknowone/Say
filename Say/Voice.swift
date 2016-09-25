@@ -8,11 +8,17 @@
 
 import Cocoa
 
-class VoiceAPI {
+class VoiceAPI: NSObject {
     let identifier: String
     let comment: String
     let locale: String
     let name: String
+    
+    override var description: String {
+        get {
+            return "<Voice: '\(self.name)'(\(self.locale)), '\(self.comment)'>"
+        }
+    }
     
     init(dictionary: [String: Any]) {
         self.identifier = dictionary["VoiceIdentifier"] as! String
