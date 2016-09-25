@@ -10,14 +10,25 @@ import Cocoa
 
 class SayAPI {
     let speechSynthesizer: NSSpeechSynthesizer?
-    var text: String?
-    var voice: String?
+    var text: String
+    var voice: VoiceAPI?
     
-    init() {
+    init(text: String, voice: VoiceAPI?) {
         speechSynthesizer = NSSpeechSynthesizer.init()
+        self.text = text
+        self.voice = voice
     }
     
-    func startSpeaking(text:String) {
+    public convenience init(text: String) {
+        self.init(text: text, voice: nil)
+    }
+    
+    public convenience init?(text: String, voiceIdentifier: String) {
+        self.init(text: text, voice: VoiceAPI.init(dictionary: NSSpeechSynthesizer.attributes(forVoice: voiceIdentifier)))
+    }
+
+    func play() {
+        speechSynthesizer?.setVoice(self.voice?.identifier)
         speechSynthesizer?.startSpeaking(text);
     }
 }
