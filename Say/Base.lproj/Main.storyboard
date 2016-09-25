@@ -650,9 +650,15 @@
                                         <action selector="saveDocumentAs:" target="Oky-zY-oP4" id="bQt-fI-lvt"/>
                                     </connections>
                                 </toolbarItem>
+                                <toolbarItem implicitItemIdentifier="1CE3227C-5008-47CB-BD4F-99245796BCDB" label="Pause" paletteLabel="Pause" tag="-1" id="Abu-1G-Dns">
+                                    <connections>
+                                        <action selector="pause:" target="Oky-zY-oP4" id="OxX-rx-2gg"/>
+                                    </connections>
+                                </toolbarItem>
                             </allowedToolbarItems>
                             <defaultToolbarItems>
                                 <toolbarItem reference="ejk-nz-xAn"/>
+                                <toolbarItem reference="Abu-1G-Dns"/>
                                 <toolbarItem reference="TyK-Za-nsz"/>
                                 <toolbarItem reference="ZA3-HX-azw"/>
                                 <toolbarItem reference="uvq-7p-ATT"/>
@@ -662,7 +668,8 @@
                             <outlet property="delegate" destination="B8D-0N-5wS" id="mzV-fs-HiO"/>
                             <outlet property="exportToolbarItem" destination="TyK-Za-nsz" id="Mup-fG-Imc"/>
                             <outlet property="openToolbarItem" destination="ZA3-HX-azw" id="B6X-N6-Ftw"/>
-                            <outlet property="speechToolbarItem" destination="ejk-nz-xAn" id="3lL-2C-FGG"/>
+                            <outlet property="pauseToolbarItem" destination="Abu-1G-Dns" id="6w9-2E-E8l"/>
+                            <outlet property="speechToolbarItem" destination="ejk-nz-xAn" id="Zf7-9q-cqH"/>
                         </connections>
                     </window>
                     <connections>
@@ -720,7 +727,7 @@
                                             <size key="minSize" width="423" height="262"/>
                                             <size key="maxSize" width="463" height="10000000"/>
                                             <attributedString key="textStorage">
-                                                <fragment content="Write or paste text here.  `Play` to play the sound via audio output. `Export` to export the sound as an .aiff file.">
+                                                <fragment content="Write or paste text here.  `Play` to play the sound via audio output. `Export` to export the sound as an .aiff file.">
                                                     <attributes>
                                                         <font key="NSFont" metaFont="smallSystem"/>
                                                         <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>

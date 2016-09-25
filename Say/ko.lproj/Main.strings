@@ -116,7 +116,7 @@
 /* Class = "NSMenuItem"; title = "Open…"; ObjectID = "IAo-SY-fd9"; */
 "IAo-SY-fd9.title" = "열기...";
 
-/* Class = "NSWindow"; title = "말하기"; ObjectID = "IQv-IB-iLA"; */
+/* Class = "NSWindow"; title = "Say"; ObjectID = "IQv-IB-iLA"; */
 "IQv-IB-iLA.title" = "말하기";
 
 /* Class = "NSMenuItem"; title = "Justify"; ObjectID = "J5U-5w-g23"; */
@@ -397,3 +397,6 @@
 
 /* Class = "NSToolbarItem"; label = "Import"; ObjectID = "ZA3-HX-azw"; */
 "ZA3-HX-azw.label" = "열기";
+
+/* Class = "NSToolbarItem"; label = "Pause"; ObjectID = "Abu-1G-Dns"; */
+"Abu-1G-Dns.label" = "일시정지";

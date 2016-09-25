@@ -9,12 +9,16 @@
 import Cocoa
 // import SayKit
 
-
 /// Main window of the application
 class MainWindow: NSWindow {
     @IBOutlet var speechToolbarItem: NSToolbarItem! = nil
+    @IBOutlet var pauseToolbarItem: NSToolbarItem! = nil
     @IBOutlet var exportToolbarItem: NSToolbarItem! = nil
     @IBOutlet var openToolbarItem: NSToolbarItem! = nil
+    //@IBOutlet var statusItem: NSStatusItem! = nil
+    //@IBOutlet var statusMenu: NSMenu! = nil
+    
+    
     override func awakeFromNib() {
         /** Load data from cache in NSUserDefaults or from URL.
          *
@@ -38,8 +42,12 @@ class MainWindow: NSWindow {
         }
         
         super.awakeFromNib()
+        
         if let imageData = syncronizedData("icon_speech", URL: URL(string: "https://upload.wikimedia.org/wikipedia/commons/1/10/Exquisite-microphone.png")!) {
             self.speechToolbarItem.image = NSImage(data: imageData)
+        }
+        if let imageData = syncronizedData("icon_pause2", URL: URL(string: "https://upload.wikimedia.org/wikipedia/commons/5/57/Pause_icon_status.png")!) {
+            self.pauseToolbarItem.image = NSImage(data: imageData)
         }
         if let imageData = syncronizedData("icon_export", URL: URL(string: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Gnome-generic-empty.svg/500px-Gnome-generic-empty.svg.png?uselang=ko")!) {
             self.exportToolbarItem.image = NSImage(data: imageData)
@@ -49,7 +57,6 @@ class MainWindow: NSWindow {
             self.openToolbarItem.image = NSImage(data: imageData)
         }
     }
-    
     
 }
 
@@ -64,6 +71,8 @@ class ViewController: NSViewController {
     
     /// Open panel for "Open" menu
     let textOpenPanel = NSOpenPanel()
+    
+    var temp:SayAPI! = SayAPI(text: "hello",voice: nil)
     
     @available(OSX 10.10, *)
     override func viewDidLoad() {
@@ -103,10 +112,23 @@ class ViewController: NSViewController {
         }
     }
     
-    @IBAction func say(_ sender: NSControl) {
+    
+    @IBAction func say(_ sender: NSToolbarItem) {
+        
+        //temp = Say(text: self.textForSpeech, voice: self.selectedVoice).play(true)
+        //temp = Say(text: self.textForSpeech,voice: self.selectedVoice)
         sender.isEnabled = false
-        SayAPI(text: self.textForSpeech, voice: self.selectedVoice).play(false)
+        temp = SayAPI(text: self.textForSpeech, voice: self.selectedVoice)
+        temp.play(false)
         sender.isEnabled = true
+        
+    }
+    
+    @IBAction func pause(_ sender: NSControl) {
+        
+        
+        temp.pause()
+        
     }
     
     @IBAction func saveDocumentAs(_ sender: NSControl) {
@@ -128,5 +150,6 @@ class ViewController: NSViewController {
         catch {/* error handling here */}
     }
     
+
 }
 

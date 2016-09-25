@@ -45,6 +45,8 @@
 	<key>NSMainStoryboardFile</key>
 	<string>Main</string>
 	<key>NSPrincipalClass</key>
+    <key>LSUIElement<key>
+        <true/>
 	<string>NSApplication</string>
 </dict>
 </plist>
