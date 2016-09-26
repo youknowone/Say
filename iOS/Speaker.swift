@@ -42,7 +42,6 @@ public class Speaker: NSObject, AVSpeechSynthesizerDelegate {
 
     public func speakText(text: String) {
         let utterance = AVSpeechUtterance(string: text)
-        utterance.rate = 0.4
         utterance.volume = self.mute ? 0.0 : self.volume
         utterance.voice = self.voice
         self.synthesizer.speak(utterance)
