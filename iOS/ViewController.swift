@@ -19,6 +19,7 @@ class ViewController: UIViewController, SpeakerDelegate, UIPickerViewDelegate, U
             self.speaker.speakText(text: text)
         }
     }
+    
     @IBAction func changeVoiceClicked(_ sender: AnyObject) {
         // create action sheet & picker view dynamically
         let alertController = UIAlertController(title: "Select Launguage", message: "\n\n\n\n\n\n\n\n\n\n", preferredStyle: UIAlertControllerStyle.actionSheet);
@@ -45,8 +46,6 @@ class ViewController: UIViewController, SpeakerDelegate, UIPickerViewDelegate, U
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
         //init language names
         let voices = self.speaker.voices
         for voice in voices {
