@@ -11,7 +11,6 @@ import UIKit
 class ViewController: UIViewController, SpeakerDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
     
     @IBOutlet var textview: UITextView!
-    var languagePicker: UIPickerView = UIPickerView()
     let speaker = Speaker.defaultSpeaker
     var languageNames = [String]()
     
@@ -20,18 +19,25 @@ class ViewController: UIViewController, SpeakerDelegate, UIPickerViewDelegate, U
             self.speaker.speakText(text: text)
         }
     }
+    
     @IBAction func changeVoiceClicked(_ sender: AnyObject) {
-        // create action sheet dynamically
+        // create action sheet & picker view dynamically
         let alertController = UIAlertController(title: "Select Launguage", message: "\n\n\n\n\n\n\n\n\n\n", preferredStyle: UIAlertControllerStyle.actionSheet);
-        self.languagePicker.center.x = self.view.center.x
+        let alertFrame = alertController.view.frame
+        let languagePicker = UIPickerView(frame: CGRect(x: alertFrame.minX, y: alertFrame.minY + 20, width: alertFrame.width - 50, height: 250))
+        languagePicker.center.x = self.view.center.x
+        languagePicker.autoresizingMask = [UIViewAutoresizing.flexibleLeftMargin, UIViewAutoresizing.flexibleRightMargin]
+        languagePicker.delegate = self
+        languagePicker.dataSource = self
+        languagePicker.showsSelectionIndicator = true
+        alertController.view.addSubview(languagePicker)
+        
         let action = UIAlertAction(title: "DONE", style: .default) { (action) in
-            let value = self.languagePicker.selectedRow(inComponent: 0)
+            let value = languagePicker.selectedRow(inComponent: 0)
             self.speaker.changeLanguage(language: self.speaker.voices[value].language)
         }
         alertController.addAction(action)
-        alertController.view.addSubview(languagePicker)
         present(alertController, animated: true, completion: nil)
-        self.languagePicker.autoresizingMask = [UIViewAutoresizing.flexibleLeftMargin, UIViewAutoresizing.flexibleRightMargin]
     }
     
     func speaker(speaker: Speaker, didFinishSpeechString: String) {
@@ -40,15 +46,6 @@ class ViewController: UIViewController, SpeakerDelegate, UIPickerViewDelegate, U
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // create popup picker view
-        languagePicker = UIPickerView(frame: CGRect(x: 0, y: 20, width: 300, height: 250))
-        languagePicker.delegate = self
-        languagePicker.dataSource = self
-        languagePicker.showsSelectionIndicator = true
-        languagePicker.tintColor = UIColor.red
-        languagePicker.reloadAllComponents()
-        
         //init language names
         let voices = self.speaker.voices
         for voice in voices {
