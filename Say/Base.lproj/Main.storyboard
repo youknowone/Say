@@ -655,10 +655,16 @@
                                         <action selector="pause:" target="Oky-zY-oP4" id="OxX-rx-2gg"/>
                                     </connections>
                                 </toolbarItem>
+                                <toolbarItem implicitItemIdentifier="C31A443A-DB2C-4DC6-ADDA-0A25D4E5D7E3" label="Stop" paletteLabel="Stop" tag="-1" id="lyx-MY-XTa">
+                                    <connections>
+                                        <action selector="stop:" target="Oky-zY-oP4" id="Zs8-lQ-LzE"/>
+                                    </connections>
+                                </toolbarItem>
                             </allowedToolbarItems>
                             <defaultToolbarItems>
                                 <toolbarItem reference="ejk-nz-xAn"/>
                                 <toolbarItem reference="Abu-1G-Dns"/>
+                                <toolbarItem reference="lyx-MY-XTa"/>
                                 <toolbarItem reference="TyK-Za-nsz"/>
                                 <toolbarItem reference="ZA3-HX-azw"/>
                                 <toolbarItem reference="uvq-7p-ATT"/>
@@ -670,6 +676,7 @@
                             <outlet property="openToolbarItem" destination="ZA3-HX-azw" id="B6X-N6-Ftw"/>
                             <outlet property="pauseToolbarItem" destination="Abu-1G-Dns" id="6w9-2E-E8l"/>
                             <outlet property="speechToolbarItem" destination="ejk-nz-xAn" id="Zf7-9q-cqH"/>
+                            <outlet property="stopToolbarItem" destination="lyx-MY-XTa" id="sG5-tE-lM5"/>
                         </connections>
                     </window>
                     <connections>

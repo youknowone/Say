@@ -15,9 +15,9 @@ class MainWindow: NSWindow {
     @IBOutlet var pauseToolbarItem: NSToolbarItem! = nil
     @IBOutlet var exportToolbarItem: NSToolbarItem! = nil
     @IBOutlet var openToolbarItem: NSToolbarItem! = nil
+    @IBOutlet var stopToolbarItem: NSToolbarItem! = nil
     //@IBOutlet var statusItem: NSStatusItem! = nil
     //@IBOutlet var statusMenu: NSMenu! = nil
-    
     
     override func awakeFromNib() {
         /** Load data from cache in NSUserDefaults or from URL.
@@ -40,13 +40,13 @@ class MainWindow: NSWindow {
             }
             return iconData
         }
-        
+        speechToolbarItem.autovalidates = false
         super.awakeFromNib()
         
         if let imageData = syncronizedData("icon_speech", URL: URL(string: "https://upload.wikimedia.org/wikipedia/commons/1/10/Exquisite-microphone.png")!) {
             self.speechToolbarItem.image = NSImage(data: imageData)
         }
-        if let imageData = syncronizedData("icon_pause2", URL: URL(string: "https://upload.wikimedia.org/wikipedia/commons/5/57/Pause_icon_status.png")!) {
+        if let imageData = syncronizedData("icon_pause", URL: URL(string: "https://upload.wikimedia.org/wikipedia/commons/5/57/Pause_icon_status.png")!) {
             self.pauseToolbarItem.image = NSImage(data: imageData)
         }
         if let imageData = syncronizedData("icon_export", URL: URL(string: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Gnome-generic-empty.svg/500px-Gnome-generic-empty.svg.png?uselang=ko")!) {
@@ -55,6 +55,10 @@ class MainWindow: NSWindow {
         if let imageData = syncronizedData("icon_open", URL: URL(string: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Inkscape_icons_document_import.svg/500px-Inkscape_icons_document_import.svg.png?uselang=ko")!) {
             //assert(self.openToolbarItem != nil)
             self.openToolbarItem.image = NSImage(data: imageData)
+        }
+        if let imageData = syncronizedData("icon_stop", URL: URL(string: "https://commons.wikimedia.org/wiki/File%3AStop_icon_status.png")!) {
+            //assert(self.openToolbarItem != nil)
+            self.stopToolbarItem.image = NSImage(data: imageData)
         }
     }
     
@@ -73,6 +77,7 @@ class ViewController: NSViewController {
     let textOpenPanel = NSOpenPanel()
     
     var temp:SayAPI! = SayAPI(text: "hello",voice: nil)
+    var pause:Bool = false
     
     @available(OSX 10.10, *)
     override func viewDidLoad() {
@@ -117,22 +122,40 @@ class ViewController: NSViewController {
         
         //temp = Say(text: self.textForSpeech, voice: self.selectedVoice).play(true)
         //temp = Say(text: self.textForSpeech,voice: self.selectedVoice)
-        
         if !temp.isplaying(){
-            sender.isEnabled = false
-            temp = SayAPI(text: self.textForSpeech, voice: self.selectedVoice)
-            temp.play(false)
-            sender.isEnabled = true
+            
+            if self.pause{
+            
+                temp.continueSpeeking()
+            }
+            else{
+                //sender.isEnabled = false
+                temp = SayAPI(text: self.textForSpeech, voice: self.selectedVoice)
+                temp.play(false)
+                
+            }
+            //sender.isEnabled = true
+        }
+        else{
+            
         }
         
     }
-    
     @IBAction func pause(_ sender: NSControl) {
         
-        
+        sender.isEnabled = true
+        self.pause = true
         temp.pause()
         
     }
+    @IBAction func stop(_ sender: NSControl) {
+        
+        sender.isEnabled = true
+        self.pause = false
+        temp.stop()
+        
+    }
+    
     
     @IBAction func saveDocumentAs(_ sender: NSControl) {
         self.voiceSavePanel.runModal()

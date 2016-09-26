@@ -67,8 +67,14 @@ class SayAPI: NSObject {
         self.speechSynthesizer.startSpeaking(text)
     }
     
+    func continueSpeeking(){
+        self.speechSynthesizer.continueSpeaking()
+    }
+    
     func pause(){
-        
+        self.speechSynthesizer.pauseSpeaking(at:.immediateBoundary)
+    }
+    func stop(){
         self.speechSynthesizer.stopSpeaking()
     }
     
