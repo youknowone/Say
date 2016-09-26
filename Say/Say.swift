@@ -72,6 +72,11 @@ class SayAPI: NSObject {
         self.speechSynthesizer.stopSpeaking()
     }
     
+    func isplaying()-> Bool{
+        
+        return self.speechSynthesizer.isSpeaking
+        
+    }
     
     /**
         Composite and write speech to URL.

@@ -117,10 +117,13 @@ class ViewController: NSViewController {
         
         //temp = Say(text: self.textForSpeech, voice: self.selectedVoice).play(true)
         //temp = Say(text: self.textForSpeech,voice: self.selectedVoice)
-        sender.isEnabled = false
-        temp = SayAPI(text: self.textForSpeech, voice: self.selectedVoice)
-        temp.play(false)
-        sender.isEnabled = true
+        
+        if !temp.isplaying(){
+            sender.isEnabled = false
+            temp = SayAPI(text: self.textForSpeech, voice: self.selectedVoice)
+            temp.play(false)
+            sender.isEnabled = true
+        }
         
     }
     
