@@ -68,7 +68,7 @@ class ViewController: NSViewController {
     @IBOutlet var alarmButton: NSButton!
     
     var alarmTime: Date! = nil
-    var timer: Timer! = nil
+    var alarmTimer: Timer! = nil
     
     @available(OSX 10.10, *)
     override func viewDidLoad() {
@@ -76,7 +76,7 @@ class ViewController: NSViewController {
         assert(self.textView != nil)
         assert(self.voiceComboBox != nil)
         self.voiceSavePanel.allowedFileTypes = ["aiff"] // default output format is aiff. See `man say`
-        self.voiceComboBox.addItems(withObjectValues: Voice.voices.map({ "\($0.name)(\($0.locale)): \($0.comment)"; }))
+        self.voiceComboBox.addItems(withObjectValues: VoiceAPI.voices.map({ "\($0.name)(\($0.locale)): \($0.comment)"; }))
         self.datePicker.dateValue = Date.init()
     }
     
@@ -137,18 +137,16 @@ class ViewController: NSViewController {
     @IBAction func setAlarm(_ sender: NSControl) {
         if alarmButton.state == NSOnState {
             self.alarmTime = datePicker.dateValue
-            self.timer = Timer(fireAt: alarmTime, interval: 0, target: self, selector: #selector(doAlarm), userInfo: nil, repeats: false)
-            RunLoop.main.add(timer, forMode: RunLoopMode.commonModes)
+            self.alarmTimer = Timer(fireAt: alarmTime, interval: 0, target: self, selector: #selector(doAlarm), userInfo: nil, repeats: false)
+            RunLoop.main.add(alarmTimer, forMode: RunLoopMode.commonModes)
         } else if alarmButton.state == NSOffState {
-            self.timer.invalidate()
+            self.alarmTimer.invalidate()
         }
     }
     
     func doAlarm() {
-        alarmButton.isEnabled = false
         SayAPI(text: self.textForSpeech, voice: self.selectedVoice).play(false)
-        alarmButton.setNextState()
-        alarmButton.isEnabled = true
+        alarmButton.state = NSOffState
     }
     
 }
