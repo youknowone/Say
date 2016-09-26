@@ -114,7 +114,7 @@
 "I0S-gh-46l.title" = "Subscript";
 
 /* Class = "NSMenuItem"; title = "Open…"; ObjectID = "IAo-SY-fd9"; */
-"IAo-SY-fd9.title" = "열기";
+"IAo-SY-fd9.title" = "열기...";
 
 /* Class = "NSWindow"; title = "말하기"; ObjectID = "IQv-IB-iLA"; */
 "IQv-IB-iLA.title" = "말하기";
@@ -396,4 +396,4 @@
 "z6F-FW-3nz.title" = "Show Substitutions";
 
 /* Class = "NSToolbarItem"; label = "Import"; ObjectID = "ZA3-HX-azw"; */
-"ZA3-HX-azw.label" = "불러오기";
+"ZA3-HX-azw.label" = "열기";
