@@ -12,7 +12,7 @@ import Cocoa
     Easy-to-use interface for `say` command in OS X.
 */
 class SayAPI: NSObject {
-    let speechSynthesizer: NSSpeechSynthesizer?
+    let speechSynthesizer: NSSpeechSynthesizer
     var text: String
     var voice: VoiceAPI?
     
@@ -32,7 +32,7 @@ class SayAPI: NSObject {
         - voice: A voice to composite speech. If given voice is nil, default voice is used.
      */
     init(text: String, voice: VoiceAPI?) {
-        speechSynthesizer = NSSpeechSynthesizer.init()
+        self.speechSynthesizer = NSSpeechSynthesizer.init()
         self.text = text
         self.voice = voice
         super.init()
@@ -63,8 +63,8 @@ class SayAPI: NSObject {
         - Parameter waitUntilDone: Currently ignored.
      */
     func play(_ waitUntilDone: Bool) {
-        speechSynthesizer?.setVoice(self.voice?.identifier)
-        speechSynthesizer?.startSpeaking(text);
+        self.speechSynthesizer.setVoice(self.voice?.identifier)
+        self.speechSynthesizer.startSpeaking(text);
     }
     
     /**
@@ -77,7 +77,7 @@ class SayAPI: NSObject {
         - atomically: Currently ignored.
      */
     func writeToURL(_ URL: Foundation.URL, atomically: Bool) {
-        speechSynthesizer?.setVoice(self.voice?.identifier)
-        speechSynthesizer?.startSpeaking(text, to: URL)
+        self.speechSynthesizer.setVoice(self.voice?.identifier)
+        self.speechSynthesizer.startSpeaking(text, to: URL)
     }
 }
