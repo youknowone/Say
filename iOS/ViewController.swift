@@ -22,15 +22,15 @@ class ViewController: UIViewController, SpeakerDelegate, UIPickerViewDelegate, U
     }
     @IBAction func changeVoiceClicked(_ sender: AnyObject) {
         // create action sheet dynamically
-        let alertView = UIAlertController(title: "Select Launguage", message: "\n\n\n\n\n\n\n\n\n\n", preferredStyle: UIAlertControllerStyle.actionSheet);
+        let alertController = UIAlertController(title: "Select Launguage", message: "\n\n\n\n\n\n\n\n\n\n", preferredStyle: UIAlertControllerStyle.actionSheet);
         self.languagePicker.center.x = self.view.center.x
         let action = UIAlertAction(title: "DONE", style: .default) { (action) in
             let value = self.languagePicker.selectedRow(inComponent: 0)
             self.speaker.changeLanguage(language: self.speaker.voices[value].language)
         }
-        alertView.addAction(action)
-        alertView.view.addSubview(languagePicker)
-        present(alertView, animated: true, completion: nil)
+        alertController.addAction(action)
+        alertController.view.addSubview(languagePicker)
+        present(alertController, animated: true, completion: nil)
         self.languagePicker.autoresizingMask = [UIViewAutoresizing.flexibleLeftMargin, UIViewAutoresizing.flexibleRightMargin]
     }
     
