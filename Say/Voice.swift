@@ -25,6 +25,7 @@ class VoiceAPI: NSObject {
         self.comment = dictionary["VoiceDemoText"] as! String
         self.locale = dictionary["VoiceLocaleIdentifier"] as! String
         self.name = dictionary["VoiceName"] as! String
+        super.init()
     }
     
     static let voices: [VoiceAPI] = {

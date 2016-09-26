@@ -65,7 +65,7 @@ class ViewController: NSViewController {
         assert(self.voiceComboBox != nil)
         self.voiceSavePanel.allowedFileTypes = ["aiff"] // default output format is aiff. See `man say`
 
-        self.voiceComboBox.addItems(withObjectValues: Voice.voices.map({ "\($0.name)(\($0.locale)): \($0.comment)"; }))
+        self.voiceComboBox.addItems(withObjectValues: VoiceAPI.voices.map({ "\($0.name)(\($0.locale)): \($0.comment)"; }))
     }
 
     override var representedObject: Any? {
@@ -80,29 +80,27 @@ class ViewController: NSViewController {
         }
     }
 
-    var selectedVoice: Voice? {
+    var selectedVoice: VoiceAPI? {
         get {
             let index = self.voiceComboBox.indexOfSelectedItem
             if index <= 0 || index == NSNotFound {
                 return nil
             } else {
-                return Voice.voices[index - 1]
+                return VoiceAPI.voices[index - 1]
             }
         }
     }
 
     @IBAction func say(_ sender: NSControl) {
         sender.isEnabled = false
-//        Say(text: self.textForSpeech, voice: self.selectedVoice).play(true)
-        let sayAPI = SayAPI.init()
-        sayAPI.startSpeaking(text: self.textForSpeech)
+        SayAPI(text: self.textForSpeech, voice: self.selectedVoice).play(false)
         sender.isEnabled = true
     }
 
     @IBAction func saveDocumentAs(_ sender: NSControl) {
         self.voiceSavePanel.runModal()
         if let URL = self.voiceSavePanel.url {
-            Say(text: self.textForSpeech, voice: self.selectedVoice).writeToURL(URL, atomically: true)
+            SayAPI(text: self.textForSpeech, voice: self.selectedVoice).writeToURL(URL, atomically: true)
         }
     }
 

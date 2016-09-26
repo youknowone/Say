@@ -25,6 +25,7 @@ class SayAPI: NSObject {
         speechSynthesizer = NSSpeechSynthesizer.init()
         self.text = text
         self.voice = voice
+        super.init()
     }
     
     public convenience init(text: String) {
@@ -35,7 +36,7 @@ class SayAPI: NSObject {
         self.init(text: text, voice: VoiceAPI.init(dictionary: NSSpeechSynthesizer.attributes(forVoice: voiceIdentifier)))
     }
 
-    func play() {
+    func play(_ waitUntilDone: Bool) {
         speechSynthesizer?.setVoice(self.voice?.identifier)
         speechSynthesizer?.startSpeaking(text);
     }

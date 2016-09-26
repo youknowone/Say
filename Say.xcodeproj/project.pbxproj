@@ -63,6 +63,10 @@
 		38EBA4721D963CF90017D221 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38B8C1EF1AD6F903009F0783 /* Images.xcassets */; };
 		38EBA4731D963CF90017D221 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 38531EA91B0E508300E2C16D /* InfoPlist.strings */; };
 		38EBA4741D963CF90017D221 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38B8C1F11AD6F903009F0783 /* Main.storyboard */; };
+		4E2CBB3D1D99248F00D096E5 /* Say.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF775FC1D9690A000B407BD /* Say.swift */; };
+		4E2CBB3E1D99248F00D096E5 /* Say.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF775FC1D9690A000B407BD /* Say.swift */; };
+		4E2CBB3F1D99249200D096E5 /* Voice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EBDB0E51D97D1B000E00010 /* Voice.swift */; };
+		4E2CBB401D99249200D096E5 /* Voice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EBDB0E51D97D1B000E00010 /* Voice.swift */; };
 		4EBDB0E61D97D1B000E00010 /* Voice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EBDB0E51D97D1B000E00010 /* Voice.swift */; };
 		4EBDB0E71D97D1B000E00010 /* Voice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EBDB0E51D97D1B000E00010 /* Voice.swift */; };
 		4EF775FD1D9690A000B407BD /* Say.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF775FC1D9690A000B407BD /* Say.swift */; };
@@ -929,6 +933,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E2CBB3F1D99249200D096E5 /* Voice.swift in Sources */,
+				4E2CBB3E1D99248F00D096E5 /* Say.swift in Sources */,
 				38EBA45E1D963C9E0017D221 /* SayKit.swift in Sources */,
 				389F0EEA1B0D3ACD0069DBEF /* TodayViewController.swift in Sources */,
 			);
@@ -983,6 +989,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E2CBB401D99249200D096E5 /* Voice.swift in Sources */,
+				4E2CBB3D1D99248F00D096E5 /* Say.swift in Sources */,
 				38DF27161D96609600332CE1 /* SayKit.swift in Sources */,
 				38DF27171D96609600332CE1 /* TodayViewController.swift in Sources */,
 			);
