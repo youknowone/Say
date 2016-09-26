@@ -76,7 +76,12 @@ class ViewController: NSViewController {
 
     var textForSpeech: String {
         let selectedRange = self.textView.selectedRange()
-        return ((self.textView.string ?? "") as NSString).substring(with: selectedRange)
+        if selectedRange.length > 0 {
+            return ((self.textView.string ?? "") as NSString).substring(with: selectedRange)
+        }
+        else {
+            return self.textView.string ?? ""
+        }
     }
 
     var selectedVoice: Voice? {
