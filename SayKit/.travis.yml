@@ -1,8 +1,0 @@
-language: objective-c
-sudo: false
-xcode_project: SayKit.xcodeproj # path to your xcodeproj folder
-osx_image: xcode8
-xcode_sdk:
-  - macosx
-xcode_scheme:
-  - SayKit
