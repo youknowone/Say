@@ -61,9 +61,11 @@ class ViewController: NSViewController {
     @IBOutlet var voiceComboBox: NSComboBox! = nil
     /// Save panel for "Export" menu
     let voiceSavePanel = NSSavePanel()
-    
     /// Open panel for "Open" menu
     let textOpenPanel = NSOpenPanel()
+    
+    @IBOutlet var datePicker: NSDatePicker! = nil;
+    @IBOutlet var alarmButton: NSButton!;
     
     @available(OSX 10.10, *)
     override func viewDidLoad() {
@@ -72,6 +74,7 @@ class ViewController: NSViewController {
         assert(self.voiceComboBox != nil)
         self.voiceSavePanel.allowedFileTypes = ["aiff"] // default output format is aiff. See `man say`
         self.voiceComboBox.addItems(withObjectValues: Voice.voices.map({ "\($0.name)(\($0.locale)): \($0.comment)"; }))
+        self.datePicker.dateValue = Date.init()
     }
     
     override var representedObject: Any? {
@@ -114,6 +117,7 @@ class ViewController: NSViewController {
             Say(text: self.textForSpeech, voice: self.selectedVoice).writeToURL(URL, atomically: true)
         }
     }
+    
     @IBAction func openTextFile(_ sender: NSControl){
         self.textOpenPanel.runModal()
         do {
@@ -125,6 +129,24 @@ class ViewController: NSViewController {
             
         }
         catch {/* error handling here */}
+    }
+    
+    @IBAction func setAlarm(_ sender: NSControl) {
+        let date = datePicker.dateValue
+        let timer = Timer(fireAt: date, interval: 0, target: self, selector: #selector(doAlarm), userInfo: nil, repeats: false)
+        
+        if alarmButton.state == NSOnState {
+            sender.isEnabled = false
+            RunLoop.main.add(timer, forMode: RunLoopMode.commonModes)
+            sender.isEnabled = true
+        } else if alarmButton.state == NSOffState {
+            timer.invalidate()
+        }
+    }
+    
+    func doAlarm() {
+        Say(text: self.textForSpeech, voice: self.selectedVoice).play(true)
+        alarmButton.state = NSOffState
     }
     
 }
