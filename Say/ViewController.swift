@@ -64,8 +64,11 @@ class ViewController: NSViewController {
     /// Open panel for "Open" menu
     let textOpenPanel = NSOpenPanel()
     
-    @IBOutlet var datePicker: NSDatePicker! = nil;
-    @IBOutlet var alarmButton: NSButton!;
+    @IBOutlet var datePicker: NSDatePicker! = nil
+    @IBOutlet var alarmButton: NSButton!
+    
+    var alarmTime: Date! = nil
+    var timer: Timer! = nil
     
     @available(OSX 10.10, *)
     override func viewDidLoad() {
@@ -132,21 +135,20 @@ class ViewController: NSViewController {
     }
     
     @IBAction func setAlarm(_ sender: NSControl) {
-        let date = datePicker.dateValue
-        let timer = Timer(fireAt: date, interval: 0, target: self, selector: #selector(doAlarm), userInfo: nil, repeats: false)
-        
         if alarmButton.state == NSOnState {
-            sender.isEnabled = false
+            self.alarmTime = datePicker.dateValue
+            self.timer = Timer(fireAt: alarmTime, interval: 0, target: self, selector: #selector(doAlarm), userInfo: nil, repeats: false)
             RunLoop.main.add(timer, forMode: RunLoopMode.commonModes)
-            sender.isEnabled = true
         } else if alarmButton.state == NSOffState {
-            timer.invalidate()
+            self.timer.invalidate()
         }
     }
     
     func doAlarm() {
+        alarmButton.isEnabled = false
         Say(text: self.textForSpeech, voice: self.selectedVoice).play(true)
-        alarmButton.state = NSOffState
+        alarmButton.setNextState()
+        alarmButton.isEnabled = true
     }
     
 }
