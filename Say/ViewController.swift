@@ -12,9 +12,9 @@ import Cocoa
 
 /// Main window of the application
 class MainWindow: NSWindow {
-    @IBOutlet var speechToolbarItem: NSToolbarItem! = nil;
-    @IBOutlet var exportToolbarItem: NSToolbarItem! = nil;
-    @IBOutlet var openToolbarItem: NSToolbarItem! = nil;
+    @IBOutlet var speechToolbarItem: NSToolbarItem! = nil
+    @IBOutlet var exportToolbarItem: NSToolbarItem! = nil
+    @IBOutlet var openToolbarItem: NSToolbarItem! = nil
     override func awakeFromNib() {
         /** Load data from cache in NSUserDefaults or from URL.
          *
@@ -56,9 +56,9 @@ class MainWindow: NSWindow {
 /// The controller for main view in main window
 class ViewController: NSViewController {
     /// Text view to speech
-    @IBOutlet var textView: NSTextView! = nil;
+    @IBOutlet var textView: NSTextView! = nil
     /// Combo box for voices. Default is decided by system locale
-    @IBOutlet var voiceComboBox: NSComboBox! = nil;
+    @IBOutlet var voiceComboBox: NSComboBox! = nil
     /// Save panel for "Export" menu
     let voiceSavePanel = NSSavePanel()
     
@@ -81,13 +81,14 @@ class ViewController: NSViewController {
     }
     
     var textForSpeech: String {
+        let fullText = self.textView.string ?? ""
+        var selectedText = fullText
+
         let selectedRange = self.textView.selectedRange()
         if selectedRange.length > 0 {
-            return ((self.textView.string ?? "") as NSString).substring(with: selectedRange)
+            selectedText = (selectedText as NSString).substring(with: selectedRange)
         }
-        else {
-            return self.textView.string ?? ""
-        }
+        return selectedText
     }
     
     var selectedVoice: Voice? {
