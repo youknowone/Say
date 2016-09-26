@@ -18,16 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Hello, World!" translatesAutoresizingMaskIntoConstraints="NO" id="Vpa-uC-abB">
-                                <frame key="frameInset" minX="17" minY="145" width="342" height="235"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NJt-HC-7Os">
-                                <frame key="frameInset" minX="1" height="44" maxX="-1"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NJt-HC-7Os">
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="XB2-1i-E5b"/>
                                     <barButtonItem systemItem="play" id="hCx-7W-w6w">
@@ -38,8 +29,22 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="7vD-ZR-bfQ"/>
                                 </items>
                             </toolbar>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Hello, World!" translatesAutoresizingMaskIntoConstraints="NO" id="Vpa-uC-abB">
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="NJt-HC-7Os" firstAttribute="top" secondItem="Vpa-uC-abB" secondAttribute="bottom" constant="20" id="8Ze-6b-SOk"/>
+                            <constraint firstItem="NJt-HC-7Os" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="CuI-jy-ZLd"/>
+                            <constraint firstAttribute="trailing" secondItem="NJt-HC-7Os" secondAttribute="trailing" id="IK6-tJ-yMj"/>
+                            <constraint firstItem="Vpa-uC-abB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="QnS-8a-WeM"/>
+                            <constraint firstItem="Vpa-uC-abB" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="aUC-FQ-fVN"/>
+                            <constraint firstAttribute="trailing" secondItem="Vpa-uC-abB" secondAttribute="trailing" constant="20" id="gue-8T-DVe"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="NJt-HC-7Os" secondAttribute="bottom" id="thA-FU-CHT"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Say" id="WUJ-hf-aht">
                         <barButtonItem key="leftBarButtonItem" title="Language" id="Sqg-OF-Xne">
