@@ -97,27 +97,27 @@ class ViewController: NSViewController {
         return selectedText
     }
     
-    var selectedVoice: Voice? {
+    var selectedVoice: VoiceAPI? {
         get {
             let index = self.voiceComboBox.indexOfSelectedItem
             if index <= 0 || index == NSNotFound {
                 return nil
             } else {
-                return Voice.voices[index - 1]
+                return VoiceAPI.voices[index - 1]
             }
         }
     }
     
     @IBAction func say(_ sender: NSControl) {
         sender.isEnabled = false
-        Say(text: self.textForSpeech, voice: self.selectedVoice).play(true)
+        SayAPI(text: self.textForSpeech, voice: self.selectedVoice).play(false)
         sender.isEnabled = true
     }
     
     @IBAction func saveDocumentAs(_ sender: NSControl) {
         self.voiceSavePanel.runModal()
         if let URL = self.voiceSavePanel.url {
-            Say(text: self.textForSpeech, voice: self.selectedVoice).writeToURL(URL, atomically: true)
+            SayAPI(text: self.textForSpeech, voice: self.selectedVoice).writeToURL(URL, atomically: true)
         }
     }
     
@@ -146,7 +146,7 @@ class ViewController: NSViewController {
     
     func doAlarm() {
         alarmButton.isEnabled = false
-        Say(text: self.textForSpeech, voice: self.selectedVoice).play(true)
+        SayAPI(text: self.textForSpeech, voice: self.selectedVoice).play(false)
         alarmButton.setNextState()
         alarmButton.isEnabled = true
     }
