@@ -61,9 +61,14 @@ class ViewController: NSViewController {
     @IBOutlet var voiceComboBox: NSComboBox! = nil
     /// Save panel for "Export" menu
     let voiceSavePanel = NSSavePanel()
-    
     /// Open panel for "Open" menu
     let textOpenPanel = NSOpenPanel()
+    
+    @IBOutlet var datePicker: NSDatePicker! = nil
+    @IBOutlet var alarmButton: NSButton!
+    
+    var alarmTime: Date! = nil
+    var alarmTimer: Timer! = nil
     
     @available(OSX 10.10, *)
     override func viewDidLoad() {
@@ -71,8 +76,8 @@ class ViewController: NSViewController {
         assert(self.textView != nil)
         assert(self.voiceComboBox != nil)
         self.voiceSavePanel.allowedFileTypes = ["aiff"] // default output format is aiff. See `man say`
-
         self.voiceComboBox.addItems(withObjectValues: VoiceAPI.voices.map({ "\($0.name)(\($0.locale)): \($0.comment)"; }))
+        self.datePicker.dateValue = Date.init()
     }
     
     override var representedObject: Any? {
@@ -115,6 +120,7 @@ class ViewController: NSViewController {
             SayAPI(text: self.textForSpeech, voice: self.selectedVoice).writeToURL(URL, atomically: true)
         }
     }
+    
     @IBAction func openTextFile(_ sender: NSControl){
         self.textOpenPanel.runModal()
         do {
@@ -126,6 +132,21 @@ class ViewController: NSViewController {
             
         }
         catch {/* error handling here */}
+    }
+    
+    @IBAction func setAlarm(_ sender: NSControl) {
+        if alarmButton.state == NSOnState {
+            self.alarmTime = datePicker.dateValue
+            self.alarmTimer = Timer(fireAt: alarmTime, interval: 0, target: self, selector: #selector(doAlarm), userInfo: nil, repeats: false)
+            RunLoop.main.add(alarmTimer, forMode: RunLoopMode.commonModes)
+        } else if alarmButton.state == NSOffState {
+            self.alarmTimer.invalidate()
+        }
+    }
+    
+    func doAlarm() {
+        SayAPI(text: self.textForSpeech, voice: self.selectedVoice).play(false)
+        alarmButton.state = NSOffState
     }
     
 }

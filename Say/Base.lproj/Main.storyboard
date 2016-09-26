@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
         <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11201"/>
@@ -708,16 +708,16 @@
                                 </comboBoxCell>
                             </comboBox>
                             <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L9g-0O-auU">
-                                <rect key="frame" x="20" y="20" width="440" height="264"/>
+                                <rect key="frame" x="20" y="45" width="440" height="239"/>
                                 <clipView key="contentView" id="c9L-u2-i0w">
-                                    <rect key="frame" x="1" y="1" width="423" height="262"/>
+                                    <rect key="frame" x="1" y="1" width="438" height="237"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <textView importsGraphics="NO" usesFontPanel="YES" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" linkDetection="YES" dashSubstitution="YES" spellingCorrection="YES" smartInsertDelete="YES" id="1kY-L4-Wfr">
-                                            <rect key="frame" x="0.0" y="0.0" width="423" height="262"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="438" height="237"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <size key="minSize" width="423" height="262"/>
+                                            <size key="minSize" width="438" height="237"/>
                                             <size key="maxSize" width="463" height="10000000"/>
                                             <attributedString key="textStorage">
                                                 <fragment content="Write or paste text here.  `Play` to play the sound via audio output. `Export` to export the sound as an .aiff file.">
@@ -737,24 +737,55 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                                 <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="9z9-iT-xMo">
-                                    <rect key="frame" x="424" y="1" width="15" height="262"/>
+                                    <rect key="frame" x="423" y="1" width="16" height="237"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
+                            <button translatesAutoresizingMaskIntoConstraints="NO" id="tu0-a6-ffR">
+                                <rect key="frame" x="18" y="14" width="87" height="18"/>
+                                <buttonCell key="cell" type="check" title="Say text at" bezelStyle="regularSquare" imagePosition="left" inset="2" id="0u5-ol-6pM">
+                                    <behavior key="behavior" pushIn="YES" changeContents="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="setAlarm:" target="XfG-lQ-9wD" id="dGB-Ty-jnK"/>
+                                </connections>
+                            </button>
+                            <datePicker horizontalHuggingPriority="249" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="GwB-Ej-3Fr">
+                                <rect key="frame" x="111" y="12" width="349" height="22"/>
+                                <datePickerCell key="cell" borderStyle="bezel" alignment="left" datePickerStyle="textField" id="8n4-Ss-eqM">
+                                    <font key="font" metaFont="system"/>
+                                    <calendarDate key="date" timeIntervalSinceReferenceDate="-595929600" calendarFormat="%Y-%m-%d %H:%M:%S %z">
+                                        <!--1982-02-12 08:00:00 -0800-->
+                                        <timeZone key="timeZone" name="US/Pacific"/>
+                                    </calendarDate>
+                                    <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                    <datePickerElements key="datePickerElements" year="YES" month="YES" day="YES" hour="YES" minute="YES" second="YES"/>
+                                </datePickerCell>
+                            </datePicker>
                         </subviews>
                         <constraints>
+                            <constraint firstAttribute="bottom" secondItem="tu0-a6-ffR" secondAttribute="bottom" constant="16" id="0Go-Xg-QsN"/>
+                            <constraint firstAttribute="bottom" secondItem="GwB-Ej-3Fr" secondAttribute="bottom" constant="12" id="1rA-wn-FLe"/>
+                            <constraint firstItem="GwB-Ej-3Fr" firstAttribute="top" secondItem="L9g-0O-auU" secondAttribute="bottom" constant="11" id="2eR-gh-w2T"/>
                             <constraint firstItem="L9g-0O-auU" firstAttribute="top" secondItem="nMR-Om-fuB" secondAttribute="bottom" constant="8" id="9ci-bp-FPT"/>
                             <constraint firstAttribute="trailing" secondItem="L9g-0O-auU" secondAttribute="trailing" constant="20" id="CoY-sT-sEq"/>
                             <constraint firstItem="oBJ-y9-Nmp" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="GdM-wZ-ZDJ"/>
+                            <constraint firstAttribute="trailing" secondItem="GwB-Ej-3Fr" secondAttribute="trailing" constant="20" id="HjQ-d5-BXM"/>
                             <constraint firstItem="nMR-Om-fuB" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" id="KHA-fI-N92"/>
+                            <constraint firstItem="tu0-a6-ffR" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="MPe-NX-poL"/>
                             <constraint firstAttribute="trailing" secondItem="nMR-Om-fuB" secondAttribute="trailing" constant="20" id="WxB-36-IfM"/>
                             <constraint firstItem="L9g-0O-auU" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="X59-vP-g8w"/>
+                            <constraint firstItem="tu0-a6-ffR" firstAttribute="top" secondItem="L9g-0O-auU" secondAttribute="bottom" constant="15" id="dDO-Ek-Ehk"/>
                             <constraint firstItem="oBJ-y9-Nmp" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="21" id="gdJ-3j-54V"/>
-                            <constraint firstAttribute="bottom" secondItem="L9g-0O-auU" secondAttribute="bottom" constant="20" id="m71-Uy-SN0"/>
+                            <constraint firstItem="GwB-Ej-3Fr" firstAttribute="leading" secondItem="tu0-a6-ffR" secondAttribute="trailing" constant="8" id="lXK-3x-uN2"/>
                             <constraint firstItem="nMR-Om-fuB" firstAttribute="leading" secondItem="oBJ-y9-Nmp" secondAttribute="trailing" constant="2" id="tH1-J9-dJr"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="alarmButton" destination="tu0-a6-ffR" id="Wwc-7J-bx3"/>
+                        <outlet property="datePicker" destination="GwB-Ej-3Fr" id="BHF-46-O90"/>
                         <outlet property="textView" destination="1kY-L4-Wfr" id="4Lk-Jc-b1H"/>
                         <outlet property="voiceComboBox" destination="nMR-Om-fuB" id="opG-Oc-sb1"/>
                     </connections>
