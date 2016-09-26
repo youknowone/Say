@@ -26,7 +26,7 @@ class TodayViewController: NSViewController, NCWidgetProviding, NSTextFieldDeleg
 
     func control(_ control: NSControl, textView: NSTextView, doCommandBy commandSelector: Selector) -> Bool {
         if commandSelector == #selector(insertNewline(_:)) {
-            let say = Say(text: textView.string ?? "")
+            let say = SayAPI(text: textView.string ?? "")
             say.play(false)
         }
         return false
