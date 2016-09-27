@@ -110,10 +110,22 @@ class ViewController: NSViewController {
     
     @IBAction func say(_ sender: NSControl) {
         sender.isEnabled = false
-        SayAPI(text: self.textForSpeech, voice: self.selectedVoice).play(false)
-        sender.isEnabled = true
+        let sayApi = SayAPI(text: self.textForSpeech, voice: self.selectedVoice)
+        if #available(OSX 10.10, *) {
+            DispatchQueue.global(qos: .background).async {
+                sayApi.play(true)
+                DispatchQueue.main.async {
+                    sender.isEnabled = true
+                }
+            }
+        } else {
+            sayApi.play(true)
+            sender.isEnabled = true
+        }
     }
+
     
+
     @IBAction func saveDocumentAs(_ sender: NSControl) {
         self.voiceSavePanel.runModal()
         if let URL = self.voiceSavePanel.url {
