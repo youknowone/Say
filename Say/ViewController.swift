@@ -82,7 +82,7 @@ class ViewController: NSViewController {
     var alarmTime: Date! = nil
     var alarmTimer: Timer! = nil
     
-    var temp:SayAPI! = SayAPI(text: "hello",voice: nil)
+    var say:SayAPI! = SayAPI(text: "hello",voice: nil)
     var pause:Bool = false
     
     @available(OSX 10.10, *)
@@ -165,17 +165,17 @@ class ViewController: NSViewController {
     
     @IBAction func say(_ sender: NSToolbarItem) {
         
-        if !temp.isplaying(){
+        if !say.isplaying(){
             
             if self.pause{
             
-                temp.continueSpeeking()
+                say.continueSpeeking()
             }
             else{
                 //sender.isEnabled = false
-                temp = SayAPI(text: self.textForSpeech, voice: self.selectedVoice)
-                temp.speechToolBar = sender
-                temp.play(false)
+                say = SayAPI(text: self.textForSpeech, voice: self.selectedVoice)
+                say.speechToolBar = sender
+                say.play(false)
                 
             }
             //sender.isEnabled = true
@@ -186,14 +186,14 @@ class ViewController: NSViewController {
         
         //sender.isEnabled = true
         self.pause = true
-        temp.pause()
+        say.pause()
         
     }
     @IBAction func stop(_ sender: NSControl) {
         
         //sender.isEnabled = true
         self.pause = false
-        temp.stop()
+        say.stop()
         
     }
     
