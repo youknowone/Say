@@ -398,7 +398,15 @@
 /* Class = "NSToolbarItem"; label = "Import"; ObjectID = "ZA3-HX-azw"; */
 "ZA3-HX-azw.label" = "열기";
 
-/* Class = "NSButtonCell"; title = "Say text at"; ObjectID = "0u5-ol-6pM";*/
-"0u5-ol-6pM.title" = "예약하기";
+/* Class = "NSButtonCell"; title = "Say text"; ObjectID = "0u5-ol-6pM";*/
+"0u5-ol-6pM.title" = "예약 : ";
 
+/* Class = "NSTextFieldCell"; title = "hours"; ObjectID = "72m-xq-vAg";*/
+"72m-xq-vAg.title" = "시";
+
+/* Class = "NSTextFieldCell"; title = "minutes"; ObjectID = "Aex-Dy-irS";*/
+"Aex-Dy-irS.title" = "분";
+
+/* Class = "NSTextFieldCell"; title = "seconds later"; ObjectID = "0Ok-oi-6aH";*/
+"0Ok-oi-6aH.title" = "초 후에 말하기";
 
