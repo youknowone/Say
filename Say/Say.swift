@@ -17,12 +17,14 @@ class SayAPI: NSObject {
     var voice: VoiceAPI?
     
     var outputFile: String? = nil
-    
+    var speechToolBar:NSToolbarItem? = nil
     override var description: String {
         get {
             return "<Say: '\(self.text)'>"
         }
     }
+    
+    
 
     /**
         Construct a say interface with given text and voice.
@@ -37,7 +39,14 @@ class SayAPI: NSObject {
         self.voice = voice
         super.init()
     }
+    /*
+    var temp2 : NSSpeechSynthesizerDelegate
     
+    temp2.speechSynthesizer(speechSynthesizer, true){
+    
+            speechToolBar.isEnabled = true
+    }
+    */
     /**
         Construct a say interface with given text and default voice.
      

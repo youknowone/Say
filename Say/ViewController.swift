@@ -120,8 +120,6 @@ class ViewController: NSViewController {
     
     @IBAction func say(_ sender: NSToolbarItem) {
         
-        //temp = Say(text: self.textForSpeech, voice: self.selectedVoice).play(true)
-        //temp = Say(text: self.textForSpeech,voice: self.selectedVoice)
         if !temp.isplaying(){
             
             if self.pause{
@@ -129,28 +127,26 @@ class ViewController: NSViewController {
                 temp.continueSpeeking()
             }
             else{
-                //sender.isEnabled = false
+                sender.isEnabled = false
                 temp = SayAPI(text: self.textForSpeech, voice: self.selectedVoice)
+                temp.speechToolBar = sender
                 temp.play(false)
                 
             }
             //sender.isEnabled = true
         }
-        else{
-            
-        }
         
     }
     @IBAction func pause(_ sender: NSControl) {
         
-        sender.isEnabled = true
+        //sender.isEnabled = true
         self.pause = true
         temp.pause()
         
     }
     @IBAction func stop(_ sender: NSControl) {
         
-        sender.isEnabled = true
+        //sender.isEnabled = true
         self.pause = false
         temp.stop()
         
