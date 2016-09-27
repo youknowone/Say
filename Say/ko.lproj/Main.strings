@@ -403,3 +403,7 @@
 
 /* Class = "NSToolbarItem"; label = "Pause"; ObjectID = "Abu-1G-Dns"; */
 "Abu-1G-Dns.label" = "일시정지";
+
+/* Class = "NSButtonCell"; title = "Say text at"; ObjectID = "0u5-ol-6pM";*/
+"0u5-ol-6pM.title" = "예약하기";
+

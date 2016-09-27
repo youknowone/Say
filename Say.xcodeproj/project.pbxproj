@@ -45,17 +45,13 @@
 		38DF26F01D9647E100332CE1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38DF26EE1D9647E100332CE1 /* LaunchScreen.storyboard */; };
 		38DF26FB1D9647E100332CE1 /* iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DF26FA1D9647E100332CE1 /* iOSTests.swift */; };
 		38DF27061D9647E100332CE1 /* iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DF27051D9647E100332CE1 /* iOSUITests.swift */; };
-		38DF27161D96609600332CE1 /* SayKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38EBA45B1D963C7E0017D221 /* SayKit.swift */; };
 		38DF27171D96609600332CE1 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389F0EE91B0D3ACD0069DBEF /* TodayViewController.swift */; };
 		38DF27191D96609600332CE1 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 389F0EC41B0D3A3B0069DBEF /* NotificationCenter.framework */; };
 		38DF271C1D96609600332CE1 /* TodayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38531EAD1B0E517900E2C16D /* TodayViewController.xib */; };
 		38DF271D1D96609600332CE1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 389F0EE61B0D3ACD0069DBEF /* InfoPlist.strings */; };
 		38DF27271D96614A00332CE1 /* Today.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 38DF27231D96609600332CE1 /* Today.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		38EBA45D1D963C7E0017D221 /* SayKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38EBA45B1D963C7E0017D221 /* SayKit.swift */; };
-		38EBA45E1D963C9E0017D221 /* SayKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38EBA45B1D963C7E0017D221 /* SayKit.swift */; };
 		38EBA4661D963CF90017D221 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B8C1ED1AD6F903009F0783 /* ViewController.swift */; };
 		38EBA4671D963CF90017D221 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B8C1EB1AD6F903009F0783 /* AppDelegate.swift */; };
-		38EBA4681D963CF90017D221 /* SayKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38EBA45B1D963C7E0017D221 /* SayKit.swift */; };
 		38EBA46A1D963CF90017D221 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38531F641B0E8D6200E2C16D /* SystemConfiguration.framework */; };
 		38EBA46B1D963CF90017D221 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38531F621B0E8D5A00E2C16D /* Security.framework */; };
 		38EBA46C1D963CF90017D221 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 38531F541B0E8C0800E2C16D /* libz.dylib */; };
@@ -230,12 +226,8 @@
 		38DF27051D9647E100332CE1 /* iOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSUITests.swift; sourceTree = "<group>"; };
 		38DF27071D9647E100332CE1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		38DF27231D96609600332CE1 /* Today.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Today.appex; sourceTree = BUILT_PRODUCTS_DIR; };
-		38DF27241D96609600332CE1 /* Today copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Today copy-Info.plist"; path = "/Volumes/UserSpace/Projects/Say/Today copy-Info.plist"; sourceTree = "<absolute>"; };
 		38EBA4571D963C010017D221 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
-		38EBA45A1D963C7E0017D221 /* SayKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SayKit.h; sourceTree = "<group>"; };
-		38EBA45B1D963C7E0017D221 /* SayKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SayKit.swift; sourceTree = "<group>"; };
 		38EBA47E1D963CF90017D221 /* Say.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Say.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		38EBA47F1D963CF90017D221 /* Say copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Say copy-Info.plist"; path = "/Volumes/UserSpace/Projects/Say/Say copy-Info.plist"; sourceTree = "<absolute>"; };
 		3C77902F1D968C3600DE34F2 /* Speaker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Speaker.swift; sourceTree = "<group>"; };
 		4EBDB0E51D97D1B000E00010 /* Voice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Voice.swift; sourceTree = "<group>"; };
 		4EF775FC1D9690A000B407BD /* Say.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Say.swift; sourceTree = "<group>"; };
@@ -347,7 +339,6 @@
 			isa = PBXGroup;
 			children = (
 				38B8C1E81AD6F903009F0783 /* Say */,
-				38EBA4581D963C7E0017D221 /* SayKit */,
 				38B8C1FB1AD6F903009F0783 /* SayTests */,
 				389F0EE21B0D3ACD0069DBEF /* Today */,
 				38DF26E41D9647E100332CE1 /* iOS */,
@@ -356,8 +347,6 @@
 				38B8C1E71AD6F903009F0783 /* Products */,
 				4D16F21E26E774FB43E0C712 /* Pods */,
 				7979093ADF6D2E2A28116378 /* Frameworks */,
-				38EBA47F1D963CF90017D221 /* Say copy-Info.plist */,
-				38DF27241D96609600332CE1 /* Today copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -449,16 +438,6 @@
 				38DF27071D9647E100332CE1 /* Info.plist */,
 			);
 			path = iOSUITests;
-			sourceTree = "<group>";
-		};
-		38EBA4581D963C7E0017D221 /* SayKit */ = {
-			isa = PBXGroup;
-			children = (
-				38EBA45A1D963C7E0017D221 /* SayKit.h */,
-				38EBA45B1D963C7E0017D221 /* SayKit.swift */,
-			);
-			name = SayKit;
-			path = SayKit/SayKit;
 			sourceTree = "<group>";
 		};
 		4D16F21E26E774FB43E0C712 /* Pods */ = {
@@ -938,7 +917,6 @@
 			files = (
 				4E2CBB3F1D99249200D096E5 /* Voice.swift in Sources */,
 				4E2CBB3E1D99248F00D096E5 /* Say.swift in Sources */,
-				38EBA45E1D963C9E0017D221 /* SayKit.swift in Sources */,
 				389F0EEA1B0D3ACD0069DBEF /* TodayViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -951,7 +929,6 @@
 				4EF775FD1D9690A000B407BD /* Say.swift in Sources */,
 				38B8C1EC1AD6F903009F0783 /* AppDelegate.swift in Sources */,
 				4EBDB0E61D97D1B000E00010 /* Voice.swift in Sources */,
-				38EBA45D1D963C7E0017D221 /* SayKit.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -995,7 +972,6 @@
 			files = (
 				4E2CBB401D99249200D096E5 /* Voice.swift in Sources */,
 				4E2CBB3D1D99248F00D096E5 /* Say.swift in Sources */,
-				38DF27161D96609600332CE1 /* SayKit.swift in Sources */,
 				38DF27171D96609600332CE1 /* TodayViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1008,7 +984,6 @@
 				4EF775FE1D9690A000B407BD /* Say.swift in Sources */,
 				38EBA4671D963CF90017D221 /* AppDelegate.swift in Sources */,
 				4EBDB0E71D97D1B000E00010 /* Voice.swift in Sources */,
-				38EBA4681D963CF90017D221 /* SayKit.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1465,7 +1440,7 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "Today copy-Info.plist";
+				INFOPLIST_FILE = Today/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.youknowone.Say.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = Today;
@@ -1481,7 +1456,7 @@
 				CODE_SIGN_ENTITLEMENTS = Today/Today.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = "Today copy-Info.plist";
+				INFOPLIST_FILE = Today/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.youknowone.Say.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = Today;
@@ -1500,7 +1475,7 @@
 					NOFABRIC,
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "Say copy-Info.plist";
+				INFOPLIST_FILE = Say/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.youknowone.$(PRODUCT_NAME:rfc1034identifier)";
@@ -1520,7 +1495,7 @@
 					NOFABRIC,
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "Say copy-Info.plist";
+				INFOPLIST_FILE = Say/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.youknowone.$(PRODUCT_NAME:rfc1034identifier)";
