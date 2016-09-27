@@ -16,8 +16,6 @@ class MainWindow: NSWindow {
     @IBOutlet var exportToolbarItem: NSToolbarItem! = nil
     @IBOutlet var openToolbarItem: NSToolbarItem! = nil
     @IBOutlet var stopToolbarItem: NSToolbarItem! = nil
-    //@IBOutlet var statusItem: NSStatusItem! = nil
-    //@IBOutlet var statusMenu: NSMenu! = nil
     
     override func awakeFromNib() {
         /** Load data from cache in NSUserDefaults or from URL.
@@ -40,7 +38,6 @@ class MainWindow: NSWindow {
             }
             return iconData
         }
-        speechToolbarItem.autovalidates = false
         super.awakeFromNib()
         
         if let imageData = syncronizedData("icon_speech", URL: URL(string: "https://upload.wikimedia.org/wikipedia/commons/1/10/Exquisite-microphone.png")!) {
@@ -172,31 +169,26 @@ class ViewController: NSViewController {
                 say.continueSpeeking()
             }
             else{
-                //sender.isEnabled = false
+                
                 say = SayAPI(text: self.textForSpeech, voice: self.selectedVoice)
-                say.speechToolBar = sender
                 say.play(false)
                 
             }
-            //sender.isEnabled = true
         }
         
     }
     @IBAction func pause(_ sender: NSControl) {
         
-        //sender.isEnabled = true
         self.pause = true
         say.pause()
         
     }
     @IBAction func stop(_ sender: NSControl) {
         
-        //sender.isEnabled = true
         self.pause = false
         say.stop()
         
     }
-    
     
     @IBAction func saveDocumentAs(_ sender: NSControl) {
         self.voiceSavePanel.runModal()
