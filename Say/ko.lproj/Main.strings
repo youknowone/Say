@@ -397,3 +397,8 @@
 
 /* Class = "NSToolbarItem"; label = "Import"; ObjectID = "ZA3-HX-azw"; */
 "ZA3-HX-azw.label" = "열기";
+
+/* Class = "NSButtonCell"; title = "Say text at"; ObjectID = "0u5-ol-6pM";*/
+"0u5-ol-6pM.title" = "예약하기";
+
+
