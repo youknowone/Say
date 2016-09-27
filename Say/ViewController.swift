@@ -178,7 +178,6 @@ class ViewController: NSViewController {
     @IBAction func setAlarm(_ sender: NSControl) {
         if alarmButton.state == NSOnState {
             let alarmDelayTime = self.alarmHour.intValue * 3600 + alarmMinute.intValue * 60 + alarmSecond.intValue
-            print(alarmDelayTime)
             self.alarmTime = Date().addingTimeInterval(TimeInterval(alarmDelayTime))
             self.alarmTimer = Timer(fireAt: alarmTime, interval: 0, target: self, selector: #selector(doAlarm), userInfo: nil, repeats: false)
             RunLoop.main.add(alarmTimer, forMode: RunLoopMode.commonModes)
