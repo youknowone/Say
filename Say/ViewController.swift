@@ -162,7 +162,7 @@ class ViewController: NSViewController {
     
     @IBAction func say(_ sender: NSToolbarItem) {
         
-        if !say.isplaying(){
+        if !say.isplaying() {
             
             if self.pause{
             
