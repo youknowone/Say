@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="7bZ-WN-fvp">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Say-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Say" customModuleProvider="target" sceneMemberID="viewController">
@@ -18,44 +18,69 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UVf-iw-IcV">
-                                <frame key="frameInset" minY="20" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NJt-HC-7Os">
                                 <items>
-                                    <navigationItem title="Say" id="HR7-cT-irW"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="XB2-1i-E5b"/>
+                                    <barButtonItem systemItem="play" id="hCx-7W-w6w">
+                                        <connections>
+                                            <action selector="playClicked:" destination="BYZ-38-t0r" id="Wvx-1c-xyu"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="7vD-ZR-bfQ"/>
                                 </items>
-                            </navigationBar>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A1y-fX-W8Q">
-                                <frame key="frameInset" minX="245" minY="439" width="30" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Play"/>
-                                <connections>
-                                    <action selector="playClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="y8f-bR-Fpc"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FOf-Jg-6RG">
-                                <frame key="frameInset" minX="75" minY="439" width="95" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Change Voice"/>
-                                <connections>
-                                    <action selector="changeVoiceClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="H7c-wG-GdN"/>
-                                </connections>
-                            </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Hello, World!" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Vpa-uC-abB">
-                                <frame key="frameInset" minX="17" minY="145" width="342" height="235"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </toolbar>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Hello, World!" translatesAutoresizingMaskIntoConstraints="NO" id="Vpa-uC-abB">
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="NJt-HC-7Os" firstAttribute="top" secondItem="Vpa-uC-abB" secondAttribute="bottom" constant="20" id="8Ze-6b-SOk"/>
+                            <constraint firstItem="NJt-HC-7Os" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="CuI-jy-ZLd"/>
+                            <constraint firstAttribute="trailing" secondItem="NJt-HC-7Os" secondAttribute="trailing" id="IK6-tJ-yMj"/>
+                            <constraint firstItem="Vpa-uC-abB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="QnS-8a-WeM"/>
+                            <constraint firstItem="Vpa-uC-abB" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="aUC-FQ-fVN"/>
+                            <constraint firstAttribute="trailing" secondItem="Vpa-uC-abB" secondAttribute="trailing" constant="20" id="gue-8T-DVe"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="NJt-HC-7Os" secondAttribute="bottom" id="thA-FU-CHT"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Say" id="WUJ-hf-aht">
+                        <barButtonItem key="leftBarButtonItem" title="Language" id="Sqg-OF-Xne">
+                            <connections>
+                                <action selector="changeVoiceClicked:" destination="BYZ-38-t0r" id="OOu-oh-tat"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="textview" destination="Vpa-uC-abB" id="yTS-Z0-ZEa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="964" y="36.431784107946029"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="dfh-gs-RF9">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="7bZ-WN-fvp" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="s3F-Oe-IhJ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="eyr-K2-HVL">
+                        <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </toolbar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Ehf-gq-GmF"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vka-Os-Gxw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="24.800000000000001" y="36.431784107946029"/>
         </scene>
