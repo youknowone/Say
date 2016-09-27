@@ -167,15 +167,13 @@ class ViewController: NSViewController {
             if self.pause{
             
                 say.continueSpeeking()
-            }
-            else{
+            } else {
                 
                 say = SayAPI(text: self.textForSpeech, voice: self.selectedVoice)
                 say.play(false)
                 
             }
         }
-        
     }
     @IBAction func pause(_ sender: NSControl) {
         
@@ -196,7 +194,7 @@ class ViewController: NSViewController {
             SayAPI(text: self.textForSpeech, voice: self.selectedVoice).writeToURL(URL, atomically: true)
         }
     }
-    @IBAction func openTextFile(_ sender: NSControl){
+    @IBAction func openTextFile(_ sender: NSControl) {
         self.textOpenPanel.runModal()
         do {
             if let URL = self.textOpenPanel.url{
