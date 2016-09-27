@@ -62,7 +62,7 @@ class SayAPI: NSObject {
         self.speechSynthesizer.startSpeaking(text)
     }
     
-    func continueSpeeking() {
+    func continueSpeaking() {
         self.speechSynthesizer.continueSpeaking()
     }
     

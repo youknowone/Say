@@ -166,7 +166,7 @@ class ViewController: NSViewController {
             
             if self.pause{
             
-                say.continueSpeeking()
+                say.continueSpeaking()
             } else {
                 
                 say = SayAPI(text: self.textForSpeech, voice: self.selectedVoice)
