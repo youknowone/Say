@@ -27,8 +27,6 @@
 		38531F5F1B0E8D4200E2C16D /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 38531F541B0E8C0800E2C16D /* libz.dylib */; };
 		38531F631B0E8D5A00E2C16D /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38531F621B0E8D5A00E2C16D /* Security.framework */; };
 		38531F651B0E8D6200E2C16D /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38531F641B0E8D6200E2C16D /* SystemConfiguration.framework */; };
-		38531F681B0E8DBF00E2C16D /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38531F661B0E8DBF00E2C16D /* Fabric.framework */; };
-		38531F691B0E8DBF00E2C16D /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38531F671B0E8DBF00E2C16D /* Crashlytics.framework */; };
 		389F0EE11B0D3ACD0069DBEF /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 389F0EC41B0D3A3B0069DBEF /* NotificationCenter.framework */; };
 		389F0EE81B0D3ACD0069DBEF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 389F0EE61B0D3ACD0069DBEF /* InfoPlist.strings */; };
 		389F0EEA1B0D3ACD0069DBEF /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389F0EE91B0D3ACD0069DBEF /* TodayViewController.swift */; };
@@ -196,8 +194,6 @@
 		38531F601B0E8D5300E2C16D /* SecurityFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SecurityFoundation.framework; path = System/Library/Frameworks/SecurityFoundation.framework; sourceTree = SDKROOT; };
 		38531F621B0E8D5A00E2C16D /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		38531F641B0E8D6200E2C16D /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		38531F661B0E8DBF00E2C16D /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Fabric.framework; path = Pods/FabricOSX/Fabric.framework; sourceTree = SOURCE_ROOT; };
-		38531F671B0E8DBF00E2C16D /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Crashlytics.framework; path = Pods/FabricOSX/Crashlytics.framework; sourceTree = SOURCE_ROOT; };
 		3859C7C41B15DFDF005E6D87 /* Version.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Version.xcconfig; sourceTree = SOURCE_ROOT; };
 		38892F2A1CB81FA8003E14D3 /* Pods.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods.framework; path = Pods/../build/Debug/Pods.framework; sourceTree = "<group>"; };
 		389F0EC41B0D3A3B0069DBEF /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
@@ -265,8 +261,6 @@
 				38531F631B0E8D5A00E2C16D /* Security.framework in Frameworks */,
 				38531F5F1B0E8D4200E2C16D /* libz.dylib in Frameworks */,
 				38531F5E1B0E8D3D00E2C16D /* libc++.dylib in Frameworks */,
-				38531F681B0E8DBF00E2C16D /* Fabric.framework in Frameworks */,
-				38531F691B0E8DBF00E2C16D /* Crashlytics.framework in Frameworks */,
 				DEF8F1885BBB478066E71E9B /* Pods_Say.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -380,9 +374,7 @@
 				38B8C1ED1AD6F903009F0783 /* ViewController.swift */,
 				4EBDB0E81D97D1B700E00010 /* SayAPI */,
 				38B8C1EF1AD6F903009F0783 /* Images.xcassets */,
-				38531F661B0E8DBF00E2C16D /* Fabric.framework */,
 				38B8C1F11AD6F903009F0783 /* Main.storyboard */,
-				38531F671B0E8DBF00E2C16D /* Crashlytics.framework */,
 				38B8C1E91AD6F903009F0783 /* Supporting Files */,
 			);
 			path = Say;
