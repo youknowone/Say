@@ -15,7 +15,6 @@ class SayAPI: NSObject {
     let speechSynthesizer: NSSpeechSynthesizer
     var text: String
     var voice: VoiceAPI?
-    
     var outputFile: String? = nil
     
     override var description: String {
@@ -23,7 +22,6 @@ class SayAPI: NSObject {
             return "<Say: '\(self.text)'>"
         }
     }
-
     /**
         Construct a say interface with given text and voice.
      
@@ -37,7 +35,6 @@ class SayAPI: NSObject {
         self.voice = voice
         super.init()
     }
-    
     /**
         Construct a say interface with given text and default voice.
      
@@ -46,7 +43,6 @@ class SayAPI: NSObject {
     public convenience init(text: String) {
         self.init(text: text, voice: nil)
     }
-    
     /**
         Construct a say interface with given text and voice with given voice name.
      
@@ -56,7 +52,6 @@ class SayAPI: NSObject {
     public convenience init?(text: String, voiceIdentifier: String) {
         self.init(text: text, voice: VoiceAPI.init(dictionary: NSSpeechSynthesizer.attributes(forVoice: voiceIdentifier)))
     }
-
     /**
         Composite and play speech.
      
@@ -64,7 +59,24 @@ class SayAPI: NSObject {
      */
     func play(_ waitUntilDone: Bool) {
         self.speechSynthesizer.setVoice(self.voice?.identifier)
-        self.speechSynthesizer.startSpeaking(text);
+        self.speechSynthesizer.startSpeaking(text)
+    }
+    
+    func continueSpeaking() {
+        self.speechSynthesizer.continueSpeaking()
+    }
+    
+    func pause() {
+        self.speechSynthesizer.pauseSpeaking(at:.immediateBoundary)
+    }
+    func stop() {
+        self.speechSynthesizer.stopSpeaking()
+    }
+    
+    func isplaying()-> Bool {
+        
+        return self.speechSynthesizer.isSpeaking
+        
     }
     
     /**

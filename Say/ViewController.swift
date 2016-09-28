@@ -9,12 +9,14 @@
 import Cocoa
 // import SayKit
 
-
 /// Main window of the application
 class MainWindow: NSWindow {
     @IBOutlet var speechToolbarItem: NSToolbarItem! = nil
+    @IBOutlet var pauseToolbarItem: NSToolbarItem! = nil
     @IBOutlet var exportToolbarItem: NSToolbarItem! = nil
     @IBOutlet var openToolbarItem: NSToolbarItem! = nil
+    @IBOutlet var stopToolbarItem: NSToolbarItem! = nil
+    
     override func awakeFromNib() {
         /** Load data from cache in NSUserDefaults or from URL.
          *
@@ -36,10 +38,13 @@ class MainWindow: NSWindow {
             }
             return iconData
         }
-        
         super.awakeFromNib()
+        
         if let imageData = syncronizedData("icon_speech", URL: URL(string: "https://upload.wikimedia.org/wikipedia/commons/1/10/Exquisite-microphone.png")!) {
             self.speechToolbarItem.image = NSImage(data: imageData)
+        }
+        if let imageData = syncronizedData("icon_pause", URL: URL(string: "https://upload.wikimedia.org/wikipedia/commons/5/57/Pause_icon_status.png")!) {
+            self.pauseToolbarItem.image = NSImage(data: imageData)
         }
         if let imageData = syncronizedData("icon_export", URL: URL(string: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Gnome-generic-empty.svg/500px-Gnome-generic-empty.svg.png?uselang=ko")!) {
             self.exportToolbarItem.image = NSImage(data: imageData)
@@ -48,8 +53,11 @@ class MainWindow: NSWindow {
             //assert(self.openToolbarItem != nil)
             self.openToolbarItem.image = NSImage(data: imageData)
         }
+        if let imageData = syncronizedData("icon_stop", URL: URL(string: "https://commons.wikimedia.org/wiki/File%3AStop_icon_status.png")!) {
+            //assert(self.openToolbarItem != nil)
+            self.stopToolbarItem.image = NSImage(data: imageData)
+        }
     }
-    
     
 }
 
@@ -70,6 +78,9 @@ class ViewController: NSViewController {
     
     var alarmTime: Date! = nil
     var alarmTimer: Timer! = nil
+    
+    var say:SayAPI! = SayAPI(text: "hello",voice: nil)
+    var pause:Bool = false
     
     @available(OSX 10.10, *)
     override func viewDidLoad() {
@@ -148,10 +159,33 @@ class ViewController: NSViewController {
         }
     }
     
-    @IBAction func say(_ sender: NSControl) {
-        sender.isEnabled = false
-        SayAPI(text: self.textForSpeech, voice: self.selectedVoice).play(false)
-        sender.isEnabled = true
+    
+    @IBAction func say(_ sender: NSToolbarItem) {
+        
+        if !say.isplaying() {
+            
+            if self.pause{
+            
+                say.continueSpeaking()
+            } else {
+                
+                say = SayAPI(text: self.textForSpeech, voice: self.selectedVoice)
+                say.play(false)
+                
+            }
+        }
+    }
+    @IBAction func pause(_ sender: NSControl) {
+        
+        self.pause = true
+        say.pause()
+        
+    }
+    @IBAction func stop(_ sender: NSControl) {
+        
+        self.pause = false
+        say.stop()
+        
     }
     
     @IBAction func saveDocumentAs(_ sender: NSControl) {
@@ -160,7 +194,7 @@ class ViewController: NSViewController {
             SayAPI(text: self.textForSpeech, voice: self.selectedVoice).writeToURL(URL, atomically: true)
         }
     }
-    @IBAction func openTextFile(_ sender: NSControl){
+    @IBAction func openTextFile(_ sender: NSControl) {
         self.textOpenPanel.runModal()
         do {
             if let URL = self.textOpenPanel.url{
@@ -187,5 +221,6 @@ class ViewController: NSViewController {
         alarmButton.state = NSOffState
     }
     
+
 }
 

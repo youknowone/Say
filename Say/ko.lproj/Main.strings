@@ -400,8 +400,17 @@
 <<<<<<< HEAD
 =======
 
+/* Class = "NSToolbarItem"; label = "Stop"; ObjectID = "lyx-MY-XTa"; */
+"lyx-MY-XTa.label" = "정지";
+
+/* Class = "NSToolbarItem"; label = "Pause"; ObjectID = "Abu-1G-Dns"; */
+"Abu-1G-Dns.label" = "일시정지";
+
 /* Class = "NSButtonCell"; title = "Say text at"; ObjectID = "0u5-ol-6pM";*/
 "0u5-ol-6pM.title" = "예약하기";
 
+<<<<<<< HEAD
 
 >>>>>>> 89f561928b64697055707642753432cd41724493
+=======
+>>>>>>> 35e985f4c9886c04c89c23e99890051c751f9820
