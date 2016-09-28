@@ -21,9 +21,15 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NJt-HC-7Os">
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="XB2-1i-E5b"/>
-                                    <barButtonItem systemItem="play" id="hCx-7W-w6w">
+                                    <barButtonItem image="Play.png" id="hCx-7W-w6w">
                                         <connections>
-                                            <action selector="playClicked:" destination="BYZ-38-t0r" id="Wvx-1c-xyu"/>
+                                            <action selector="playClicked:" destination="BYZ-38-t0r" id="3Dj-DG-RU1"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="yeU-P9-uWb"/>
+                                    <barButtonItem image="Stop.png" id="Mww-ao-8O7">
+                                        <connections>
+                                            <action selector="stopClicked:" destination="BYZ-38-t0r" id="XCh-F8-pWs"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="7vD-ZR-bfQ"/>
@@ -54,6 +60,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="playButton" destination="hCx-7W-w6w" id="GjK-oQ-hkv"/>
                         <outlet property="textview" destination="Vpa-uC-abB" id="yTS-Z0-ZEa"/>
                     </connections>
                 </viewController>
@@ -85,4 +92,8 @@
             <point key="canvasLocation" x="24.800000000000001" y="36.431784107946029"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Play.png" width="25" height="25"/>
+        <image name="Stop.png" width="25" height="25"/>
+    </resources>
 </document>

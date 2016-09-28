@@ -10,14 +10,43 @@ import UIKit
 
 class ViewController: UIViewController, SpeakerDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
     
-    @IBOutlet var textview: UITextView!
+    @IBOutlet weak var textview: UITextView!
+    @IBOutlet weak var playButton: UIBarButtonItem!
+
     let speaker = Speaker.defaultSpeaker
     var languageNames = [String]()
+    var isSpeaking: Bool = false
+    var isPaused: Bool = false
     
     @IBAction func playClicked(_ sender: AnyObject) {
-        if let text = self.textview.text {
-            self.speaker.speakText(text: text)
+        if isSpeaking {
+            if isPaused {
+                speaker.continueSpeaking()
+                isPaused = false
+                playButton.image = UIImage(named: "Pause.png")
+            } else {
+                speaker.pauseSpeaking()
+                isPaused = true
+                playButton.image = UIImage(named: "Play.png")
+            }
+        } else if let text = self.textview.text {
+            speaker.speakText(text: text)
+            isSpeaking = true
+            playButton.image = UIImage(named: "Pause.png")
         }
+    }
+    
+    @IBAction func stopClicked(_ sender: AnyObject) {
+        speaker.stopSpeaking()
+        isPaused = false
+        isSpeaking = false
+        playButton.image = UIImage(named: "Play.png")
+    }
+    
+    func speaker(speaker: Speaker, didFinishSpeechString: String) {
+        isSpeaking = false
+        isPaused = false
+        playButton.image = UIImage(named: "Play.png")
     }
     
     @IBAction func changeVoiceClicked(_ sender: AnyObject) {
@@ -40,12 +69,10 @@ class ViewController: UIViewController, SpeakerDelegate, UIPickerViewDelegate, U
         present(alertController, animated: true, completion: nil)
     }
     
-    func speaker(speaker: Speaker, didFinishSpeechString: String) {
-        print("didFinishSpeechString : ", didFinishSpeechString)
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        speaker.delegate = self
+        
         //init language names
         let voices = self.speaker.voices
         for voice in voices {
