@@ -72,3 +72,4 @@ class ViewController: UIViewController, SpeakerDelegate, UIPickerViewDelegate, U
         // Dispose of any resources that can be recreated.
     }
 }
+@IBOutlet var showText: NSScrollView!

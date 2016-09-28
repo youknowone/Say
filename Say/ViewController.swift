@@ -108,7 +108,7 @@ class ViewController: NSViewController {
             }
         }
     }
- 
+ /*
     func dialogOK(question: String, text: String) {
         let myPopup: NSAlert = NSAlert()
         myPopup.messageText = question
@@ -146,7 +146,64 @@ class ViewController: NSViewController {
         } else {
             return nil
         }
+    }*/
+    func dialogOK(question: String, text: String) {
+        let myPopup: NSAlert = NSAlert()
+        myPopup.messageText = question
+        myPopup.informativeText = text
+        myPopup.alertStyle = NSAlertStyle.warning
+        myPopup.addButton(withTitle: "OK")
+        myPopup.runModal()
     }
+    
+    @IBAction func selectText(_ sender: NSTextField) {
+        if let url = URL(string: sender.stringValue) {
+            let instapaper = "https://www.instapaper.com/text?u="
+            let onlyText = URL(string:"\(instapaper)\(url)")
+            // if URL format is right
+            if let data = NSData.init(contentsOf: onlyText!) {
+                let dataString = String(data:data as Data, encoding:String.Encoding.utf8)!
+                if let result = findMainClass(in: dataString) {
+                    //textView.string = dataString//all html
+                    textView.string = result
+                } else {
+                    dialogOK(question:"URL fetching error", text: "URL is not accessible")
+                }
+            } else {
+                dialogOK(question:"URL fetching error", text: "URL is not accessible")            }
+        } else {
+            dialogOK(question:"URL fetching error", text: "URL is not accessible")
+        }
+    }
+    
+    func findTitle(in dataString: String) -> String? {
+        let regex = try! NSRegularExpression(pattern: "<title>\\s*(.*)\\s*</title>", options: NSRegularExpression.Options())
+        let result = regex.matches(in: dataString as String, options: NSRegularExpression.MatchingOptions(), range: NSRange(location: 0, length: dataString.characters.count))
+        
+        if result.count > 0 {
+            let range = result[0].rangeAt(1)
+            let text = (dataString as NSString).substring(with: range)
+            return text
+        } else {
+            return nil
+        }
+    }
+    func findMainClass(in dataString: String) -> String? {
+        textView.string = dataString
+        let unlinedString = dataString.replacingOccurrences(of: "\n", with: " ");
+        let regex = try! NSRegularExpression(pattern: "<main.*", options: NSRegularExpression.Options())
+        let result = regex.matches(in: unlinedString as String, options: NSRegularExpression.MatchingOptions(), range: NSRange(location: 0, length: dataString.characters.count))
+        
+        if result.count > 0 {
+            let range = result[0].rangeAt(0)
+            let text = (dataString as NSString).substring(with: range)
+            textView.string = text
+            return text
+        } else {
+            return nil
+        }
+    }
+
     
     @IBAction func say(_ sender: NSControl) {
         sender.isEnabled = false
