@@ -735,6 +735,7 @@
                                             <size key="minSize" width="408" height="209"/>
                                             <size key="maxSize" width="463" height="10000000"/>
                                             <attributedString key="textStorage">
+
                                                 <fragment content="Write or paste text here.`Play` to play the sound via audio output.`Export` to export the sound as an .aiff file.">
                                                     <attributes>
                                                         <font key="NSFont" metaFont="smallSystem"/>
