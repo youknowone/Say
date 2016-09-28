@@ -11,7 +11,10 @@ import Cocoa
 //import Crashlytics
 
 @NSApplicationMain
+
 class AppDelegate: NSObject, NSApplicationDelegate {
+    
+    
     func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool {
         // force app to be terminated after closing
         return true

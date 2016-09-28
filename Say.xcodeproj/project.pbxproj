@@ -231,7 +231,7 @@
 		67B66C7B8905683C82719BF4 /* Pods-Say.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Say.release.xcconfig"; path = "Pods/Target Support Files/Pods-Say/Pods-Say.release.xcconfig"; sourceTree = "<group>"; };
 		85C266E2E98713504326D715 /* Pods-Today.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Today.release.xcconfig"; path = "Pods/Target Support Files/Pods-Today/Pods-Today.release.xcconfig"; sourceTree = "<group>"; };
 		99CE34ECE6B8AF4678AD345D /* Pods_Today.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Today.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		CEC48FAA1D969BB200BA78FD /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Main.strings; sourceTree = "<group>"; };
+		CE9AC4761D9993960038E012 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Main.strings; sourceTree = "<group>"; };
 		D5085086CDFD1D10C3AB0619 /* Pods-Today.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Today.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Today/Pods-Today.debug.xcconfig"; sourceTree = "<group>"; };
 		D9A43EE01BD294DADD455567 /* Pods-Say.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Say.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Say/Pods-Say.debug.xcconfig"; sourceTree = "<group>"; };
 		E94767B29E2584F76FB58A25 /* Pods_Say.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Say.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1061,7 +1061,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				38B8C1F21AD6F903009F0783 /* Base */,
-				CEC48FAA1D969BB200BA78FD /* ko */,
+				CE9AC4761D9993960038E012 /* ko */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";

@@ -636,7 +636,7 @@
                                 <toolbarItem implicitItemIdentifier="NSToolbarPrintItem" id="EuY-7R-H1G"/>
                                 <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="mwf-Un-Ifj"/>
                                 <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="uvq-7p-ATT"/>
-                                <toolbarItem implicitItemIdentifier="71E1B7C3-AC11-462C-9BAF-9AA9055DBBFD" label="Play" paletteLabel="Play" tag="1" id="ejk-nz-xAn">
+                                <toolbarItem implicitItemIdentifier="71E1B7C3-AC11-462C-9BAF-9AA9055DBBFD" label="Play" paletteLabel="Play" tag="1" autovalidates="NO" id="ejk-nz-xAn">
                                     <connections>
                                         <action selector="say:" target="Oky-zY-oP4" id="Cad-Yw-tgn"/>
                                     </connections>
@@ -651,9 +651,21 @@
                                         <action selector="saveDocumentAs:" target="Oky-zY-oP4" id="bQt-fI-lvt"/>
                                     </connections>
                                 </toolbarItem>
+                                <toolbarItem implicitItemIdentifier="1CE3227C-5008-47CB-BD4F-99245796BCDB" label="Pause" paletteLabel="Pause" tag="-1" id="Abu-1G-Dns">
+                                    <connections>
+                                        <action selector="pause:" target="Oky-zY-oP4" id="OxX-rx-2gg"/>
+                                    </connections>
+                                </toolbarItem>
+                                <toolbarItem implicitItemIdentifier="C31A443A-DB2C-4DC6-ADDA-0A25D4E5D7E3" label="Stop" paletteLabel="Stop" tag="-1" id="lyx-MY-XTa">
+                                    <connections>
+                                        <action selector="stop:" target="Oky-zY-oP4" id="Zs8-lQ-LzE"/>
+                                    </connections>
+                                </toolbarItem>
                             </allowedToolbarItems>
                             <defaultToolbarItems>
                                 <toolbarItem reference="ejk-nz-xAn"/>
+                                <toolbarItem reference="Abu-1G-Dns"/>
+                                <toolbarItem reference="lyx-MY-XTa"/>
                                 <toolbarItem reference="TyK-Za-nsz"/>
                                 <toolbarItem reference="ZA3-HX-azw"/>
                                 <toolbarItem reference="uvq-7p-ATT"/>
@@ -663,7 +675,9 @@
                             <outlet property="delegate" destination="B8D-0N-5wS" id="mzV-fs-HiO"/>
                             <outlet property="exportToolbarItem" destination="TyK-Za-nsz" id="Mup-fG-Imc"/>
                             <outlet property="openToolbarItem" destination="ZA3-HX-azw" id="B6X-N6-Ftw"/>
-                            <outlet property="speechToolbarItem" destination="ejk-nz-xAn" id="3lL-2C-FGG"/>
+                            <outlet property="pauseToolbarItem" destination="Abu-1G-Dns" id="6w9-2E-E8l"/>
+                            <outlet property="speechToolbarItem" destination="ejk-nz-xAn" id="Zf7-9q-cqH"/>
+                            <outlet property="stopToolbarItem" destination="lyx-MY-XTa" id="sG5-tE-lM5"/>
                         </connections>
                     </window>
                     <connections>
@@ -717,7 +731,7 @@
                                             <size key="minSize" width="438" height="209"/>
                                             <size key="maxSize" width="463" height="10000000"/>
                                             <attributedString key="textStorage">
-                                                <fragment content="Write or paste text here.  `Play` to play the sound via audio output. `Export` to export the sound as an .aiff file.">
+                                                <fragment content="Write or paste text here.`Play` to play the sound via audio output.`Export` to export the sound as an .aiff file.">
                                                     <attributes>
                                                         <font key="NSFont" metaFont="smallSystem"/>
                                                         <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
