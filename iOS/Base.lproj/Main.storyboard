@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -40,16 +41,38 @@
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XrO-IB-k1e">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.5" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KaN-Qo-Ue9">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="9As-n1-uiS">
+                                <connections>
+                                    <action selector="rateChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="mgU-qR-nY8"/>
+                                </connections>
+                            </slider>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="NJt-HC-7Os" firstAttribute="top" secondItem="Vpa-uC-abB" secondAttribute="bottom" constant="20" id="8Ze-6b-SOk"/>
+                            <constraint firstItem="NJt-HC-7Os" firstAttribute="top" secondItem="Vpa-uC-abB" secondAttribute="bottom" constant="100" id="8Ze-6b-SOk"/>
                             <constraint firstItem="NJt-HC-7Os" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="CuI-jy-ZLd"/>
                             <constraint firstAttribute="trailing" secondItem="NJt-HC-7Os" secondAttribute="trailing" id="IK6-tJ-yMj"/>
+                            <constraint firstItem="XrO-IB-k1e" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="KoP-WF-6Tz"/>
                             <constraint firstItem="Vpa-uC-abB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="QnS-8a-WeM"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="KaN-Qo-Ue9" secondAttribute="bottom" constant="68" id="WqJ-DW-15N"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="XrO-IB-k1e" secondAttribute="bottom" constant="68" id="Wrh-gB-wTF"/>
+                            <constraint firstItem="KaN-Qo-Ue9" firstAttribute="leading" secondItem="9As-n1-uiS" secondAttribute="trailing" constant="20" id="YqT-J9-g1f"/>
                             <constraint firstItem="Vpa-uC-abB" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="aUC-FQ-fVN"/>
                             <constraint firstAttribute="trailing" secondItem="Vpa-uC-abB" secondAttribute="trailing" constant="20" id="gue-8T-DVe"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="9As-n1-uiS" secondAttribute="trailing" constant="68" id="gvz-x4-mVQ"/>
+                            <constraint firstItem="9As-n1-uiS" firstAttribute="leading" secondItem="XrO-IB-k1e" secondAttribute="trailing" constant="20" id="i0B-Nj-ThB"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="NJt-HC-7Os" secondAttribute="bottom" id="thA-FU-CHT"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="9As-n1-uiS" secondAttribute="bottom" constant="64" id="xRm-8p-9Mn"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Say" id="WUJ-hf-aht">
@@ -61,6 +84,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="playButton" destination="hCx-7W-w6w" id="GjK-oQ-hkv"/>
+                        <outlet property="rateLabel" destination="KaN-Qo-Ue9" id="E3V-ox-Cdf"/>
                         <outlet property="textview" destination="Vpa-uC-abB" id="yTS-Z0-ZEa"/>
                     </connections>
                 </viewController>
