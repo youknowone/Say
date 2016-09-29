@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, SpeakerDelegate, UIPickerViewDelegate, UIPickerViewDataSource, UITextViewDelegate {
+class ViewController: UIViewController, SpeakerDelegate, UIPickerViewDelegate, UIPickerViewDataSource{
     
     @IBOutlet var textview: UITextView!
     @IBOutlet var panGesture: UIPanGestureRecognizer!
@@ -56,7 +56,6 @@ class ViewController: UIViewController, SpeakerDelegate, UIPickerViewDelegate, U
         self.view.addGestureRecognizer(panGesture)
         //init language names
         let voices = self.speaker.voices
-        textview.delegate = self
         for voice in voices {
             languageNames.append(voice.name)
         }
