@@ -8,9 +8,11 @@
 
 import UIKit
 
-class ViewController: UIViewController, SpeakerDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
+class ViewController: UIViewController, SpeakerDelegate, UIPickerViewDelegate, UIPickerViewDataSource, UITextViewDelegate {
     
     @IBOutlet var textview: UITextView!
+    @IBOutlet var panGesture: UIPanGestureRecognizer!
+    
     let speaker = Speaker.defaultSpeaker
     var languageNames = [String]()
     
@@ -18,6 +20,10 @@ class ViewController: UIViewController, SpeakerDelegate, UIPickerViewDelegate, U
         if let text = self.textview.text {
             self.speaker.speakText(text: text)
         }
+    }
+    
+    @IBAction func DismissKeyboard(sender: UIPanGestureRecognizer) {
+        self.view.endEditing(true)
     }
     
     @IBAction func changeVoiceClicked(_ sender: AnyObject) {
@@ -46,11 +52,15 @@ class ViewController: UIViewController, SpeakerDelegate, UIPickerViewDelegate, U
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        self.view.addGestureRecognizer(panGesture)
         //init language names
         let voices = self.speaker.voices
+        textview.delegate = self
         for voice in voices {
             languageNames.append(voice.name)
         }
+        
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
@@ -66,7 +76,7 @@ class ViewController: UIViewController, SpeakerDelegate, UIPickerViewDelegate, U
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
-    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

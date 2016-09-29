@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="7bZ-WN-fvp">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="7bZ-WN-fvp">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -29,13 +29,18 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="7vD-ZR-bfQ"/>
                                 </items>
                             </toolbar>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Hello, World!" translatesAutoresizingMaskIntoConstraints="NO" id="Vpa-uC-abB">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" text="Hello, World!" translatesAutoresizingMaskIntoConstraints="NO" id="Vpa-uC-abB">
+                                <frame key="frameInset" minY="64" width="375" height="559"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="UfC-c5-zne"/>
+                                </connections>
                             </textView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="NJt-HC-7Os" firstAttribute="top" secondItem="Vpa-uC-abB" secondAttribute="bottom" constant="20" id="8Ze-6b-SOk"/>
                             <constraint firstItem="NJt-HC-7Os" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="CuI-jy-ZLd"/>
@@ -54,10 +59,17 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="panGesture" destination="tN7-AW-e4D" id="BQx-iJ-ZLX"/>
                         <outlet property="textview" destination="Vpa-uC-abB" id="yTS-Z0-ZEa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="tN7-AW-e4D">
+                    <connections>
+                        <action selector="DismissKeyboardWithSender:" destination="BYZ-38-t0r" id="7PO-8q-HmU"/>
+                        <outlet property="delegate" destination="BYZ-38-t0r" id="n9Z-zO-flE"/>
+                    </connections>
+                </panGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="964" y="36.431784107946029"/>
         </scene>
