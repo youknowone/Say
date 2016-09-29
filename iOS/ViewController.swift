@@ -10,14 +10,14 @@ import UIKit
 
 class ViewController: UIViewController, SpeakerDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
     
-    @IBOutlet weak var textview: UITextView!
-    @IBOutlet weak var playButton: UIBarButtonItem!
-    @IBOutlet weak var rateLabel: UILabel!
+    @IBOutlet weak var textView: UITextView! = nil
+    @IBOutlet weak var playButton: UIBarButtonItem! = nil
+    @IBOutlet weak var rateLabel: UILabel! = nil
 
     let speaker = Speaker.defaultSpeaker
-    var languageNames = [String]()
-    var isSpeaking: Bool = false
-    var isPaused: Bool = false
+    var languageNames: [String] = []
+    var isSpeaking = false
+    var isPaused = false
     
     @IBAction func playClicked(_ sender: AnyObject) {
         if isSpeaking {
@@ -30,7 +30,7 @@ class ViewController: UIViewController, SpeakerDelegate, UIPickerViewDelegate, U
                 isPaused = true
                 playButton.image = UIImage(named: "Play.png")
             }
-        } else if let text = self.textview.text {
+        } else if let text = self.textView.text {
             speaker.speakText(text: text)
             isSpeaking = true
             playButton.image = UIImage(named: "Pause.png")
