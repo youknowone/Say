@@ -69,6 +69,10 @@ class ViewController: UIViewController, SpeakerDelegate, UIPickerViewDelegate, U
         present(alertController, animated: true, completion: nil)
     }
     
+    @IBAction func rateChanged(_ sender: UISlider) {
+        speaker.rate = sender.value
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         speaker.delegate = self
