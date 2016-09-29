@@ -6,10 +6,3 @@ target 'Say' do
     pod 'Crashlytics'
     # pod 'SayKit', :path => '../SayKit'
 end
-
-target 'Today' do
-    use_frameworks!
-    pod 'Fabric'
-    pod 'Crashlytics'
-    # pod 'SayKit', :path => '../SayKit'
-end
