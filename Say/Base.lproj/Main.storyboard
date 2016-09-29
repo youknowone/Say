@@ -627,58 +627,11 @@
                     <window key="window" title="Say" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" deferred="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA" customClass="MainWindow" customModule="Say" customModuleProvider="target">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-                        <rect key="contentRect" x="196" y="240" width="480" height="270"/>
+                        <rect key="contentRect" x="196" y="240" width="480" height="360"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
-                        <value key="minSize" type="size" width="480" height="270"/>
-                        <toolbar key="toolbar" implicitIdentifier="36FF4490-015C-47AE-8CB9-E7823ACAA8FA" autosavesConfiguration="NO" displayMode="iconAndLabel" sizeMode="regular" id="I8s-wV-dHm">
-                            <allowedToolbarItems>
-                                <toolbarItem implicitItemIdentifier="NSToolbarShowColorsItem" id="383-BP-qIg"/>
-                                <toolbarItem implicitItemIdentifier="NSToolbarShowFontsItem" id="bGN-Tw-MQ1"/>
-                                <toolbarItem implicitItemIdentifier="NSToolbarPrintItem" id="EuY-7R-H1G"/>
-                                <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="mwf-Un-Ifj"/>
-                                <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="uvq-7p-ATT"/>
-                                <toolbarItem implicitItemIdentifier="71E1B7C3-AC11-462C-9BAF-9AA9055DBBFD" label="Play" paletteLabel="Play" tag="1" autovalidates="NO" id="ejk-nz-xAn">
-                                    <connections>
-                                        <action selector="say:" target="Oky-zY-oP4" id="Cad-Yw-tgn"/>
-                                    </connections>
-                                </toolbarItem>
-                                <toolbarItem implicitItemIdentifier="6A955BC7-564E-48A5-A151-E34E7D5F2DEE" label="Import" paletteLabel="Import" tag="-1" id="ZA3-HX-azw">
-                                    <connections>
-                                        <action selector="openTextFile:" target="Oky-zY-oP4" id="fJm-Yf-yM8"/>
-                                    </connections>
-                                </toolbarItem>
-                                <toolbarItem implicitItemIdentifier="FC3706CA-321A-40CD-9C56-F02197593445" label="Export" paletteLabel="Export" tag="-1" id="TyK-Za-nsz">
-                                    <connections>
-                                        <action selector="saveDocumentAs:" target="Oky-zY-oP4" id="bQt-fI-lvt"/>
-                                    </connections>
-                                </toolbarItem>
-                                <toolbarItem implicitItemIdentifier="1CE3227C-5008-47CB-BD4F-99245796BCDB" label="Pause" paletteLabel="Pause" tag="-1" id="Abu-1G-Dns">
-                                    <connections>
-                                        <action selector="pause:" target="Oky-zY-oP4" id="OxX-rx-2gg"/>
-                                    </connections>
-                                </toolbarItem>
-                                <toolbarItem implicitItemIdentifier="C31A443A-DB2C-4DC6-ADDA-0A25D4E5D7E3" label="Stop" paletteLabel="Stop" tag="-1" id="lyx-MY-XTa">
-                                    <connections>
-                                        <action selector="stop:" target="Oky-zY-oP4" id="Zs8-lQ-LzE"/>
-                                    </connections>
-                                </toolbarItem>
-                            </allowedToolbarItems>
-                            <defaultToolbarItems>
-                                <toolbarItem reference="ejk-nz-xAn"/>
-                                <toolbarItem reference="Abu-1G-Dns"/>
-                                <toolbarItem reference="lyx-MY-XTa"/>
-                                <toolbarItem reference="TyK-Za-nsz"/>
-                                <toolbarItem reference="ZA3-HX-azw"/>
-                                <toolbarItem reference="uvq-7p-ATT"/>
-                            </defaultToolbarItems>
-                        </toolbar>
+                        <value key="minSize" type="size" width="480" height="360"/>
                         <connections>
                             <outlet property="delegate" destination="B8D-0N-5wS" id="mzV-fs-HiO"/>
-                            <outlet property="exportToolbarItem" destination="TyK-Za-nsz" id="Mup-fG-Imc"/>
-                            <outlet property="openToolbarItem" destination="ZA3-HX-azw" id="B6X-N6-Ftw"/>
-                            <outlet property="pauseToolbarItem" destination="Abu-1G-Dns" id="6w9-2E-E8l"/>
-                            <outlet property="speechToolbarItem" destination="ejk-nz-xAn" id="Zf7-9q-cqH"/>
-                            <outlet property="stopToolbarItem" destination="lyx-MY-XTa" id="sG5-tE-lM5"/>
                         </connections>
                     </window>
                     <connections>
@@ -694,28 +647,61 @@
             <objects>
                 <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="Say" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="500" height="327"/>
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="360"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <stackView distribution="fill" orientation="vertical" alignment="leading" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cav-GR-Uhn" userLabel="Import Stack View">
-                                <rect key="frame" x="20" y="285" width="460" height="22"/>
+                                <rect key="frame" x="20" y="289" width="460" height="51"/>
                                 <subviews>
+                                    <stackView distribution="fill" orientation="horizontal" alignment="top" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CV2-l2-JSx">
+                                        <rect key="frame" x="0.0" y="30" width="198" height="21"/>
+                                        <subviews>
+                                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="AyC-Bw-F2w">
+                                                <rect key="frame" x="-6" y="-7" width="134" height="32"/>
+                                                <buttonCell key="cell" type="push" title="Import from file" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="aFN-JT-Rge">
+                                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                    <font key="font" metaFont="system"/>
+                                                </buttonCell>
+                                                <connections>
+                                                    <action selector="openTextFile:" target="XfG-lQ-9wD" id="eV2-Rq-ApR"/>
+                                                </connections>
+                                            </button>
+                                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="9JH-J4-Vpt">
+                                                <rect key="frame" x="124" y="-7" width="80" height="32"/>
+                                                <buttonCell key="cell" type="push" title="Export" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="8vg-Jk-l2x">
+                                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                    <font key="font" metaFont="system"/>
+                                                </buttonCell>
+                                                <connections>
+                                                    <action selector="saveDocumentAs:" target="XfG-lQ-9wD" id="zOT-hX-FzZ"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <visibilityPriorities>
+                                            <integer value="1000"/>
+                                            <integer value="1000"/>
+                                        </visibilityPriorities>
+                                        <customSpacing>
+                                            <real value="3.4028234663852886e+38"/>
+                                            <real value="3.4028234663852886e+38"/>
+                                        </customSpacing>
+                                    </stackView>
                                     <stackView distribution="fill" orientation="horizontal" alignment="top" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Rzd-vd-kff" userLabel="URL Stack View">
                                         <rect key="frame" x="0.0" y="0.0" width="460" height="22"/>
                                         <subviews>
                                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="9om-9p-w6H">
-                                                <rect key="frame" x="-2" y="5" width="64" height="17"/>
+                                                <rect key="frame" x="-2" y="5" width="104" height="17"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="60" id="xjy-0F-BfD"/>
+                                                    <constraint firstAttribute="width" constant="100" id="xjy-0F-BfD"/>
                                                 </constraints>
-                                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="URL" id="pvR-JQ-yJU">
+                                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Import from URL" id="pvR-JQ-yJU">
                                                     <font key="font" metaFont="system"/>
                                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                 </textFieldCell>
                                             </textField>
                                             <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="6da-OV-GLp">
-                                                <rect key="frame" x="68" y="0.0" width="392" height="22"/>
+                                                <rect key="frame" x="108" y="0.0" width="352" height="22"/>
                                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="put URL here" drawsBackground="YES" id="YSy-Z1-9kz">
                                                     <font key="font" metaFont="system"/>
                                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
@@ -738,23 +724,25 @@
                                 </subviews>
                                 <visibilityPriorities>
                                     <integer value="1000"/>
+                                    <integer value="1000"/>
                                 </visibilityPriorities>
                                 <customSpacing>
+                                    <real value="3.4028234663852886e+38"/>
                                     <real value="3.4028234663852886e+38"/>
                                 </customSpacing>
                             </stackView>
                             <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L9g-0O-auU" userLabel="Bordered Scroll View">
-                                <rect key="frame" x="20" y="68" width="460" height="209"/>
+                                <rect key="frame" x="20" y="97" width="460" height="184"/>
                                 <clipView key="contentView" id="c9L-u2-i0w">
-                                    <rect key="frame" x="1" y="1" width="458" height="207"/>
+                                    <rect key="frame" x="1" y="1" width="443" height="182"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <textView importsGraphics="NO" usesFontPanel="YES" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" linkDetection="YES" dashSubstitution="YES" spellingCorrection="YES" smartInsertDelete="YES" id="1kY-L4-Wfr">
-                                            <rect key="frame" x="0.0" y="0.0" width="443" height="207"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="428" height="182"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <size key="minSize" width="458" height="207"/>
-                                            <size key="maxSize" width="463" height="10000000"/>
+                                            <size key="minSize" width="443" height="182"/>
+                                            <size key="maxSize" width="574" height="10000000"/>
                                             <attributedString key="textStorage">
                                                 <fragment content="Write or paste text here.`Play` to play the sound via audio output.`Export` to export the sound as an .aiff file.">
                                                     <attributes>
@@ -773,15 +761,15 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                                 <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="9z9-iT-xMo">
-                                    <rect key="frame" x="443" y="1" width="16" height="207"/>
+                                    <rect key="frame" x="444" y="1" width="15" height="182"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
                             <stackView distribution="fill" orientation="vertical" alignment="leading" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fXy-M6-zQQ" userLabel="Player Stack View">
-                                <rect key="frame" x="20" y="10" width="460" height="50"/>
+                                <rect key="frame" x="20" y="10" width="460" height="79"/>
                                 <subviews>
                                     <stackView distribution="fill" orientation="horizontal" alignment="centerY" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BYc-Ha-WY5" userLabel="Voice Stack View">
-                                        <rect key="frame" x="0.0" y="30" width="460" height="20"/>
+                                        <rect key="frame" x="0.0" y="59" width="460" height="20"/>
                                         <subviews>
                                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="oBJ-y9-Nmp">
                                                 <rect key="frame" x="-2" y="2" width="64" height="17"/>
@@ -816,7 +804,7 @@
                                         </customSpacing>
                                     </stackView>
                                     <stackView distribution="fill" orientation="horizontal" alignment="centerY" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7Ms-Kv-RsB" userLabel="Alarm Stack View">
-                                        <rect key="frame" x="0.0" y="0.0" width="370" height="22"/>
+                                        <rect key="frame" x="0.0" y="29" width="370" height="22"/>
                                         <subviews>
                                             <button translatesAutoresizingMaskIntoConstraints="NO" id="tu0-a6-ffR">
                                                 <rect key="frame" x="-2" y="2" width="97" height="18"/>
@@ -908,6 +896,39 @@
                                             <real value="3.4028234663852886e+38"/>
                                         </customSpacing>
                                     </stackView>
+                                    <stackView distribution="fill" orientation="horizontal" alignment="top" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8lR-w9-bEs">
+                                        <rect key="frame" x="0.0" y="0.0" width="119" height="21"/>
+                                        <subviews>
+                                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="JyY-d2-mjD">
+                                                <rect key="frame" x="-6" y="-7" width="66" height="32"/>
+                                                <buttonCell key="cell" type="push" title="Play" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="2TG-Ps-TtL">
+                                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                    <font key="font" metaFont="system"/>
+                                                </buttonCell>
+                                                <connections>
+                                                    <action selector="say:" target="XfG-lQ-9wD" id="pD8-Ns-yMg"/>
+                                                </connections>
+                                            </button>
+                                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Vyn-73-J4y">
+                                                <rect key="frame" x="56" y="-7" width="69" height="32"/>
+                                                <buttonCell key="cell" type="push" title="Stop" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="mJJ-yC-62z">
+                                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                    <font key="font" metaFont="system"/>
+                                                </buttonCell>
+                                                <connections>
+                                                    <action selector="stop:" target="XfG-lQ-9wD" id="zzQ-94-skU"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <visibilityPriorities>
+                                            <integer value="1000"/>
+                                            <integer value="1000"/>
+                                        </visibilityPriorities>
+                                        <customSpacing>
+                                            <real value="3.4028234663852886e+38"/>
+                                            <real value="3.4028234663852886e+38"/>
+                                        </customSpacing>
+                                    </stackView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="BYc-Ha-WY5" secondAttribute="trailing" id="qG7-ue-YjZ"/>
@@ -915,8 +936,10 @@
                                 <visibilityPriorities>
                                     <integer value="1000"/>
                                     <integer value="1000"/>
+                                    <integer value="1000"/>
                                 </visibilityPriorities>
                                 <customSpacing>
+                                    <real value="3.4028234663852886e+38"/>
                                     <real value="3.4028234663852886e+38"/>
                                     <real value="3.4028234663852886e+38"/>
                                 </customSpacing>
@@ -936,18 +959,22 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="Export" destination="9JH-J4-Vpt" id="qcS-LK-QkG"/>
+                        <outlet property="Play" destination="JyY-d2-mjD" id="QN4-Qd-myD"/>
+                        <outlet property="Stop" destination="Vyn-73-J4y" id="caD-nO-dTl"/>
                         <outlet property="URLField" destination="6da-OV-GLp" id="cPD-nm-RvK"/>
                         <outlet property="alarmButton" destination="tu0-a6-ffR" id="Wwc-7J-bx3"/>
                         <outlet property="alarmHour" destination="iur-Fo-WnH" id="sIH-2u-TKs"/>
                         <outlet property="alarmMinute" destination="xah-fP-uPi" id="oxb-1q-kQ7"/>
                         <outlet property="alarmSecond" destination="rDv-YG-wGb" id="eg7-p7-FqX"/>
+                        <outlet property="importFile" destination="AyC-Bw-F2w" id="EL2-b1-pep"/>
                         <outlet property="textView" destination="1kY-L4-Wfr" id="4Lk-Jc-b1H"/>
                         <outlet property="voiceComboBox" destination="nMR-Om-fuB" id="opG-Oc-sb1"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="85" y="683.5"/>
+            <point key="canvasLocation" x="75" y="700"/>
         </scene>
     </scenes>
 </document>

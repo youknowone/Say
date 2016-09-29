@@ -9,57 +9,6 @@
 import Cocoa
 // import SayKit
 
-/// Main window of the application
-class MainWindow: NSWindow {
-    @IBOutlet var speechToolbarItem: NSToolbarItem! = nil
-    @IBOutlet var pauseToolbarItem: NSToolbarItem! = nil
-    @IBOutlet var exportToolbarItem: NSToolbarItem! = nil
-    @IBOutlet var openToolbarItem: NSToolbarItem! = nil
-    @IBOutlet var stopToolbarItem: NSToolbarItem! = nil
-    
-    override func awakeFromNib() {
-        /** Load data from cache in NSUserDefaults or from URL.
-         *
-         *   Load data from cache in NSUserDefaults. If cache data doesn't exist
-         *   in NSUserDefaults with given tag, download data from URL and save
-         *   it to the given tag before loading.
-         */
-        func syncronizedData(_ tag: String, URL: Foundation.URL) -> Data? {
-            let standardUserDefaults = UserDefaults.standard
-            let iconData = standardUserDefaults.object(forKey: tag) as? Data
-            if iconData == nil {
-                if let iconData = try? Data(contentsOf: URL) {
-                    standardUserDefaults.set(iconData, forKey: tag)
-                    standardUserDefaults.synchronize()
-                    return iconData
-                } else {
-                    //print("Icon is not loadable!")
-                }
-            }
-            return iconData
-        }
-        super.awakeFromNib()
-        
-        if let imageData = syncronizedData("icon_speech", URL: URL(string: "https://upload.wikimedia.org/wikipedia/commons/1/10/Exquisite-microphone.png")!) {
-            self.speechToolbarItem.image = NSImage(data: imageData)
-        }
-        if let imageData = syncronizedData("icon_pause", URL: URL(string: "https://upload.wikimedia.org/wikipedia/commons/5/57/Pause_icon_status.png")!) {
-            self.pauseToolbarItem.image = NSImage(data: imageData)
-        }
-        if let imageData = syncronizedData("icon_export", URL: URL(string: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Gnome-generic-empty.svg/500px-Gnome-generic-empty.svg.png?uselang=ko")!) {
-            self.exportToolbarItem.image = NSImage(data: imageData)
-        }
-        if let imageData = syncronizedData("icon_open", URL: URL(string: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Inkscape_icons_document_import.svg/500px-Inkscape_icons_document_import.svg.png?uselang=ko")!) {
-            //assert(self.openToolbarItem != nil)
-            self.openToolbarItem.image = NSImage(data: imageData)
-        }
-        if let imageData = syncronizedData("icon_stop", URL: URL(string: "https://commons.wikimedia.org/wiki/File%3AStop_icon_status.png")!) {
-            //assert(self.openToolbarItem != nil)
-            self.stopToolbarItem.image = NSImage(data: imageData)
-        }
-    }
-    
-}
 
 /// The controller for main view in main window
 class ViewController: NSViewController {
@@ -78,6 +27,12 @@ class ViewController: NSViewController {
     @IBOutlet var alarmHour: NSTextField!
     @IBOutlet var alarmMinute: NSTextField!
     @IBOutlet var alarmSecond: NSTextField!
+    
+    @IBOutlet weak var importFile: NSButton!
+    @IBOutlet weak var Export: NSButton!
+    
+    @IBOutlet weak var Play: NSButton!
+    @IBOutlet weak var Stop: NSButton!
     
     var alarmTime: Date! = nil
     var alarmTimer: Timer! = nil
@@ -151,7 +106,7 @@ class ViewController: NSViewController {
         }
     }
     
-    @IBAction func say(_ sender: NSToolbarItem) {
+    @IBAction func say(_ sender: NSControl) {
         
         if !say.isplaying() {
             
