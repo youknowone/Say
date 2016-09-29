@@ -404,6 +404,14 @@
 /* Class = "NSToolbarItem"; label = "Pause"; ObjectID = "Abu-1G-Dns"; */
 "Abu-1G-Dns.label" = "일시정지";
 
-/* Class = "NSButtonCell"; title = "Say text at"; ObjectID = "0u5-ol-6pM";*/
-"0u5-ol-6pM.title" = "예약하기";
+/* Class = "NSButtonCell"; title = "Say text"; ObjectID = "0u5-ol-6pM";*/
+"0u5-ol-6pM.title" = "예약 :";
 
+/* Class = "NSTextField"; title = "hours"; ObjectID = "HKG-Va-etP";*/
+"HKG-Va-etP.title" = "시간";
+
+/* Class = "NSTextField"; title = "minutes"; ObjectID = "kIF-fe-tQX";*/
+"kIF-fe-tQX.title" = "분";
+
+/* Class = "NSTextField"; title = "seconds"; ObjectID = "62i-Di-ZV1";*/
+"62i-Di-ZV1.title" = "초 후에 말하기";
