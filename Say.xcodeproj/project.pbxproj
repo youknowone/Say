@@ -58,9 +58,6 @@
 		38EBA4731D963CF90017D221 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 38531EA91B0E508300E2C16D /* InfoPlist.strings */; };
 		38EBA4741D963CF90017D221 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38B8C1F11AD6F903009F0783 /* Main.storyboard */; };
 		3C7790301D968C3600DE34F2 /* Speaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C77902F1D968C3600DE34F2 /* Speaker.swift */; };
-		3CD6D4771D9BED3400000D1D /* Pause@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CD6D4741D9BED3400000D1D /* Pause@2x.png */; };
-		3CD6D4781D9BED3400000D1D /* Play@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CD6D4751D9BED3400000D1D /* Play@2x.png */; };
-		3CD6D4791D9BED3400000D1D /* Stop@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CD6D4761D9BED3400000D1D /* Stop@2x.png */; };
 		4E2CBB3D1D99248F00D096E5 /* Say.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF775FC1D9690A000B407BD /* Say.swift */; };
 		4E2CBB3E1D99248F00D096E5 /* Say.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF775FC1D9690A000B407BD /* Say.swift */; };
 		4E2CBB3F1D99249200D096E5 /* Voice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EBDB0E51D97D1B000E00010 /* Voice.swift */; };
@@ -228,9 +225,6 @@
 		38EBA4571D963C010017D221 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 		38EBA47E1D963CF90017D221 /* Say.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Say.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C77902F1D968C3600DE34F2 /* Speaker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Speaker.swift; sourceTree = "<group>"; };
-		3CD6D4741D9BED3400000D1D /* Pause@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Pause@2x.png"; sourceTree = "<group>"; };
-		3CD6D4751D9BED3400000D1D /* Play@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Play@2x.png"; sourceTree = "<group>"; };
-		3CD6D4761D9BED3400000D1D /* Stop@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Stop@2x.png"; sourceTree = "<group>"; };
 		4EBDB0E51D97D1B000E00010 /* Voice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Voice.swift; sourceTree = "<group>"; };
 		4EF775FC1D9690A000B407BD /* Say.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Say.swift; sourceTree = "<group>"; };
 		67AF1B41D71AD8F6B26E1BD0 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -409,7 +403,6 @@
 		38DF26E41D9647E100332CE1 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				3CD6D4731D9BED3400000D1D /* icons */,
 				38DF26E51D9647E100332CE1 /* AppDelegate.swift */,
 				38DF26E71D9647E100332CE1 /* ViewController.swift */,
 				3C77902F1D968C3600DE34F2 /* Speaker.swift */,
@@ -437,16 +430,6 @@
 				38DF27071D9647E100332CE1 /* Info.plist */,
 			);
 			path = iOSUITests;
-			sourceTree = "<group>";
-		};
-		3CD6D4731D9BED3400000D1D /* icons */ = {
-			isa = PBXGroup;
-			children = (
-				3CD6D4741D9BED3400000D1D /* Pause@2x.png */,
-				3CD6D4751D9BED3400000D1D /* Play@2x.png */,
-				3CD6D4761D9BED3400000D1D /* Stop@2x.png */,
-			);
-			path = icons;
 			sourceTree = "<group>";
 		};
 		4D16F21E26E774FB43E0C712 /* Pods */ = {
@@ -760,9 +743,6 @@
 				38DF26F01D9647E100332CE1 /* LaunchScreen.storyboard in Resources */,
 				38DF26ED1D9647E100332CE1 /* Assets.xcassets in Resources */,
 				38DF26EB1D9647E100332CE1 /* Main.storyboard in Resources */,
-				3CD6D4791D9BED3400000D1D /* Stop@2x.png in Resources */,
-				3CD6D4771D9BED3400000D1D /* Pause@2x.png in Resources */,
-				3CD6D4781D9BED3400000D1D /* Play@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
