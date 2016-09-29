@@ -15,6 +15,7 @@ public class Speaker: NSObject, AVSpeechSynthesizerDelegate {
     var mute = false
     var voice = AVSpeechSynthesisVoice(language: "en-US")     // set default language : english (temporarily)
     var voices = AVSpeechSynthesisVoice.speechVoices()
+    var delegate: SpeakerDelegate?
     
     let synthesizer = AVSpeechSynthesizer()
 
@@ -36,8 +37,7 @@ public class Speaker: NSObject, AVSpeechSynthesizerDelegate {
     }
 
     public func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didFinish utterance: AVSpeechUtterance) {
-//        Do what speeching finished
-        print("speeching finished")
+        delegate?.speaker(speaker: self, didFinishSpeechString: utterance.speechString)
     }
 
     public func speakText(text: String) {
