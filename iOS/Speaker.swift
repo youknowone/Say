@@ -16,7 +16,7 @@ public class Speaker: NSObject, AVSpeechSynthesizerDelegate {
     var voice = AVSpeechSynthesisVoice(language: "en-US")     // set default language : english (temporarily)
     var voices = AVSpeechSynthesisVoice.speechVoices()
     var delegate: SpeakerDelegate?
-    var rate: Float = 1.0
+    var rate: Float = AVSpeechUtteranceDefaultSpeechRate
     
     let synthesizer = AVSpeechSynthesizer()
 

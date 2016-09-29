@@ -12,6 +12,7 @@ class ViewController: UIViewController, SpeakerDelegate, UIPickerViewDelegate, U
     
     @IBOutlet weak var textview: UITextView!
     @IBOutlet weak var playButton: UIBarButtonItem!
+    @IBOutlet weak var rateLabel: UILabel!
 
     let speaker = Speaker.defaultSpeaker
     var languageNames = [String]()
@@ -70,7 +71,9 @@ class ViewController: UIViewController, SpeakerDelegate, UIPickerViewDelegate, U
     }
     
     @IBAction func rateChanged(_ sender: UISlider) {
-        speaker.rate = sender.value
+        let value = roundf(100 * sender.value) / 100
+        speaker.rate = value
+        rateLabel.text = String(value)
     }
     
     override func viewDidLoad() {
