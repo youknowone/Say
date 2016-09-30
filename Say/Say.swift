@@ -61,24 +61,33 @@ class SayAPI: NSObject {
         self.speechSynthesizer.setVoice(self.voice?.identifier)
         self.speechSynthesizer.startSpeaking(text)
     }
-    
+    /**
+        Composite and continue speech.
+     */
     func continueSpeaking() {
         self.speechSynthesizer.continueSpeaking()
     }
-    
+    /**
+        Composite and pause speech.
+     */
     func pause() {
         self.speechSynthesizer.pauseSpeaking(at:.immediateBoundary)
     }
+    /**
+        Composite and stop speech.
+     */
     func stop() {
         self.speechSynthesizer.stopSpeaking()
     }
-    
+    /**
+         Composite
+         if speech is playigng return true
+     */
     func isplaying()-> Bool {
         
         return self.speechSynthesizer.isSpeaking
         
     }
-    
     /**
         Composite and write speech to URL.
      
