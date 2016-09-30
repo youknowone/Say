@@ -73,8 +73,11 @@ class ViewController: NSViewController {
     
     /// Open panel for "Open" menu
     let textOpenPanel = NSOpenPanel()
-    @IBOutlet var datePicker: NSDatePicker! = nil
+    
     @IBOutlet var alarmButton: NSButton!
+    @IBOutlet var alarmHour: NSTextField!
+    @IBOutlet var alarmMinute: NSTextField!
+    @IBOutlet var alarmSecond: NSTextField!
     
     var alarmTime: Date! = nil
     var alarmTimer: Timer! = nil
@@ -89,7 +92,6 @@ class ViewController: NSViewController {
         assert(self.voiceComboBox != nil)
         self.voiceSavePanel.allowedFileTypes = ["aiff"] // default output format is aiff. See `man say`
         self.voiceComboBox.addItems(withObjectValues: VoiceAPI.voices.map({ "\($0.name)(\($0.locale)): \($0.comment)"; }))
-        self.datePicker.dateValue = Date.init()
     }
     
     override var representedObject: Any? {
@@ -131,34 +133,23 @@ class ViewController: NSViewController {
     
     @IBAction func selectText(_ sender: NSTextField) {
         if let url = URL(string: sender.stringValue) {
+            let instapaper = "https://www.instapaper.com/text?u="
+            let instapaperURL = URL(string:"\(instapaper)\(url)")!
             // if URL format is right
-            if let data = NSData.init(contentsOf: url) {
+            if let data = NSData(contentsOf: instapaperURL) {
                 let dataString = String(data:data as Data, encoding:String.Encoding.utf8)!
-                if let result = findTitle(in: dataString) {
+                if let result = findMainClass(in: dataString) {
+                    //textView.string = dataString//all html
                     textView.string = result
                 } else {
-                    dialogOK(question:"URL fetching error", text: "Ther URL is not accessible")
+                    dialogOK(question:"URL fetching error", text: "URL is not accessible")
                 }
             } else {
-                dialogOK(question:"URL fetching error", text: "Ther URL is not accessible")            }
+                dialogOK(question:"URL fetching error", text: "URL is not accessible")            }
         } else {
-            dialogOK(question:"URL fetching error", text: "Ther URL is not accessible")
+            dialogOK(question:"URL fetching error", text: "URL is not accessible")
         }
     }
-    
-    func findTitle(in dataString: String) -> String? {
-        let regex = try! NSRegularExpression(pattern: "<title>\\s*(.*)\\s*</title>", options: NSRegularExpression.Options())
-        let result = regex.matches(in: dataString as String, options: NSRegularExpression.MatchingOptions(), range: NSRange(location: 0, length: dataString.characters.count))
-        if result.count > 0 {
-            let range = result[0].rangeAt(1)
-            let text = (dataString as NSString).substring(with: range)
-            
-            return text
-        } else {
-            return nil
-        }
-    }
-    
     
     @IBAction func say(_ sender: NSToolbarItem) {
         
@@ -175,11 +166,28 @@ class ViewController: NSViewController {
             }
         }
     }
+    func findMainClass(in dataString: String) -> String? {
+        let unlinedString = dataString.replacingOccurrences(of: "\n", with: " ").replacingOccurrences(of: "\r", with: "")
+        
+        let regex = try! NSRegularExpression(pattern: "<main.*</main>", options: NSRegularExpression.Options())
+        let result = regex.matches(in: unlinedString as String, options: NSRegularExpression.MatchingOptions(), range: NSRange(location: 0, length: unlinedString.characters.count))
+        
+        if result.count > 0 {
+            let range = result[0].rangeAt(0)
+            let text = (unlinedString as NSString).substring(with: range)
+            
+            let regexTag = try! NSRegularExpression(pattern: "<[^>]*>", options: NSRegularExpression.Options())
+            var realResult = regexTag.stringByReplacingMatches(in: text, options: NSRegularExpression.MatchingOptions(), range: NSRange(location: 0, length: text.characters.count), withTemplate: "")
+            textView.string = realResult
+            return realResult
+        } else {
+            return nil
+        }
+    }
     @IBAction func pause(_ sender: NSControl) {
         
         self.pause = true
         say.pause()
-        
     }
     @IBAction func stop(_ sender: NSControl) {
         
@@ -206,9 +214,11 @@ class ViewController: NSViewController {
         }
         catch {/* error handling here */}
     }
+    
     @IBAction func setAlarm(_ sender: NSControl) {
         if alarmButton.state == NSOnState {
-            self.alarmTime = datePicker.dateValue
+            let alarmDelayTime = self.alarmHour.intValue * 3600 + alarmMinute.intValue * 60 + alarmSecond.intValue
+            self.alarmTime = Date().addingTimeInterval(TimeInterval(alarmDelayTime))
             self.alarmTimer = Timer(fireAt: alarmTime, interval: 0, target: self, selector: #selector(doAlarm), userInfo: nil, repeats: false)
             RunLoop.main.add(alarmTimer, forMode: RunLoopMode.commonModes)
         } else if alarmButton.state == NSOffState {
@@ -220,7 +230,6 @@ class ViewController: NSViewController {
         SayAPI(text: self.textForSpeech, voice: self.selectedVoice).play(false)
         alarmButton.state = NSOffState
     }
-    
 
 }
 

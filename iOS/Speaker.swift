@@ -15,6 +15,8 @@ public class Speaker: NSObject, AVSpeechSynthesizerDelegate {
     var mute = false
     var voice = AVSpeechSynthesisVoice(language: "en-US")     // set default language : english (temporarily)
     var voices = AVSpeechSynthesisVoice.speechVoices()
+    var delegate: SpeakerDelegate?
+    var rate: Float = AVSpeechUtteranceDefaultSpeechRate
     
     let synthesizer = AVSpeechSynthesizer()
 
@@ -34,16 +36,16 @@ public class Speaker: NSObject, AVSpeechSynthesizerDelegate {
     public func continueSpeaking() {
         self.synthesizer.continueSpeaking()
     }
-
+    
     public func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didFinish utterance: AVSpeechUtterance) {
-//        Do what speeching finished
-        print("speeching finished")
+        delegate?.speaker(speaker: self, didFinishSpeechString: utterance.speechString)
     }
 
     public func speakText(text: String) {
         let utterance = AVSpeechUtterance(string: text)
         utterance.volume = self.mute ? 0.0 : self.volume
         utterance.voice = self.voice
+        utterance.rate = self.rate
         self.synthesizer.speak(utterance)
     }
     
