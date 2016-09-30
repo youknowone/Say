@@ -179,6 +179,7 @@ class ViewController: NSViewController {
         }
     }
     
+
     @IBAction func pause(_ sender: NSControl) {
         self.pause = true
         say.pause()
@@ -187,6 +188,43 @@ class ViewController: NSViewController {
     @IBAction func stop(_ sender: NSControl) {
         self.pause = false
         say.stop()
+
+    @IBAction func say(_ sender: NSControl) {
+        let originalText = self.textForSpeech
+    
+
+        print (originalText)
+        let url: String = "https://openapi.naver.com/v1/language/translate"
+        
+        let request = NSMutableURLRequest(url : NSURL(string : url)! as URL)
+        request.httpMethod = "POST"
+        request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+        request.setValue("2qo6qri2A3MxVUASRYeI", forHTTPHeaderField: "X-Naver-Client-Id")
+        request.setValue("zPVJXM_usW", forHTTPHeaderField: "X-Naver-Client-Secret")
+ 
+        
+        request.httpBody = "source=en&target=ko&text=\(originalText)".data(using: .utf8)
+        
+        
+        let data = try! NSURLConnection.sendSynchronousRequest(request as URLRequest, returning: nil)
+        let JSONObject = try! JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
+        let string = String(data: data, encoding: .utf8)
+        print(string)
+        
+        let JSONMessage = JSONObject["message"] as! [String: Any]
+        let JSONResult = JSONMessage["result"] as! [String: Any]
+        print(JSONResult)
+        
+        let text = JSONResult["translatedText"] as! String
+        print(text)
+        
+       textView.string = text
+        let resultText = text
+
+        sender.isEnabled = false
+        SayAPI(text: resultText, voice: self.selectedVoice).play(false)
+        
+        sender.isEnabled = true
     }
     
     @IBAction func saveDocumentAs(_ sender: NSControl) {
