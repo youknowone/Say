@@ -228,7 +228,7 @@ class ViewController: NSViewController {
     
     func doAlarm() {
         if !say.isplaying() {
-            if self.pause{
+            if self.pause {
                 say.continueSpeaking()
             } else {
                 say = SayAPI(text: self.textForSpeech, voice: self.selectedVoice)
