@@ -152,17 +152,13 @@ class ViewController: NSViewController {
     }
     
     @IBAction func say(_ sender: NSToolbarItem) {
-        
         if !say.isplaying() {
-            
-            if self.pause{
-            
+            if self.pause {
+                self.pause = false
                 say.continueSpeaking()
             } else {
-                
                 say = SayAPI(text: self.textForSpeech, voice: self.selectedVoice)
                 say.play(false)
-                
             }
         }
     }
@@ -184,16 +180,15 @@ class ViewController: NSViewController {
             return nil
         }
     }
+    
     @IBAction func pause(_ sender: NSControl) {
-        
         self.pause = true
         say.pause()
     }
+    
     @IBAction func stop(_ sender: NSControl) {
-        
         self.pause = false
         say.stop()
-        
     }
     
     @IBAction func saveDocumentAs(_ sender: NSControl) {
