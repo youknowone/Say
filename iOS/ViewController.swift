@@ -8,8 +8,10 @@
 
 import UIKit
 
-class ViewController: UIViewController, SpeakerDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
+class ViewController: UIViewController, SpeakerDelegate, UIPickerViewDelegate, UIPickerViewDataSource{
     
+
+    @IBOutlet var panGesture: UIPanGestureRecognizer! = nil
     @IBOutlet weak var textView: UITextView! = nil
     @IBOutlet weak var playButton: UIBarButtonItem! = nil
     @IBOutlet weak var rateLabel: UILabel! = nil
@@ -35,6 +37,11 @@ class ViewController: UIViewController, SpeakerDelegate, UIPickerViewDelegate, U
             isSpeaking = true
             playButton.image = UIImage(named: "Pause.png")
         }
+    }
+    
+
+    @IBAction func DismissKeyboard(sender: UIPanGestureRecognizer) {
+        self.view.endEditing(true)
     }
     
     @IBAction func stopClicked(_ sender: AnyObject) {
@@ -78,13 +85,14 @@ class ViewController: UIViewController, SpeakerDelegate, UIPickerViewDelegate, U
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.addGestureRecognizer(panGesture)
         speaker.delegate = self
-        
         //init language names
         let voices = self.speaker.voices
         for voice in voices {
             languageNames.append(voice.name)
         }
+        
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
@@ -100,7 +108,7 @@ class ViewController: UIViewController, SpeakerDelegate, UIPickerViewDelegate, U
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
-    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
