@@ -227,7 +227,14 @@ class ViewController: NSViewController {
     }
     
     func doAlarm() {
-        SayAPI(text: self.textForSpeech, voice: self.selectedVoice).play(false)
+        if !say.isplaying() {
+            if self.pause{
+                say.continueSpeaking()
+            } else {
+                say = SayAPI(text: self.textForSpeech, voice: self.selectedVoice)
+                say.play(false)
+            }
+        }
         alarmButton.state = NSOffState
     }
 
