@@ -41,6 +41,9 @@ class TodayViewController: NSViewController, NCWidgetProviding, NSTextFieldDeleg
                     say = SayAPI(text: self.textField.stringValue )
                     say.play(false)
                 }
+            } else {
+                self.pause = true
+                say.pause()
             }
         }
         return false
@@ -49,6 +52,7 @@ class TodayViewController: NSViewController, NCWidgetProviding, NSTextFieldDeleg
     @IBAction func say(_ control: NSControl) {
         if !say.isplaying() {
             if self.pause {
+                self.pause = false
                 say.continueSpeaking()
             } else {
                 say = SayAPI(text: self.textField.stringValue )

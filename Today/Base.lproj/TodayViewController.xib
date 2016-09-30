@@ -18,7 +18,7 @@
         <customView simulatedAppContext="notificationCenter" translatesAutoresizingMaskIntoConstraints="NO" id="Hz6-mo-xeY">
             <rect key="frame" x="0.0" y="0.0" width="320" height="45"/>
             <subviews>
-                <textField verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="G29-Z4-BLU">
+                <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="G29-Z4-BLU">
                     <rect key="frame" x="11" y="12" width="249" height="22"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="Text to create speech" drawsBackground="YES" id="dzS-tC-DaE">
                         <font key="font" metaFont="system"/>
@@ -29,9 +29,13 @@
                         <outlet property="delegate" destination="-2" id="0VZ-2d-zsV"/>
                     </connections>
                 </textField>
-                <button misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="F4v-QJ-Qdw">
+                <button translatesAutoresizingMaskIntoConstraints="NO" id="F4v-QJ-Qdw">
                     <rect key="frame" x="286" y="12" width="19" height="22"/>
-                    <buttonCell key="cell" type="square" title="22" bezelStyle="shadowlessSquare" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="Y2u-BJ-M4r">
+                    <constraints>
+                        <constraint firstAttribute="height" constant="22" id="aVt-Rf-FN3"/>
+                        <constraint firstAttribute="width" constant="19" id="iAF-Sl-0EN"/>
+                    </constraints>
+                    <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="Ic_pause_48px.svg" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="Y2u-BJ-M4r">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
@@ -39,9 +43,13 @@
                         <action selector="pause:" target="-2" id="5nd-lT-b3K"/>
                     </connections>
                 </button>
-                <button misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="N2U-d7-tLN">
+                <button translatesAutoresizingMaskIntoConstraints="NO" id="N2U-d7-tLN">
                     <rect key="frame" x="264" y="12" width="19" height="22"/>
-                    <buttonCell key="cell" type="square" title="11" bezelStyle="shadowlessSquare" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="Ydd-kV-tFw">
+                    <constraints>
+                        <constraint firstAttribute="height" constant="22" id="Xwy-ph-H5o"/>
+                        <constraint firstAttribute="width" constant="19" id="rDP-Bx-iqu"/>
+                    </constraints>
+                    <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="Ic_play_48px.svg" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="Ydd-kV-tFw">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
@@ -65,4 +73,8 @@
             <point key="canvasLocation" x="49" y="106.5"/>
         </customView>
     </objects>
+    <resources>
+        <image name="Ic_pause_48px.svg" width="48" height="48"/>
+        <image name="Ic_play_48px.svg" width="48" height="48"/>
+    </resources>
 </document>
