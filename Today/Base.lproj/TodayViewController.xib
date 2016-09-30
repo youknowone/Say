@@ -1,24 +1,25 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="7702"/>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11201"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="TodayViewController" customModule="Today" customModuleProvider="target">
             <connections>
+                <outlet property="pauseButton" destination="F4v-QJ-Qdw" id="dJ1-nX-VuU"/>
+                <outlet property="playButton" destination="N2U-d7-tLN" id="qT9-ca-qP4"/>
+                <outlet property="textField" destination="G29-Z4-BLU" id="dCZ-Qu-3Cg"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
             </connections>
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
-        <customView misplaced="YES" simulatedAppContext="notificationCenter" translatesAutoresizingMaskIntoConstraints="NO" id="Hz6-mo-xeY">
-            <rect key="frame" x="0.0" y="-5" width="320" height="53"/>
+        <customView simulatedAppContext="notificationCenter" translatesAutoresizingMaskIntoConstraints="NO" id="Hz6-mo-xeY">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="45"/>
             <subviews>
-                <textField verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="G29-Z4-BLU">
-                    <rect key="frame" x="15" y="20" width="291" height="22"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="22" id="c0e-67-j02"/>
-                    </constraints>
+                <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="G29-Z4-BLU">
+                    <rect key="frame" x="11" y="12" width="249" height="22"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="Text to create speech" drawsBackground="YES" id="dzS-tC-DaE">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
@@ -28,14 +29,52 @@
                         <outlet property="delegate" destination="-2" id="0VZ-2d-zsV"/>
                     </connections>
                 </textField>
+                <button translatesAutoresizingMaskIntoConstraints="NO" id="F4v-QJ-Qdw">
+                    <rect key="frame" x="286" y="12" width="19" height="22"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="22" id="aVt-Rf-FN3"/>
+                        <constraint firstAttribute="width" constant="19" id="iAF-Sl-0EN"/>
+                    </constraints>
+                    <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="Ic_pause_48px.svg" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="Y2u-BJ-M4r">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="pause:" target="-2" id="5nd-lT-b3K"/>
+                    </connections>
+                </button>
+                <button translatesAutoresizingMaskIntoConstraints="NO" id="N2U-d7-tLN">
+                    <rect key="frame" x="264" y="12" width="19" height="22"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="22" id="Xwy-ph-H5o"/>
+                        <constraint firstAttribute="width" constant="19" id="rDP-Bx-iqu"/>
+                    </constraints>
+                    <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="Ic_play_48px.svg" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="Ydd-kV-tFw">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="say:" target="-2" id="Cw9-Fh-Q21"/>
+                    </connections>
+                </button>
             </subviews>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="G29-Z4-BLU" secondAttribute="bottom" constant="8" id="4UI-XX-Iu7"/>
-                <constraint firstItem="G29-Z4-BLU" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="8" id="Dxn-UW-jlO"/>
-                <constraint firstItem="G29-Z4-BLU" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="8" id="Hzk-hG-PFe"/>
-                <constraint firstAttribute="trailing" secondItem="G29-Z4-BLU" secondAttribute="trailing" constant="8" id="snx-Hk-LVR"/>
+                <constraint firstItem="G29-Z4-BLU" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="11" id="6fE-gJ-qnk"/>
+                <constraint firstItem="N2U-d7-tLN" firstAttribute="leading" secondItem="G29-Z4-BLU" secondAttribute="trailing" constant="4" id="A0j-pa-cs2"/>
+                <constraint firstItem="F4v-QJ-Qdw" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="11" id="KTZ-lA-dax"/>
+                <constraint firstAttribute="bottom" secondItem="N2U-d7-tLN" secondAttribute="bottom" constant="12" id="NGE-Lr-abi"/>
+                <constraint firstAttribute="bottom" secondItem="G29-Z4-BLU" secondAttribute="bottom" constant="12" id="QTW-D8-48c"/>
+                <constraint firstItem="G29-Z4-BLU" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="11" id="akj-j1-0f6"/>
+                <constraint firstItem="N2U-d7-tLN" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="11" id="d3X-my-Bfz"/>
+                <constraint firstAttribute="trailing" secondItem="F4v-QJ-Qdw" secondAttribute="trailing" constant="15" id="jKc-8Y-hzz"/>
+                <constraint firstItem="F4v-QJ-Qdw" firstAttribute="leading" secondItem="N2U-d7-tLN" secondAttribute="trailing" constant="3" id="rLS-Tr-Ckv"/>
+                <constraint firstAttribute="bottom" secondItem="F4v-QJ-Qdw" secondAttribute="bottom" constant="12" id="t8r-j3-rE4"/>
             </constraints>
-            <point key="canvasLocation" x="379" y="317.5"/>
+            <point key="canvasLocation" x="49" y="106.5"/>
         </customView>
     </objects>
+    <resources>
+        <image name="Ic_pause_48px.svg" width="48" height="48"/>
+        <image name="Ic_play_48px.svg" width="48" height="48"/>
+    </resources>
 </document>

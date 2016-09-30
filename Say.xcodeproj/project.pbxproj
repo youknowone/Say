@@ -60,6 +60,8 @@
 		4EF775FD1D9690A000B407BD /* Say.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF775FC1D9690A000B407BD /* Say.swift */; };
 		4EF775FE1D9690A000B407BD /* Say.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF775FC1D9690A000B407BD /* Say.swift */; };
 		DEF8F1885BBB478066E71E9B /* Pods_Say.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E94767B29E2584F76FB58A25 /* Pods_Say.framework */; };
+		F60ED9D31D9E934400BFEF25 /* Ic_play_48px.svg.png in Resources */ = {isa = PBXBuildFile; fileRef = F60ED9D11D9E934400BFEF25 /* Ic_play_48px.svg.png */; };
+		F60ED9D41D9E934400BFEF25 /* Ic_pause_48px.svg.png in Resources */ = {isa = PBXBuildFile; fileRef = F60ED9D21D9E934400BFEF25 /* Ic_pause_48px.svg.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -212,6 +214,8 @@
 		D5085086CDFD1D10C3AB0619 /* Pods-Today.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Today.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Today/Pods-Today.debug.xcconfig"; sourceTree = "<group>"; };
 		D9A43EE01BD294DADD455567 /* Pods-Say.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Say.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Say/Pods-Say.debug.xcconfig"; sourceTree = "<group>"; };
 		E94767B29E2584F76FB58A25 /* Pods_Say.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Say.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F60ED9D11D9E934400BFEF25 /* Ic_play_48px.svg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Ic_play_48px.svg.png; sourceTree = "<group>"; };
+		F60ED9D21D9E934400BFEF25 /* Ic_pause_48px.svg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Ic_pause_48px.svg.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -280,6 +284,8 @@
 		389F0EE21B0D3ACD0069DBEF /* Today */ = {
 			isa = PBXGroup;
 			children = (
+				F60ED9D11D9E934400BFEF25 /* Ic_play_48px.svg.png */,
+				F60ED9D21D9E934400BFEF25 /* Ic_pause_48px.svg.png */,
 				389F0EE91B0D3ACD0069DBEF /* TodayViewController.swift */,
 				38531EAD1B0E517900E2C16D /* TodayViewController.xib */,
 				389F0EE31B0D3ACD0069DBEF /* Supporting Files */,
@@ -657,7 +663,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F60ED9D41D9E934400BFEF25 /* Ic_pause_48px.svg.png in Resources */,
 				3879AAA21D9C1C680073331C /* TodayViewController.xib in Resources */,
+				F60ED9D31D9E934400BFEF25 /* Ic_play_48px.svg.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

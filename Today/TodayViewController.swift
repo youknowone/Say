@@ -12,10 +12,17 @@ import NotificationCenter
 
 class TodayViewController: NSViewController, NCWidgetProviding, NSTextFieldDelegate {
 
+    @IBOutlet var playButton: NSButton!
+    @IBOutlet var pauseButton: NSButton!
+    @IBOutlet var textField: NSTextField! = nil
+    
+    var say:SayAPI! = SayAPI(text: "", voice: nil)
+    var pause:Bool = false
+    
     override var nibName: String? {
         return "TodayViewController"
     }
-
+    
     @available(OSXApplicationExtension 10.10, *)
     func widgetPerformUpdate(completionHandler: (@escaping (NCUpdateResult) -> Void)) {
         // Update your data and prepare for a snapshot. Call completion handler when you are done
@@ -26,9 +33,37 @@ class TodayViewController: NSViewController, NCWidgetProviding, NSTextFieldDeleg
 
     func control(_ control: NSControl, textView: NSTextView, doCommandBy commandSelector: Selector) -> Bool {
         if commandSelector == #selector(insertNewline(_:)) {
-            let say = SayAPI(text: textView.string ?? "")
-            say.play(false)
+            if !say.isplaying() {
+                if self.pause{
+                    self.pause = false
+                    say.continueSpeaking()
+                } else {
+                    say = SayAPI(text: self.textField.stringValue )
+                    say.play(false)
+                }
+            } else {
+                self.pause = true
+                say.pause()
+            }
         }
         return false
     }
+    
+    @IBAction func say(_ control: NSControl) {
+        if !say.isplaying() {
+            if self.pause {
+                self.pause = false
+                say.continueSpeaking()
+            } else {
+                say = SayAPI(text: self.textField.stringValue )
+                say.play(false)
+            }
+        }
+    }
+    
+    @IBAction func pause(_ sender: NSControl) {
+        self.pause = true
+        say.pause()
+    }
+    
 }
