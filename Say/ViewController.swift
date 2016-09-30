@@ -50,11 +50,9 @@ class MainWindow: NSWindow {
             self.exportToolbarItem.image = NSImage(data: imageData)
         }
         if let imageData = syncronizedData("icon_open", URL: URL(string: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Inkscape_icons_document_import.svg/500px-Inkscape_icons_document_import.svg.png?uselang=ko")!) {
-            //assert(self.openToolbarItem != nil)
             self.openToolbarItem.image = NSImage(data: imageData)
         }
-        if let imageData = syncronizedData("icon_stop", URL: URL(string: "https://commons.wikimedia.org/wiki/File%3AStop_icon_status.png")!) {
-            //assert(self.openToolbarItem != nil)
+        if let imageData = syncronizedData("icon_stop_", URL: URL(string: "https://upload.wikimedia.org/wikipedia/commons/b/bf/Stop_icon_status.png")!) {
             self.stopToolbarItem.image = NSImage(data: imageData)
         }
     }
