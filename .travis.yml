@@ -3,3 +3,7 @@ sudo: false
 xcode_workspace: Say.xcworkspace
 osx_image: xcode8
 xcode_scheme: macOS
+install:
+  - pod install
+script:
+  - xcodebuild -workspace Say.xcworkspace -scheme macOS
