@@ -4,5 +4,4 @@ target 'Say' do
     use_frameworks!
     pod 'Fabric'
     pod 'Crashlytics'
-    # pod 'SayKit', :path => '../SayKit'
 end

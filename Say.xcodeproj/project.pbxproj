@@ -32,7 +32,6 @@
 		3879AAA31D9C1C8C0073331C /* Say.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF775FC1D9690A000B407BD /* Say.swift */; };
 		3879AAA41D9C1C8C0073331C /* Voice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EBDB0E51D97D1B000E00010 /* Voice.swift */; };
 		3879AAA71D9C248E0073331C /* Today.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 3879AA8D1D9C1C2B0073331C /* Today.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		3879AAC91D9C27F00073331C /* Today.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 3879AA8D1D9C1C2B0073331C /* Today.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		38B8C1EC1AD6F903009F0783 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B8C1EB1AD6F903009F0783 /* AppDelegate.swift */; };
 		38B8C1EE1AD6F903009F0783 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B8C1ED1AD6F903009F0783 /* ViewController.swift */; };
 		38B8C1F01AD6F903009F0783 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38B8C1EF1AD6F903009F0783 /* Images.xcassets */; };
@@ -45,20 +44,9 @@
 		38DF26F01D9647E100332CE1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38DF26EE1D9647E100332CE1 /* LaunchScreen.storyboard */; };
 		38DF26FB1D9647E100332CE1 /* iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DF26FA1D9647E100332CE1 /* iOSTests.swift */; };
 		38DF27061D9647E100332CE1 /* iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DF27051D9647E100332CE1 /* iOSUITests.swift */; };
-		38EBA4661D963CF90017D221 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B8C1ED1AD6F903009F0783 /* ViewController.swift */; };
-		38EBA4671D963CF90017D221 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B8C1EB1AD6F903009F0783 /* AppDelegate.swift */; };
-		38EBA46A1D963CF90017D221 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38531F641B0E8D6200E2C16D /* SystemConfiguration.framework */; };
-		38EBA46B1D963CF90017D221 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38531F621B0E8D5A00E2C16D /* Security.framework */; };
-		38EBA46C1D963CF90017D221 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 38531F541B0E8C0800E2C16D /* libz.dylib */; };
-		38EBA46D1D963CF90017D221 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 38531F5D1B0E8D3D00E2C16D /* libc++.dylib */; };
-		38EBA4721D963CF90017D221 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38B8C1EF1AD6F903009F0783 /* Images.xcassets */; };
-		38EBA4731D963CF90017D221 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 38531EA91B0E508300E2C16D /* InfoPlist.strings */; };
-		38EBA4741D963CF90017D221 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38B8C1F11AD6F903009F0783 /* Main.storyboard */; };
 		3C7790301D968C3600DE34F2 /* Speaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C77902F1D968C3600DE34F2 /* Speaker.swift */; };
 		4EBDB0E61D97D1B000E00010 /* Voice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EBDB0E51D97D1B000E00010 /* Voice.swift */; };
-		4EBDB0E71D97D1B000E00010 /* Voice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EBDB0E51D97D1B000E00010 /* Voice.swift */; };
 		4EF775FD1D9690A000B407BD /* Say.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF775FC1D9690A000B407BD /* Say.swift */; };
-		4EF775FE1D9690A000B407BD /* Say.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF775FC1D9690A000B407BD /* Say.swift */; };
 		DEF8F1885BBB478066E71E9B /* Pods_Say.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E94767B29E2584F76FB58A25 /* Pods_Say.framework */; };
 		F60ED9D31D9E934400BFEF25 /* Ic_play_48px.svg.png in Resources */ = {isa = PBXBuildFile; fileRef = F60ED9D11D9E934400BFEF25 /* Ic_play_48px.svg.png */; };
 		F60ED9D41D9E934400BFEF25 /* Ic_pause_48px.svg.png in Resources */ = {isa = PBXBuildFile; fileRef = F60ED9D21D9E934400BFEF25 /* Ic_pause_48px.svg.png */; };
@@ -73,13 +61,6 @@
 			remoteInfo = Version;
 		};
 		3879AAA51D9C247D0073331C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 38B8C1DE1AD6F903009F0783 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 3879AA8C1D9C1C2B0073331C;
-			remoteInfo = Today;
-		};
-		3879AAC71D9C27E50073331C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 38B8C1DE1AD6F903009F0783 /* Project object */;
 			proxyType = 1;
@@ -107,13 +88,6 @@
 			remoteGlobalIDString = 38DF26E21D9647E000332CE1;
 			remoteInfo = iOS;
 		};
-		38EBA4611D963CF90017D221 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 38B8C1DE1AD6F903009F0783 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 3859C7BB1B15DF55005E6D87;
-			remoteInfo = Version;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -133,26 +107,6 @@
 			dstSubfolderSpec = 13;
 			files = (
 				3879AAA71D9C248E0073331C /* Today.appex in Embed App Extensions */,
-			);
-			name = "Embed App Extensions";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		38EBA4751D963CF90017D221 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		38EBA4761D963CF90017D221 /* Embed App Extensions */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 13;
-			files = (
-				3879AAC91D9C27F00073331C /* Today.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -202,7 +156,6 @@
 		38DF27051D9647E100332CE1 /* iOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSUITests.swift; sourceTree = "<group>"; };
 		38DF27071D9647E100332CE1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		38EBA4571D963C010017D221 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
-		38EBA47E1D963CF90017D221 /* Say.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Say.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C77902F1D968C3600DE34F2 /* Speaker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Speaker.swift; sourceTree = "<group>"; };
 		4EBDB0E51D97D1B000E00010 /* Voice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Voice.swift; sourceTree = "<group>"; };
 		4EF775FC1D9690A000B407BD /* Say.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Say.swift; sourceTree = "<group>"; };
@@ -267,17 +220,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		38EBA4691D963CF90017D221 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				38EBA46A1D963CF90017D221 /* SystemConfiguration.framework in Frameworks */,
-				38EBA46B1D963CF90017D221 /* Security.framework in Frameworks */,
-				38EBA46C1D963CF90017D221 /* libz.dylib in Frameworks */,
-				38EBA46D1D963CF90017D221 /* libc++.dylib in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -323,7 +265,6 @@
 			children = (
 				38B8C1E61AD6F903009F0783 /* Say.app */,
 				38B8C1F81AD6F903009F0783 /* SayTests.xctest */,
-				38EBA47E1D963CF90017D221 /* Say.app */,
 				38DF26E31D9647E000332CE1 /* Say.app */,
 				38DF26F61D9647E100332CE1 /* iOSTests.xctest */,
 				38DF27011D9647E100332CE1 /* iOSUITests.xctest */,
@@ -559,27 +500,6 @@
 			productReference = 38DF27011D9647E100332CE1 /* iOSUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
-		38EBA45F1D963CF90017D221 /* Say-dev */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 38EBA47B1D963CF90017D221 /* Build configuration list for PBXNativeTarget "Say-dev" */;
-			buildPhases = (
-				38EBA4651D963CF90017D221 /* Sources */,
-				38EBA4691D963CF90017D221 /* Frameworks */,
-				38EBA4711D963CF90017D221 /* Resources */,
-				38EBA4751D963CF90017D221 /* CopyFiles */,
-				38EBA4761D963CF90017D221 /* Embed App Extensions */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				3879AAC81D9C27E50073331C /* PBXTargetDependency */,
-				38EBA4601D963CF90017D221 /* PBXTargetDependency */,
-			);
-			name = "Say-dev";
-			productName = Say;
-			productReference = 38EBA47E1D963CF90017D221 /* Say.app */;
-			productType = "com.apple.product-type.application";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -650,7 +570,6 @@
 				38B8C1E51AD6F903009F0783 /* Say */,
 				3879AA8C1D9C1C2B0073331C /* Today */,
 				38B8C1F71AD6F903009F0783 /* SayTests */,
-				38EBA45F1D963CF90017D221 /* Say-dev */,
 				38DF26E21D9647E000332CE1 /* iOS */,
 				38DF26F51D9647E100332CE1 /* iOSTests */,
 				38DF27001D9647E100332CE1 /* iOSUITests */,
@@ -710,16 +629,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		38EBA4711D963CF90017D221 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				38EBA4721D963CF90017D221 /* Images.xcassets in Resources */,
-				38EBA4731D963CF90017D221 /* InfoPlist.strings in Resources */,
-				38EBA4741D963CF90017D221 /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
@@ -763,7 +672,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		B04CE90081DEBDF7E17EC1EA /* [CP] Copy Pods Resources */ = {
@@ -854,17 +763,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		38EBA4651D963CF90017D221 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				38EBA4661D963CF90017D221 /* ViewController.swift in Sources */,
-				4EF775FE1D9690A000B407BD /* Say.swift in Sources */,
-				38EBA4671D963CF90017D221 /* AppDelegate.swift in Sources */,
-				4EBDB0E71D97D1B000E00010 /* Voice.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -877,11 +775,6 @@
 			isa = PBXTargetDependency;
 			target = 3879AA8C1D9C1C2B0073331C /* Today */;
 			targetProxy = 3879AAA51D9C247D0073331C /* PBXContainerItemProxy */;
-		};
-		3879AAC81D9C27E50073331C /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 3879AA8C1D9C1C2B0073331C /* Today */;
-			targetProxy = 3879AAC71D9C27E50073331C /* PBXContainerItemProxy */;
 		};
 		38B8C1FA1AD6F903009F0783 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -897,11 +790,6 @@
 			isa = PBXTargetDependency;
 			target = 38DF26E21D9647E000332CE1 /* iOS */;
 			targetProxy = 38DF27021D9647E100332CE1 /* PBXContainerItemProxy */;
-		};
-		38EBA4601D963CF90017D221 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 3859C7BB1B15DF55005E6D87 /* Version */;
-			targetProxy = 38EBA4611D963CF90017D221 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1114,7 +1002,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = Say/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.youknowone.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
@@ -1132,7 +1020,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = Say/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.youknowone.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
@@ -1304,45 +1192,6 @@
 			};
 			name = Release;
 		};
-		38EBA47C1D963CF90017D221 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					NOFABRIC,
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = Say/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
-				PRODUCT_BUNDLE_IDENTIFIER = "org.youknowone.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = Say;
-				SWIFT_VERSION = 3.0;
-			};
-			name = Debug;
-		};
-		38EBA47D1D963CF90017D221 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = Say/Say.entitlements;
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					NOFABRIC,
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = Say/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
-				PRODUCT_BUNDLE_IDENTIFIER = "org.youknowone.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = Say;
-				SWIFT_VERSION = 3.0;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1414,15 +1263,6 @@
 			buildConfigurations = (
 				38DF270F1D9647E100332CE1 /* Debug */,
 				38DF27101D9647E100332CE1 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		38EBA47B1D963CF90017D221 /* Build configuration list for PBXNativeTarget "Say-dev" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				38EBA47C1D963CF90017D221 /* Debug */,
-				38EBA47D1D963CF90017D221 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -71,17 +71,9 @@ class ViewController: NSViewController {
     
     /// Open panel for "Open" menu
     let textOpenPanel = NSOpenPanel()
-    
-    @IBOutlet var alarmButton: NSButton!
-    @IBOutlet var alarmHour: NSTextField!
-    @IBOutlet var alarmMinute: NSTextField!
-    @IBOutlet var alarmSecond: NSTextField!
-    
-    var alarmTime: Date! = nil
-    var alarmTimer: Timer! = nil
-    
-    var say:SayAPI! = SayAPI(text: "hello",voice: nil)
-    var pause:Bool = false
+
+    var api: SayAPI! = SayAPI(text: " ", voice: nil)
+    var pause: Bool = false
     
     @available(OSX 10.10, *)
     override func viewDidLoad() {
@@ -129,64 +121,26 @@ class ViewController: NSViewController {
         myPopup.runModal()
     }
     
-    @IBAction func selectText(_ sender: NSTextField) {
-        if let url = URL(string: sender.stringValue) {
-            let instapaper = "https://www.instapaper.com/text?u="
-            let instapaperURL = URL(string:"\(instapaper)\(url)")!
-            // if URL format is right
-            if let data = NSData(contentsOf: instapaperURL) {
-                let dataString = String(data:data as Data, encoding:String.Encoding.utf8)!
-                if let result = findMainClass(in: dataString) {
-                    //textView.string = dataString//all html
-                    textView.string = result
-                } else {
-                    dialogOK(question:"URL fetching error", text: "URL is not accessible")
-                }
-            } else {
-                dialogOK(question:"URL fetching error", text: "URL is not accessible")            }
-        } else {
-            dialogOK(question:"URL fetching error", text: "URL is not accessible")
-        }
-    }
-    
     @IBAction func say(_ sender: NSToolbarItem) {
-        if !say.isplaying() {
+        if !api.isplaying() {
             if self.pause {
                 self.pause = false
-                say.continueSpeaking()
+                api.continueSpeaking()
             } else {
-                say = SayAPI(text: self.textForSpeech, voice: self.selectedVoice)
-                say.play(false)
+                api = SayAPI(text: self.textForSpeech, voice: self.selectedVoice)
+                api.play(false)
             }
-        }
-    }
-    func findMainClass(in dataString: String) -> String? {
-        let unlinedString = dataString.replacingOccurrences(of: "\n", with: " ").replacingOccurrences(of: "\r", with: "")
-        
-        let regex = try! NSRegularExpression(pattern: "<main.*</main>", options: NSRegularExpression.Options())
-        let result = regex.matches(in: unlinedString as String, options: NSRegularExpression.MatchingOptions(), range: NSRange(location: 0, length: unlinedString.characters.count))
-        
-        if result.count > 0 {
-            let range = result[0].rangeAt(0)
-            let text = (unlinedString as NSString).substring(with: range)
-            
-            let regexTag = try! NSRegularExpression(pattern: "<[^>]*>", options: NSRegularExpression.Options())
-            var realResult = regexTag.stringByReplacingMatches(in: text, options: NSRegularExpression.MatchingOptions(), range: NSRange(location: 0, length: text.characters.count), withTemplate: "")
-            textView.string = realResult
-            return realResult
-        } else {
-            return nil
         }
     }
     
     @IBAction func pause(_ sender: NSControl) {
         self.pause = true
-        say.pause()
+        api.pause()
     }
     
     @IBAction func stop(_ sender: NSControl) {
         self.pause = false
-        say.stop()
+        api.stop()
     }
     
     @IBAction func saveDocumentAs(_ sender: NSControl) {
@@ -206,29 +160,6 @@ class ViewController: NSViewController {
             
         }
         catch {/* error handling here */}
-    }
-    
-    @IBAction func setAlarm(_ sender: NSControl) {
-        if alarmButton.state == NSOnState {
-            let alarmDelayTime = self.alarmHour.intValue * 3600 + alarmMinute.intValue * 60 + alarmSecond.intValue
-            self.alarmTime = Date().addingTimeInterval(TimeInterval(alarmDelayTime))
-            self.alarmTimer = Timer(fireAt: alarmTime, interval: 0, target: self, selector: #selector(doAlarm), userInfo: nil, repeats: false)
-            RunLoop.main.add(alarmTimer, forMode: RunLoopMode.commonModes)
-        } else if alarmButton.state == NSOffState {
-            self.alarmTimer.invalidate()
-        }
-    }
-    
-    func doAlarm() {
-        if !say.isplaying() {
-            if self.pause {
-                say.continueSpeaking()
-            } else {
-                say = SayAPI(text: self.textForSpeech, voice: self.selectedVoice)
-                say.play(false)
-            }
-        }
-        alarmButton.state = NSOffState
     }
 
 }
