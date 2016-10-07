@@ -2,4 +2,4 @@ language: objective-c
 sudo: false
 xcode_workspace: Say.xcworkspace
 osx_image: xcode8
-xcode_scheme: Say
+xcode_scheme: macOS

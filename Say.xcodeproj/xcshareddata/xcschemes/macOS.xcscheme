@@ -16,7 +16,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "38B8C1E51AD6F903009F0783"
                BuildableName = "Say.app"
-               BlueprintName = "Say"
+               BlueprintName = "macOS"
                ReferencedContainer = "container:Say.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -29,8 +29,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "38B8C1F71AD6F903009F0783"
-               BuildableName = "SayTests.xctest"
-               BlueprintName = "SayTests"
+               BuildableName = "macOSTests.xctest"
+               BlueprintName = "macOSTests"
                ReferencedContainer = "container:Say.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -47,8 +47,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "38B8C1F71AD6F903009F0783"
-               BuildableName = "SayTests.xctest"
-               BlueprintName = "SayTests"
+               BuildableName = "macOSTests.xctest"
+               BlueprintName = "macOSTests"
                ReferencedContainer = "container:Say.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -58,7 +58,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "38B8C1E51AD6F903009F0783"
             BuildableName = "Say.app"
-            BlueprintName = "Say"
+            BlueprintName = "macOS"
             ReferencedContainer = "container:Say.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -81,7 +81,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "38B8C1E51AD6F903009F0783"
             BuildableName = "Say.app"
-            BlueprintName = "Say"
+            BlueprintName = "macOS"
             ReferencedContainer = "container:Say.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -100,7 +100,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "38B8C1E51AD6F903009F0783"
             BuildableName = "Say.app"
-            BlueprintName = "Say"
+            BlueprintName = "macOS"
             ReferencedContainer = "container:Say.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
