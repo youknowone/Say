@@ -26,18 +26,19 @@ class MainWindow: NSWindow {
          */
         func syncronizedData(_ tag: String, URL: Foundation.URL) -> Data? {
             let standardUserDefaults = UserDefaults.standard
-            let iconData = standardUserDefaults.object(forKey: tag) as? Data
-            if iconData == nil {
-                if let iconData = try? Data(contentsOf: URL) {
-                    standardUserDefaults.set(iconData, forKey: tag)
+            guard let iconData = standardUserDefaults.object(forKey: tag) as? Data else {
+                if let downloadedData = try? Data(contentsOf: URL) {
+                    standardUserDefaults.set(downloadedData, forKey: tag)
                     standardUserDefaults.synchronize()
-                    return iconData
+                    return downloadedData
                 } else {
                     //print("Icon is not loadable!")
+                    return nil
                 }
             }
             return iconData
         }
+
         super.awakeFromNib()
         
         if let imageData = syncronizedData("icon_speech", URL: URL(string: "https://upload.wikimedia.org/wikipedia/commons/1/10/Exquisite-microphone.png")!) {
@@ -104,32 +105,23 @@ class ViewController: NSViewController {
     var selectedVoice: VoiceAPI? {
         get {
             let index = self.voiceComboBox.indexOfSelectedItem
-            if index <= 0 || index == NSNotFound {
+            guard index >= 0 && index != NSNotFound else {
                 return nil
-            } else {
-                return VoiceAPI.voices[index - 1]
             }
+            return VoiceAPI.voices[index - 1]
         }
-    }
- 
-    func dialogOK(question: String, text: String) {
-        let myPopup: NSAlert = NSAlert()
-        myPopup.messageText = question
-        myPopup.informativeText = text
-        myPopup.alertStyle = NSAlertStyle.warning
-        myPopup.addButton(withTitle: "OK")
-        myPopup.runModal()
     }
     
     @IBAction func say(_ sender: NSToolbarItem) {
-        if !api.isplaying() {
-            if self.pause {
-                self.pause = false
-                api.continueSpeaking()
-            } else {
-                api = SayAPI(text: self.textForSpeech, voice: self.selectedVoice)
-                api.play(false)
-            }
+        guard api.isplaying() else {
+            return
+        }
+        if self.pause {
+            self.pause = false
+            api.continueSpeaking()
+        } else {
+            api = SayAPI(text: self.textForSpeech, voice: self.selectedVoice)
+            api.play(false)
         }
     }
     
@@ -145,21 +137,27 @@ class ViewController: NSViewController {
     
     @IBAction func saveDocumentAs(_ sender: NSControl) {
         self.voiceSavePanel.runModal()
-        if let URL = self.voiceSavePanel.url {
-            SayAPI(text: self.textForSpeech, voice: self.selectedVoice).writeToURL(URL, atomically: true)
+        guard let fileURL = self.voiceSavePanel.url else {
+            return
         }
+
+        let say = SayAPI(text: self.textForSpeech, voice: self.selectedVoice)
+        say.writeToURL(fileURL, atomically: true)
     }
+
     @IBAction func openTextFile(_ sender: NSControl) {
         self.textOpenPanel.runModal()
-        do {
-            if let URL = self.textOpenPanel.url{
-                let text2 = try NSString(contentsOf: URL, encoding: String.Encoding.utf8.rawValue)
-                self.textView.string = text2 as String
-                
-            }
-            
+
+        guard let textURL = self.textOpenPanel.url else {
+            // No given URL
+            return
         }
-        catch {/* error handling here */}
+        guard let text = try? String(contentsOf: textURL, encoding: .utf8) else {
+            // No utf-8 data in the URL
+            return
+        }
+
+        self.textView.string = text
     }
 
 }
