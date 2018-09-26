@@ -59,11 +59,11 @@ class ViewController: UIViewController, SpeakerDelegate, UIPickerViewDelegate, U
     
     @IBAction func changeVoiceClicked(_ sender: AnyObject) {
         // create action sheet & picker view dynamically
-        let alertController = UIAlertController(title: "Select Launguage", message: "\n\n\n\n\n\n\n\n\n\n", preferredStyle: UIAlertControllerStyle.actionSheet);
+        let alertController = UIAlertController(title: "Select Launguage", message: "\n\n\n\n\n\n\n\n\n\n", preferredStyle: UIAlertController.Style.actionSheet);
         let alertFrame = alertController.view.frame
         let languagePicker = UIPickerView(frame: CGRect(x: alertFrame.minX, y: alertFrame.minY + 20, width: alertFrame.width - 50, height: 250))
         languagePicker.center.x = self.view.center.x
-        languagePicker.autoresizingMask = [UIViewAutoresizing.flexibleLeftMargin, UIViewAutoresizing.flexibleRightMargin]
+        languagePicker.autoresizingMask = [.flexibleLeftMargin, .flexibleRightMargin]
         languagePicker.delegate = self
         languagePicker.dataSource = self
         languagePicker.showsSelectionIndicator = true

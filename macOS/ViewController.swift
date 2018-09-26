@@ -92,8 +92,7 @@ class ViewController: NSViewController {
     }
     
     var textForSpeech: String {
-        let fullText = self.textView.string ?? ""
-        var selectedText = fullText
+        var selectedText = self.textView.string
 
         let selectedRange = self.textView.selectedRange()
         if selectedRange.length > 0 {

@@ -50,7 +50,8 @@ class SayAPI: NSObject {
         - Parameter voiceIdentifier: A voice identifier to composite speech. If given voice name is invalid, nil is returned.
     */
     public convenience init?(text: String, voiceIdentifier: String) {
-        self.init(text: text, voice: VoiceAPI.init(dictionary: NSSpeechSynthesizer.attributes(forVoice: voiceIdentifier)))
+        let attributes = NSSpeechSynthesizer.attributes(forVoice: NSSpeechSynthesizer.VoiceName(rawValue: voiceIdentifier))
+        self.init(text: text, voice: VoiceAPI(attributes: attributes))
     }
     /**
         Composite and play speech.
@@ -58,7 +59,8 @@ class SayAPI: NSObject {
         - Parameter waitUntilDone: Currently ignored.
      */
     func play(_ waitUntilDone: Bool) {
-        self.speechSynthesizer.setVoice(self.voice?.identifier)
+        let voiceName = self.voice?.identifier
+        self.speechSynthesizer.setVoice((voiceName != nil) ? NSSpeechSynthesizer.VoiceName(rawValue: voiceName!) : nil)
         self.speechSynthesizer.startSpeaking(text)
     }
     
@@ -89,7 +91,8 @@ class SayAPI: NSObject {
         - atomically: Currently ignored.
      */
     func writeToURL(_ URL: Foundation.URL, atomically: Bool) {
-        self.speechSynthesizer.setVoice(self.voice?.identifier)
+        let voiceName = self.voice?.identifier
+        self.speechSynthesizer.setVoice((voiceName != nil) ? NSSpeechSynthesizer.VoiceName(rawValue: voiceName!) : nil)
         self.speechSynthesizer.startSpeaking(text, to: URL)
     }
 }

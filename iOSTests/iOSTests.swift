@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import iOS
+@testable import Say
 
 class iOSTests: XCTestCase {
     

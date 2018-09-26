@@ -37,11 +37,11 @@ class VoiceAPI: NSObject {
             ** Get from NSSpeechSynthesizer.attributes(forVoice: `voiceIdentifier`)
             ** Do not create one yourself
      */
-    init(dictionary: [String: Any]) {
-        self.identifier = dictionary["VoiceIdentifier"] as! String
-        self.comment = dictionary["VoiceDemoText"] as! String
-        self.locale = dictionary["VoiceLocaleIdentifier"] as! String
-        self.name = dictionary["VoiceName"] as! String
+    init(attributes: [NSSpeechSynthesizer.VoiceAttributeKey : Any]) {
+        self.identifier = attributes[NSSpeechSynthesizer.VoiceAttributeKey(rawValue: "VoiceIdentifier")] as! String
+        self.comment = attributes[NSSpeechSynthesizer.VoiceAttributeKey(rawValue: "VoiceDemoText")] as! String
+        self.locale = attributes[NSSpeechSynthesizer.VoiceAttributeKey(rawValue: "VoiceLocaleIdentifier")] as! String
+        self.name = attributes[NSSpeechSynthesizer.VoiceAttributeKey(rawValue: "VoiceName")] as! String
         super.init()
     }
 
@@ -50,8 +50,8 @@ class VoiceAPI: NSObject {
      */
     static let voices: [VoiceAPI] = {
         var voices: [VoiceAPI] = []
-        for voiceIdentifier in NSSpeechSynthesizer.availableVoices() {
-            voices.append(VoiceAPI.init(dictionary: NSSpeechSynthesizer.attributes(forVoice: voiceIdentifier)))
+        for voiceIdentifier in NSSpeechSynthesizer.availableVoices {
+            voices.append(VoiceAPI(attributes: NSSpeechSynthesizer.attributes(forVoice: voiceIdentifier)))
         }
         return voices
     }()
